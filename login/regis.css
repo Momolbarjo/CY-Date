@@ -132,8 +132,17 @@ body{
     animation-duration: 1s;
 }
 
+.round-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+.round-image:hover{
+    filter: brightness(-120%);
+}
+
 @keyframes bigger{
     100%{transform: scale(2,2)}
 }
-
-
