@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 function verify_user_data()
 {
     $surname = $_POST["surname"];

@@ -5,10 +5,6 @@
     font-family: 'Merriweather', sans-serif;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-}
 
 body {
     display: flex;
@@ -145,8 +141,12 @@ body {
     filter: brightness(-120%);
 }
 
-@keyframes bigger {
-    100% {
-        transform: scale(2, 2)
-    }
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    z-index: 9999;
 }

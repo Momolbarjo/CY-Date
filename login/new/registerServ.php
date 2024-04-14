@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+require 'verifyServ.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -9,8 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
-
-    require 'verifyServ.php';
 
     $verificationResult = verify_user_data();
 
