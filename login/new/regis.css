@@ -5,7 +5,7 @@
     font-family: 'Merriweather', sans-serif;
 }
 
-.error {
+.error-message {
     color: red;
     font-weight: bold;
     z-index: 1;
