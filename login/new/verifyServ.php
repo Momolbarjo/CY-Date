@@ -48,3 +48,5 @@ function verify_user_data()
 
     return true;
 }
+
+?>
