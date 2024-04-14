@@ -1,4 +1,7 @@
 
+<?php
+session_start();
+?>
 <html>
 
 <head>
@@ -12,6 +15,9 @@
 <body>
 
     <div class="box">
+        <?php if (isset($_SESSION['error'])): ?>
+             <span class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></span>
+        <?php endif; ?>
         <form action="registerServ.php" method="POST" enctype="multipart/form-data">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
                 style="display:none">
