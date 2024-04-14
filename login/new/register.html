@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,16 +9,6 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    if (isset($_SESSION['error'])): ?>
-    <div class="error">
-        <?php 
-            echo $_SESSION['error']; 
-            unset($_SESSION['error']);
-            ?>
-    </div>
-    <?php endif; ?>
 
     <div class="box">
         <form action="register.php" method="POST" enctype="multipart/form-data">
@@ -56,6 +45,7 @@
         </form>
     </div>
     <script src="../picture.js"></script>
+
 </body>
 
 </html>

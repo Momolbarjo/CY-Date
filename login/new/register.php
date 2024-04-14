@@ -18,10 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error'] = $verificationResult;
         header("Location: register.html");
         exit();
-    } elseif (is_string($verificationResult)) {
-        $_SESSION['error'] = $verificationResult;
-        header("Location: register.html");
-        exit();
     }
 
     if (isset($_FILES["profilPicture"]) && $_FILES["profilPicture"]["error"] == UPLOAD_ERR_OK) {

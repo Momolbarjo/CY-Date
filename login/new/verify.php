@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 function verify_user_data()
 {
     $surname = $_POST["surname"];
@@ -12,11 +11,13 @@ function verify_user_data()
     $password = $_POST["password"];
 
     if (!preg_match('/^[a-zA-Z]+$/', $surname) || !preg_match('/^[a-zA-Z]+$/', $name)) {
-        return 'Surname/Name should be with  letters only';
+        $_SESSION['error'] = 'Surname/Name should be with  letters only';
+        return false;
     }
 
     if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/', $password)) {
-        return 'Your password need to be at least 8 characters with at least : uppercase letter,lowercase letter, a number and a special character ';
+        $_SESSION['error'] = 'Your password need to be at least 8 characters with at least : uppercase letter,lowercase letter, a number and a special character ';
+        return false;
     }
 
     $birthday = new DateTime($birthday);
@@ -25,7 +26,8 @@ function verify_user_data()
     $age = $interval->y;
 
     if ($age < 18) {
-        return 'You need to be at least 18';
+        $_SESSION['error'] = 'You need to be at least 18';
+        return false;
     }
 
     $users = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
@@ -34,11 +36,13 @@ function verify_user_data()
         list($existingUsername, $existingEmail) = explode(",", $user);
 
         if ($existingUsername == $username) {
-            return 'Username already exist';
+            $_SESSION['error'] = 'Username already exist';
+            return false;
         }
 
         if ($existingEmail == $email) {
-            return 'An account with this email already exist';
+            $_SESSION['error'] = 'An account with this email already exist';
+            return false;
         }
     }
 
