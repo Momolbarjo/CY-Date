@@ -10,13 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
 
-    require 'verify.php';
+    require 'verifyServ.php';
 
     $verificationResult = verify_user_data();
 
     if ($verificationResult !== true) {
         $_SESSION['error'] = $verificationResult;
-        header("Location: register.html");
+        header("Location: registerHub.html");
         exit();
     }
 
@@ -37,11 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         $_SESSION['error'] = 'An error occurs while downloading your profilePicture';
-        header("Location: register.html");
+        header("Location: registerHub.html");
         exit();
     }
 } else {
     $_SESSION['error'] = 'Request in POST only.';
-    header("Location: register.html");
+    header("Location: registerHub.html");
     exit();
 }
