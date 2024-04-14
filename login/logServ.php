@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../web/dashboard.html");
         exit; 
     } else {
-        header("Location: index.html");
+        header("Location: ../../index.html");
         exit;
     }
 } else {
-    header("Location: index.html");
+    header("Location: ../../index.html");
     exit;
 }
 ?>
