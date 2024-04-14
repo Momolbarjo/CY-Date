@@ -5,6 +5,11 @@
     font-family: 'Merriweather', sans-serif;
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+}
+
 body {
     display: flex;
     align-items: center;

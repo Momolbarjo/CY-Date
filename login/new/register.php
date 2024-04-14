@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $surname = $_POST["surname"];
@@ -8,34 +10,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
 
-    if (!empty($surname) && !empty($name) && !empty($username) && !empty($email) && !empty($birthday) && !empty($password)) {
+    require 'verify.php';
 
-        if (isset($_FILES["profilPicture"]) && $_FILES["profilPicture"]["error"] == UPLOAD_ERR_OK) {
+    $verificationResult = verify_user_data();
 
-            $upload_Dir = "../../data/profilePic/";
+    if ($verificationResult !== true) {
+        $_SESSION['error'] = $verificationResult;
+        header("Location: register.html");
+        exit();
+    } elseif (is_string($verificationResult)) {
+        $_SESSION['error'] = $verificationResult;
+        header("Location: register.html");
+        exit();
+    }
 
-            $profilepicName = uniqid() . "_" . $_FILES["profilPicture"]["name"];
+    if (isset($_FILES["profilPicture"]) && $_FILES["profilPicture"]["error"] == UPLOAD_ERR_OK) {
 
-            move_uploaded_file($_FILES["profilPicture"]["tmp_name"], $upload_Dir . $profilepicName);
+        $upload_Dir = "../../data/profilePic/";
 
-            $profilepicPath = $upload_Dir . $profilepicName;
+        $profilepicName = uniqid() . "_" . $_FILES["profilPicture"]["name"];
 
-            $data = "$surname,$name,$username,$email,$birthday,$password,$profilepicPath\n";
-            file_put_contents("../../data/users.csv", $data, FILE_APPEND);
+        move_uploaded_file($_FILES["profilPicture"]["tmp_name"], $upload_Dir . $profilepicName);
 
-            header("Location: ../../web/dashboard.html");
-            exit();
-        } else {
-            header("Location: register.html");
-            exit();
-        }
+        $profilepicPath = $upload_Dir . $profilepicName;
+
+        $data = "$surname,$name,$username,$email,$birthday,$password,$profilepicPath\n";
+        file_put_contents("../../data/users.csv", $data, FILE_APPEND);
+
+        header("Location: ../../web/dashboard.html");
+        exit();
     } else {
+        $_SESSION['error'] = 'An error occurs while downloading your profilePicture';
         header("Location: register.html");
         exit();
     }
 } else {
+    $_SESSION['error'] = 'Request in POST only.';
     header("Location: register.html");
     exit();
 }
-?>
-
