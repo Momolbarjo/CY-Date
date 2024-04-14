@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 
 <head>
@@ -43,6 +47,12 @@
             </div>
             <button type="submit" class="button">Register</button>
         </form>
+        <?php
+        if(isset($_SESSION['error'])) {
+            echo "<p class='error-message'>" . $_SESSION['error'] . "</p>";
+            unset($_SESSION['error']); // Clear the error message after displaying it
+        }
+        ?>
     </div>
     <script src="../picture.js"></script>
 

@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($verificationResult !== true) {
         $_SESSION['error'] = $verificationResult;
-        header("Location: registerHub.html");
+        header("Location: registerHub.php");
         exit();
     }
 
@@ -37,11 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         $_SESSION['error'] = 'An error occurs while downloading your profilePicture';
-        header("Location: registerHub.html");
+        header("Location: registerHub.php");
         exit();
     }
 } else {
     $_SESSION['error'] = 'Request in POST only.';
-    header("Location: registerHub.html");
+    header("Location: registerHub.php");
     exit();
 }
