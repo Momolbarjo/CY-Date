@@ -1,14 +1,12 @@
-@font-face {
-    font-family: 'Merriweather';
-    src: url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-*{
+
+* {
     box-sizing: border-box;
     font-family: 'Merriweather', sans-serif;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,30 +17,30 @@ body{
     overflow: hidden;
 }
 
-.box{
+.box {
     width: 30%;
     height: 70%;
-    background: linear-gradient(pink,beige);
+    background: linear-gradient(pink, beige);
     text-align: center;
     align-items: center;
     color: white;
     border-radius: 3%;
-    padding: 2% 6% ;
+    padding: 2% 6%;
 }
 
-.box h1{
+.box h1 {
     font-size: 180%;
     text-align: center;
 }
 
-.inputBox{
+.inputBox {
     position: relative;
     width: 120%;
     height: 70px;
     margin: 35px 0;
 }
 
-.inputBox input{
+.inputBox input {
     height: 100%;
     width: 100%;
     background: transparent;
@@ -50,16 +48,16 @@ body{
     border: 2px solid grey;
     border-radius: 40px;
     font-size: 145%;
-    color:white;
+    color: white;
     margin-left: -15%;
     padding: 5% 12% 5% 5%;
 }
 
-.inputBox input::placeholder{
+.inputBox input::placeholder {
     color: white;
 }
 
-.inputBox i{
+.inputBox i {
     position: absolute;
     right: 10%;
     top: 50%;
@@ -67,7 +65,7 @@ body{
     font-size: 140%;
 }
 
-.remember{
+.remember {
     display: flex;
     justify-content: space-between;
     font-size: 105%;
@@ -75,15 +73,15 @@ body{
 }
 
 .remember a {
-    color:white;
+    color: white;
     text-decoration: none;
 }
 
-.remember a:hover{
+.remember a:hover {
     text-decoration: underline;
 }
 
-.button{
+.button {
     width: 100%;
     height: 45px;
     background-color: white;
@@ -98,46 +96,47 @@ body{
     margin-top: 20px;
 }
 
-.button:hover{
+.button:hover {
     background-color: grey;
 }
 
-.newAcc{
+.newAcc {
     font-size: 110%;
     text-align: center;
 }
 
-.newAcc a{
+.newAcc a {
     position: relative;
-    color:grey;
+    color: grey;
     text-decoration: none;
     font-weight: 700;
     font-size: larger;
 }
 
-.newAcc i{
+.newAcc i {
     position: relative;
-    color:grey;
+    color: grey;
     text-decoration: none;
     font-weight: 700;
     font-size: larger;
 }
 
-.newAcc a:hover{
+.newAcc a:hover {
     text-decoration: underline;
 }
 
-.newAcc i:hover{
+.newAcc i:hover {
     animation-name: bigger;
     animation-duration: 1s;
 }
 
-@keyframes bigger{
-    100%{transform: scale(2,2)}
+@keyframes bigger {
+    100% {
+        transform: scale(2, 2)
+    }
 }
 
 
-#cupid{
+#cupid {
     opacity: 40%;
 }
-
