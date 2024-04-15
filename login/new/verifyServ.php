@@ -10,17 +10,17 @@ function verify_user_data()
     $password = $_POST["password"];
 
     if (!preg_match('/^[a-zA-Z]+$/', $surname)) {
-        $_SESSION['error'] = 'Surname should be with  letters only';
+        $_SESSION['error'] = '⚠️Surname should be with  letters only⚠️';
         return false;
     }
 
     if (!preg_match('/^[a-zA-Z]+$/', $name)) {
-        $_SESSION['error'] = 'Name should be with  letters only';
+        $_SESSION['error'] = '⚠️Name should be with  letters only⚠️';
         return false;
     }
 
     if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/', $password)) {
-        $_SESSION['error'] = 'Your password need to be at least 8 characters with at least : uppercase letter,lowercase letter, a number and a special character ';
+        $_SESSION['error'] = '⚠️Your password need to be at least 8 characters with at least : uppercase letter,lowercase letter, a number and a special character⚠️ ';
         return false;
     }
 
@@ -30,7 +30,7 @@ function verify_user_data()
     $age = $interval->y;
 
     if ($age < 18) {
-        $_SESSION['error'] = 'You need to be at least 18';
+        $_SESSION['error'] = '⚠️You need to be at least 18⚠️';
         return false;
     }
 
@@ -40,12 +40,12 @@ function verify_user_data()
         list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
 
         if ($existingUsername == $username) {
-            $_SESSION['error'] = 'Username already exist';
+            $_SESSION['error'] = '⚠️Username already exist⚠️';
             return false;
         }
 
         if ($existingEmail == $email) {
-            $_SESSION['error'] = 'An account with this email already exist';
+            $_SESSION['error'] = '⚠️An account with this email already exist⚠️';
             return false;
         }
     }

@@ -43,12 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         unset($_SESSION['input_data']);
         exit();
     } else {
-        $_SESSION['error'] = 'An error occurs while downloading your profilePicture';
+        $_SESSION['error'] = '⚠️An error occurs while downloading your profilePicture⚠️';
         header("Location: registerHub.php?error=". urlencode($_SESSION['error']));
         exit();
     }
 } else {
-    $_SESSION['error'] = 'Request in POST only.';
+    $_SESSION['error'] = '⚠️Request in POST only.⚠️';
     header("Location: registerHub.php?error=". urlencode($_SESSION['error']));
     exit();
 }
