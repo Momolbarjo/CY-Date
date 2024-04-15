@@ -37,7 +37,7 @@ function verify_user_data()
     $users = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
-        list($existingUsername, $existingEmail) = explode(",", $user);
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
 
         if ($existingUsername == $username) {
             $_SESSION['error'] = 'Username already exist';
