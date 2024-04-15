@@ -30,27 +30,27 @@ if (isset($_GET['error'])){
                 <img src="../../Pictures/profilPic.png" class="round-image" alt="">
             </label>
             <div class="inputBox">
-                <input type="text" placeholder="surname" name="surname" required>
+                <input type="text" placeholder="surname" name="surname" value="<?php echo $_SESSION['input_data']['surname'] ?? ''; ?>"required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="text" placeholder="name" name="name" required>
+                <input type="text" placeholder="name" name="name" value="<?php echo $_SESSION['input_data']['name'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="text" placeholder="username" name="username" required>
+                <input type="text" placeholder="username" name="username" value="<?php echo $_SESSION['input_data']['username'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="email" placeholder="email" name="email" required>
+                <input type="email" placeholder="email" name="email" value="<?php echo $_SESSION['input_data']['email'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="date" placeholder="birthday" name="birthday" required>
+                <input type="date" placeholder="birthday" name="birthday" value="<?php echo $_SESSION['input_data']['birthday'] ?? ''; ?>" required>
                 <i class='bx bx-cake'></i>
             </div>
             <div class="inputBox">
-                <input type="password" placeholder="password" name="password" required>
+                <input type="password" placeholder="password" name="password" value="<?php echo $_SESSION['input_data']['password'] ?? ''; ?>" required>
                 <i class='bx bxs-lock'></i>
             </div>
             <button type="submit" class="button">Register</button>
