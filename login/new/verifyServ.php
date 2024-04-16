@@ -19,6 +19,11 @@ function verify_user_data()
         return false;
     }
 
+    if(!preg_match("~@gmail\.com$~",$email)){
+        $_SESSION['error'] = '⚠️You should use an @gmail account⚠️';
+        return false;
+    }
+
     if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/', $password)) {
         $_SESSION['error'] = '⚠️Your password need to be at least 8 characters with at least : uppercase letter,lowercase letter, a number and a special character⚠️ ';
         return false;
@@ -33,6 +38,8 @@ function verify_user_data()
         $_SESSION['error'] = '⚠️You need to be at least 18⚠️';
         return false;
     }
+
+   
 
     $users = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
 

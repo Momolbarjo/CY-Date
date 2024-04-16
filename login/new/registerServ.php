@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'name' => $name,
         'username' => $username,
         'email' => $email,
-        'birthday' => $birthday
+        'birthday' => $birthday,
+        'password' => $password
     ];
 
     if ($verificationResult === false) {
