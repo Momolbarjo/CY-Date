@@ -1,17 +1,24 @@
 <?php
+session_start();
+require 'verifyServ.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["user"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
-    if ($username === "momo" && $password === "milou") {
+    $_SESSION['input_log'] = [
+        'username' => $username,
+        'password' => $password
+    ];
+
+    if (verify_login($username, $password)) {
         header("Location: ../web/dashboard.html");
-        exit; 
+        exit(); 
     } else {
-        header("Location: ../../index.html");
-        exit;
+        header("Location: ../../index.php?error=". urlencode($_SESSION['error']));
+        exit();
     }
 } else {
-    header("Location: ../../index.html");
-    exit;
+    header("Location: ../../index.php?error=". urlencode($_SESSION['error']));
+    exit();
 }
 ?>

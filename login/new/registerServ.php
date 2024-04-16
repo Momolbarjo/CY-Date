@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'verifyServ.php';
+require '../verifyServ.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,12 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $profilepicPath = $upload_Dir . $profilepicName;
 
-        $verificationCode = rand(1000000,99999999);
-        $result=sendMail($email,$verificationCode);
         $data = "$surname,$name,$username,$email,$birthday,$password,$profilepicPath\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
-        header("Location: ../../web/dashboard.html");
+        header("Location: ../../index.php");
         unset($_SESSION['input_data']);
         exit();
     } else {

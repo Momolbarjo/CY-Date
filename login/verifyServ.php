@@ -60,4 +60,22 @@ function verify_user_data()
     return true;
 }
 
+function verify_login($username, $password)
+{
+    $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
+
+    foreach ($users as $user) {
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
+
+        if ($existingUsername == $username && $existingPassword == $password) {
+            return true;
+        }
+    }
+
+    $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
+    return false;
+}
+
+
+
 ?>
