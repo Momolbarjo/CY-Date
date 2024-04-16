@@ -30,6 +30,14 @@
                 <input type="date" placeholder="birthday" name="birthday" value="<?php echo $_SESSION['input_forgot']['birthday'] ?? ''; ?>" required>
                 <i class='bx bx-cake'></i>
             </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password" name="pwd" value="<?php echo $_SESSION['input_forgot']['pwd'] ?? ''; ?>" required>
+                <i class='bx bxs-lock'></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="confirm Password" name="confirmPwd" value="<?php echo $_SESSION['input_forgot']['confirmPwd'] ?? ''; ?>" required>
+                <i class='bx bxs-lock'></i>
+            </div>
             <button type="submit" class="button">Submit</button>
         </form>
     </div>
