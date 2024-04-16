@@ -76,6 +76,19 @@ function verify_login($username, $password)
     return false;
 }
 
+function verify_user($username, $birthday)
+{
+    $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
 
+    foreach ($users as $user) {
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
 
+        if ($existingUsername == $username && $existingBirthday == $birthday) {
+            return true;
+        }
+    }
+
+    $_SESSION['error'] = '⚠️Username or birthdayDate incorrect⚠️';
+    return false;
+}
 ?>

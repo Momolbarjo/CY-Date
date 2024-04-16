@@ -32,7 +32,7 @@
             </div>
             <div class="remember">
                 <label><input type="checkbox">Stay connected</label>
-                <a href="login/reset/forgotHub.html">Forgot password?</a>
+                <a href="login/reset/forgotHub.php">Forgot password?</a>
             </div>
 
             <button type="submit" class="button">Login</button>

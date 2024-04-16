@@ -11,13 +11,24 @@
 
 <body>
     <div class="box">
-        <form action="" method="POST">
+        <form action="forgotServ.php" method="POST">
+            <?php
+                session_start();
+                if (isset($_GET['error'])){
+                    echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
+                    unset($_SESSION['error']);
+                }
+             ?>
             <h1>Forgot Password</h1>
             <img id="int" src="../../Pictures/interrogationPoint.png">
             <img id="reversedInt" src="../../Pictures/interrogationpointReversed.png">
             <div class="inputBox">
-                <input type="email" placeholder="email" required>
+                <input type="text" placeholder="Username" name="username" value="<?php echo $_SESSION['input_forgot']['username'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
+            </div>
+            <div class="inputBox">
+                <input type="date" placeholder="birthday" name="birthday" value="<?php echo $_SESSION['input_forgot']['birthday'] ?? ''; ?>" required>
+                <i class='bx bx-cake'></i>
             </div>
             <button type="submit" class="button">Submit</button>
         </form>
