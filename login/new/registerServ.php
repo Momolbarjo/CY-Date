@@ -2,6 +2,7 @@
 session_start();
 require 'verifyServ.php';
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $surname = $_POST["surname"];
@@ -37,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $profilepicPath = $upload_Dir . $profilepicName;
 
+        $verificationCode = rand(1000000,99999999);
+        $result=sendMail($email,$verificationCode);
         $data = "$surname,$name,$username,$email,$birthday,$password,$profilepicPath\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
