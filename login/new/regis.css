@@ -32,11 +32,6 @@ body {
     margin-top: -10%;
 }
 
-.box h1 {
-    font-size: 180%;
-    text-align: center;
-}
-
 .inputBox {
     position: relative;
     width: 120%;
@@ -69,22 +64,6 @@ body {
     font-size: 140%;
 }
 
-.remember {
-    display: flex;
-    justify-content: space-between;
-    font-size: 105%;
-    margin: -5% 0 5%;
-}
-
-.remember a {
-    color: white;
-    text-decoration: none;
-}
-
-.remember a:hover {
-    text-decoration: underline;
-}
-
 .button {
     width: 100%;
     height: 45px;
@@ -101,36 +80,6 @@ body {
 
 .button:hover {
     background-color: grey;
-}
-
-.newAcc {
-    font-size: 110%;
-    text-align: center;
-}
-
-.newAcc a {
-    position: relative;
-    color: grey;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: larger;
-}
-
-.newAcc i {
-    position: relative;
-    color: grey;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: larger;
-}
-
-.newAcc a:hover {
-    text-decoration: underline;
-}
-
-.newAcc i:hover {
-    animation-name: bigger;
-    animation-duration: 1s;
 }
 
 .round-image {
