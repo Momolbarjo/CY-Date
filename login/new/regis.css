@@ -93,7 +93,6 @@ body {
     filter: brightness(-120%);
 }
 
-
 .error {
     color: red;
     font-weight: bold;
@@ -105,4 +104,10 @@ body {
     background-color: beige;
     position: absolute;
     z-index: 9999;
+}
+
+@media screen and (max-width: 1920px) {
+    body {
+        zoom: calc((100% / 10) * 8)
+    }
 }
