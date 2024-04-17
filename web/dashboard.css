@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background-image: url('../BG/love.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.round-image {
+    border-radius: 50%;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.round-image:hover {
+    filter: brightness(80%);
+}
