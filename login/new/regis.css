@@ -19,13 +19,17 @@ body {
 
 .box {
     width: 30%;
-    height: 70%;
+    height: 80%;
     background: linear-gradient(pink, beige);
     text-align: center;
     align-items: center;
     color: white;
     border-radius: 3%;
     padding: 2% 6%;
+}
+
+.box form {
+    margin-top: -10%;
 }
 
 .box h1 {
@@ -92,8 +96,7 @@ body {
     font-size: 120%;
     color: cadetblue;
     font-weight: 700;
-    margin-bottom: 50px;
-    margin-top: 20px;
+    margin-top: 3%;
 }
 
 .button:hover {

@@ -8,6 +8,7 @@ function verify_user_data()
     $email = $_POST["email"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
+    $gender =$_POST["gender"];
 
     if (!preg_match('/^[a-zA-Z]+$/', $surname)) {
         $_SESSION['error'] = '⚠️Surname should be with  letters only⚠️';
@@ -18,6 +19,13 @@ function verify_user_data()
         $_SESSION['error'] = '⚠️Name should be with  letters only⚠️';
         return false;
     }
+
+    $gender = strtolower($gender);
+
+    if ($gender != "male" && $gender != "female" && $gender != "others") {
+        $_SESSION['error'] = '⚠️Your gender  should be male , female or others only⚠️';
+        return false;
+    } 
 
     if(!preg_match("~@gmail\.com$~",$email)){
         $_SESSION['error'] = '⚠️You should use an @gmail account⚠️';
@@ -65,7 +73,7 @@ function verify_login($username, $password)
     $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
-        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword) = explode(",", $user);
 
         if ($existingUsername == $username && $existingPassword == $password) {
             return true;

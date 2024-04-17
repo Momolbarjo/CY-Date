@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
+    $gender = $_POST["gender"];
 
     $verificationResult = verify_user_data();
 
@@ -20,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'username' => $username,
         'email' => $email,
         'birthday' => $birthday,
-        'password' => $password
+        'password' => $password,
+        'gender' => $gender
     ];
 
     if ($verificationResult === false) {
@@ -38,7 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $profilepicPath = $upload_Dir . $profilepicName;
 
-        $data = "$surname,$name,$username,$email,$birthday,$password,$profilepicPath\n";
+        $day = date("Y-m-d");
+        $status = "unsub";
+
+        if(strtolower($gender) == "female" ){
+            $status = "sub";
+        }
+        $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
         header("Location: ../../index.php");

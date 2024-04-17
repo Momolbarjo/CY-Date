@@ -20,9 +20,7 @@ if (isset($_GET['error'])){
 
 <body>
 
-    <div class="box">
-
-            
+    <div class="box">   
         <form action="registerServ.php" method="POST" enctype="multipart/form-data">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
                 style="display:none">
@@ -35,6 +33,10 @@ if (isset($_GET['error'])){
             </div>
             <div class="inputBox">
                 <input type="text" placeholder="name" name="name" value="<?php echo $_SESSION['input_data']['name'] ?? ''; ?>" required>
+                <i class='bx bxs-user-circle'></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="gender" name="gender" value="<?php echo $_SESSION['input_data']['gender'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
