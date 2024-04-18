@@ -15,10 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['profile_pic'] = $profile_pic;
 
         if($_SESSION['role'] == 'admin'){
-            header("Location: ../admin/adminDashboard.php");
+            header("Location: ../admin/Dash.php");
+            $_SESSION['input_log'] = '';
         }
         else{
             header("Location: ../web/dashboard.php");
+            $_SESSION['input_log'] = '';
         }
         exit(); 
     } else {
