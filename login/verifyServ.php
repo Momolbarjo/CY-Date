@@ -73,9 +73,10 @@ function verify_login($username, $password)
     $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
-        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword,$existingGender,$existingDate,$existingSub,$existingProfilPath) = explode(",", $user);
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword,$existingGender,$existingDate,$existingSub,$existingProfilPath,$existingRole) = explode(",", $user);
 
         if ($existingUsername == $username && $existingPassword == $password) {
+            $_SESSION['role'] = $existingRole;
             return $existingProfilPath;
         }
     }

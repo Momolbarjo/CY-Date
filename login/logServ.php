@@ -13,7 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $profile_pic = verify_login($username, $password);
     if ($profile_pic !== false) {
         $_SESSION['profile_pic'] = $profile_pic;
-        header("Location: ../web/dashboard.php");
+
+        if($_SESSION['role'] == 'admin'){
+            header("Location: ../admin/adminDashboard.php");
+        }
+        else{
+            header("Location: ../web/dashboard.php");
+        }
         exit(); 
     } else {
         header("Location: ../../index.php?error=". urlencode($_SESSION['error']));

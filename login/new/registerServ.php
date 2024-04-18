@@ -46,7 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(strtolower($gender) == "female" ){
             $status = "sub";
         }
-        $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath\n";
+
+        $role = "user";
+
+        $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath,$role\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
         header("Location: ../../index.php");
