@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background-image: url('../BG/adminBG.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
