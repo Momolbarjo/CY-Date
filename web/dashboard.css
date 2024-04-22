@@ -10,23 +10,92 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 100vh;
     background-image: url('../BG/love.gif');
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
 
+.navMenu {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
+
+.navigationBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10%;
+}
+
+
+.navigationBar a {
+    font-size: 1.45rem;
+    color: peachpuff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navigationBar a:hover {
+    animation-name: bigger;
+    animation-duration: 1s;
+}
+
+.logo {
+    height: 80%;
+    width: 80%;
+}
+
 .round-image {
     border-radius: 50%;
     position: absolute;
-    top: 1%;
+    top: 10%;
     right: 1%;
     width: 100px;
     height: 100px;
     object-fit: cover;
+    z-index: 101;
 }
 
 .round-image:hover {
     filter: brightness(80%);
+}
+
+
+.deco_button {
+    border-radius: 3% 3% 2% 2%;
+    background: linear-gradient(pink, beige);
+    height: 5%;
+    width: 5%;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+}
+
+.deco_button:hover {
+    background: linear-gradient(red, grey);
+}
+
+i {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 140%;
+}
+
+@keyframes bigger {
+    100% {
+        transform: scale(2, 2)
+    }
 }

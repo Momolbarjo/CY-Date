@@ -9,5 +9,6 @@
     <title>admin</title>
 </head>
 <body>
+    <?php session_start(); if(!$_SESSION['role']){header('Location: ../index.php');}?>
 </body>
 </html>
