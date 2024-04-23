@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (verify_user($username, $birthday,$pwd,$confirmPwd)) {
         replace_Pwd($username, $pwd);
-        header("Location: ../../prout.html");
+        header("Location: ../../index.php");
         exit(); 
     } else {
         header("Location: forgotHub.php?error=". urlencode($_SESSION['error']));

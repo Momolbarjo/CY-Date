@@ -36,9 +36,15 @@ if (isset($_GET['error'])){
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="text" placeholder="gender" name="gender" value="<?php echo $_SESSION['input_data']['gender'] ?? ''; ?>" required>
+                <select name="gender" required >
+                    <option value="">Gender</option>
+                    <option value="male" <?php echo ($_SESSION['input_data']['gender'] ?? '') === 'male' ? 'selected' : ''; ?>>Male</option>
+                    <option value="female" <?php echo ($_SESSION['input_data']['gender'] ?? '') === 'female' ? 'selected' : ''; ?>>Female</option>
+                    <option value="others" <?php echo ($_SESSION['input_data']['gender'] ?? '') === 'others' ? 'selected' : ''; ?>>Others</option>
+                </select>
                 <i class='bx bxs-user-circle'></i>
             </div>
+
             <div class="inputBox">
                 <input type="text" placeholder="username" name="username" value="<?php echo $_SESSION['input_data']['username'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>

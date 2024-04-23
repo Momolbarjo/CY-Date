@@ -23,7 +23,7 @@ body {
     background: linear-gradient(pink, beige);
     text-align: center;
     align-items: center;
-    color: white;
+    color: darkgray;
     border-radius: 3%;
     padding: 2% 6%;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .inputBox input::placeholder {
-    color: white;
+    color: darkgray;
 }
 
 .inputBox i {
@@ -73,7 +73,7 @@ body {
 }
 
 .remember a {
-    color: white;
+    color: darkgray;
     text-decoration: none;
 }
 

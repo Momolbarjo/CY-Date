@@ -23,7 +23,7 @@ body {
     background: linear-gradient(pink, beige);
     text-align: center;
     align-items: center;
-    color: white;
+    color: darkgray;
     border-radius: 3%;
     padding: 2% 6%;
 }
@@ -47,14 +47,36 @@ body {
     border: 2px solid grey;
     border-radius: 40px;
     font-size: 145%;
-    color: white;
+    color: darkgray;
     margin-left: -15%;
     padding: 5% 12% 5% 5%;
 }
 
 .inputBox input::placeholder {
-    color: white;
+    color: darkgray;
 }
+
+.inputBox select {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    margin-left: -15%;
+    padding: 2% 12% 2% 5%;
+    appearance: none;
+    line-height: 1.5;
+}
+
+
+
+.inputBox select::placeholder {
+    color: darkgray;
+}
+
 
 .inputBox i {
     position: absolute;
