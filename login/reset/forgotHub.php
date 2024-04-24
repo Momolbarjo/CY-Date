@@ -16,7 +16,11 @@
                 session_start();
                 if (isset($_GET['error'])){
                     echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
-                    unset($_SESSION['error']);
+                    $_SESSION['error']='';
+                }
+                else if(isset($_GET['success'])){
+                    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
+                    $_SESSION['success']='';
                 }
              ?>
             <h1>Forgot Password</h1>

@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath,$role\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
-        header("Location: ../../index.php");
+        $_SESSION['success'] = '✅Your account has been created✅';
+        header("Location: ../../index.php?success=". urlencode($_SESSION['success']));
         unset($_SESSION['input_data']);
         exit();
     } else {

@@ -20,6 +20,10 @@
                     echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
                     unset($_SESSION['error']);
                 }
+                else if(isset($_GET['success'])){
+                    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
+                    unset($_SESSION['success']);
+                }
              ?>
             <img id="cupid" src="Pictures/cupid.png">
             <div class="inputBox">

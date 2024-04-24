@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (verify_user($username, $birthday,$pwd,$confirmPwd)) {
         replace_Pwd($username, $pwd);
-        header("Location: ../../index.php");
+        $_SESSION['success'] = '✅Your password has been reset✅';
+        $_SESSION['input_forgot']='';
+        header("Location: ../../index.php?success=". urlencode($_SESSION['success']));
         exit(); 
     } else {
         header("Location: forgotHub.php?error=". urlencode($_SESSION['error']));
