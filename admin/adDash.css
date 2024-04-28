@@ -29,7 +29,6 @@ body {
     padding: 0 10%;
 }
 
-
 .navigationBar a {
     font-size: 1.45rem;
     color: peachpuff;
@@ -43,7 +42,56 @@ body {
     animation-duration: 1s;
 }
 
+.navigationBar a.active {
+    text-decoration: underline;
+}
+
 .logo {
     height: 80%;
     width: 80%;
+}
+
+#userTable {
+    z-index: 999;
+    background-color: peachpuff;
+    color: black;
+    font-size: 32px;
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    overflow: auto;
+}
+
+#userTable tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#userTable tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+#userTable td,
+#userTable th {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.round-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+@media (max-width: 1920px) {
+    #userTable {
+        font-size: 24px;
+        width: 85%;
+    }
+
+    .round-image {
+        width: 80px;
+        height: 80px;
+    }
 }
