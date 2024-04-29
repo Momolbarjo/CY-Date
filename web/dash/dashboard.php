@@ -19,7 +19,7 @@
             <label for="imageUpload">
                 <img src="<?php session_start();  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
                 <div id="submenu" >
-                    <a href="#">My Profile <i class='bx bxs-user-account'></i></a>
+                    <a href="../profile/customProfile.php">My Profile <i class='bx bxs-user-account'></i></a>
                     <a href="#">My Messages <i class='bx bx-message-square-dots' ></i></a>
                 </div>
             </label>
