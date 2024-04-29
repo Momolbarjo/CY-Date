@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['input_log'] = '';
         }
         else{
-            header("Location: ../web/dashboard.php");
+            header("Location: ../web/dash/dashboard.php");
             $_SESSION['input_log'] = '';
         }
         exit(); 
