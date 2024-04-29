@@ -1,33 +1,49 @@
 <?php
 session_start();
-require '../../login/verifyServ.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
 
-    $_SESSION['input_log'] = [
-        'username' => $username,
-        'password' => $password
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_SESSION['input_log']['username']; 
+    $region = $_POST["region"];
+    $size = $_POST["size"];
+    $desc = $_POST["desc"];
+
+    $_SESSION['input_profil'] = [
+        'region' => $region,
+        'size' => $size,
+        'desc' => $desc  
     ];
 
-    $profile_pic = verify_login($username, $password);
-    if ($profile_pic !== false) {
-        $_SESSION['profile_pic'] = $profile_pic;
 
-        if($_SESSION['role'] == 'admin'){
-            header("Location: ../admin/Dash.php");
-        }
-        else{
-            header("Location: ../web/dash/dashboard.php");
-        }
-        exit(); 
-    } else {
-        header("Location: ../../index.php?error=". urlencode($_SESSION['error']));
-        exit();
+    if (isset($_FILES['profilPicture']) && $_FILES['profilPicture']['error'] == 0) {
+        $tmp_name = $_FILES['profilPicture']['tmp_name'];
+        $name = $_SESSION['profile_pic'];
+        move_uploaded_file($tmp_name, "../../data/profilePic/$name");
     }
+
+    $lines = file("../../data/description.csv", FILE_IGNORE_NEW_LINES);
+    $found = false;
+
+    foreach ($lines as $i => $line) {
+        $data = str_getcsv($line);
+        if ($data[0] == $username) {
+            $lines[$i] = "$username,$region,$size,$desc";
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        $lines[] = "$username,$region,$size,$desc";
+    }
+
+    file_put_contents("../../data/description.csv", implode("\n", $lines));
+    $_SESSION['success'] = '✅ your profile has been updated ✅';
+    header("Location: ../dash/dashboard.php");
+    exit();
+        
 } else {
-    header("Location: ../../index.php?error=". urlencode($_SESSION['error']));
+    $_SESSION['error'] = '⚠️ Request in Post ONLY ⚠️';
+    header("Location: customProfile.php?error=". urlencode($_SESSION['error']));
     exit();
 }
-
 ?>

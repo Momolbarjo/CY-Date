@@ -4,7 +4,11 @@ session_start();
 if (isset($_GET['error'])){
     echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
     unset($_SESSION['error']);
- }
+}
+else if(isset($_GET['success'])){
+    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
+    unset($_SESSION['success']);
+}
 ?>
 
 <html>
@@ -20,7 +24,9 @@ if (isset($_GET['error'])){
 <body>
 
     <div class="box">   
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="profileServ.php" method="POST" enctype="multipart/form-data">
+            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
+                style="display:none">
             <label for="imageUpload">
             <img src="<?php  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
             </label>
@@ -60,7 +66,7 @@ if (isset($_GET['error'])){
             <button type="submit" class="button">Complete My Profil !</button>
         </form>
     </div>
-
+    <script src="../../login/picture.js"></script>
 </body>
 
 </html>
