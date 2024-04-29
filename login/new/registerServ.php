@@ -42,7 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $day = date("Y-m-d");
         $status = "unsub";
-
+        $surname = strtoupper($surname);
+        $name = totitle($name);
+        
         if(strtolower($gender) == "female" ){
             $status = "sub";
         }

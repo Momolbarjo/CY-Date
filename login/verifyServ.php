@@ -8,7 +8,6 @@ function verify_user_data()
     $email = $_POST["email"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
-    $gender =$_POST["gender"];
 
     if (!preg_match('/^[a-zA-Z]{1,12}$/', $surname)) {
         $_SESSION['error'] = '⚠️Surname should be with  letters only and between 1 to 12 characters⚠️';
@@ -25,8 +24,8 @@ function verify_user_data()
         return false;
     }
 
-    
-    if(!preg_match("~@gmail\.com$~",$email)){
+
+    if (!preg_match("~@gmail\.com$~", $email)) {
         $_SESSION['error'] = '⚠️You should use an @gmail account⚠️';
         return false;
     }
@@ -37,11 +36,11 @@ function verify_user_data()
         return false;
     }
 
-    if (!preg_match('/^[^,\s]{1,10}$/', $username))  {
+    if (!preg_match('/^[^,\s]{1,10}$/', $username)) {
         $_SESSION['error'] = '⚠️Your username should not contain a comma and be at the most 10 characters long⚠️';
         return false;
     }
-    
+
 
 
     $birthday = new DateTime($birthday);
@@ -54,7 +53,7 @@ function verify_user_data()
         return false;
     }
 
-   
+
 
     $users = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
 
@@ -80,7 +79,7 @@ function verify_login($username, $password)
     $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
-        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword,$existingGender,$existingDate,$existingSub,$existingProfilPath,$existingRole) = explode(",", $user);
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingGender, $existingDate, $existingSub, $existingProfilPath, $existingRole) = explode(",", $user);
 
         if ($existingUsername == $username && $existingPassword == $password) {
             $_SESSION['role'] = $existingRole;
@@ -92,4 +91,7 @@ function verify_login($username, $password)
     return false;
 }
 
-?>
+
+function totitle($str){
+    return ucfirst(strtolower($str));
+  }
