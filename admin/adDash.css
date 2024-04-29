@@ -84,6 +84,13 @@ body {
     object-fit: cover;
 }
 
+
+@keyframes bigger {
+    100% {
+        transform: scale(2, 2)
+    }
+}
+
 @media (max-width: 1920px) {
     #userTable {
         font-size: 24px;

@@ -20,7 +20,8 @@
                 <img src="<?php session_start();  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic">
             </label>
         </nav>
-    </header>    
+    </header>   
+    <script src="../Browser/disable.js"></script>
 </body>
 
 </html>

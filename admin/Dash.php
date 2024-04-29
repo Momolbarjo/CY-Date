@@ -22,5 +22,6 @@
     </header>
     <div id="userTable"></div>
     <script src="getUsers.js"></script>
+    <script src="../Browser/disable.js"></script>
 </body>
 </html>
