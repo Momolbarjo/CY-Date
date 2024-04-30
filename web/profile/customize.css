@@ -18,7 +18,9 @@ body {
 }
 
 .box {
-    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     height: 80%;
     background: linear-gradient(pink, beige);
     text-align: center;
@@ -29,7 +31,8 @@ body {
 }
 
 .box form {
-    margin-top: -10%;
+    margin-top: 0%;
+    margin-left: 12%;
 }
 
 .inputBox {
@@ -143,6 +146,13 @@ body {
     z-index: 9999;
 }
 
+
+.vertical-bar {
+    width: 0.5%;
+    margin-right: 50%;
+    background-color: pink;
+    height: 100%;
+}
 
 @media screen and (max-width: 1920px) {
     body {

@@ -23,7 +23,7 @@ else if(isset($_GET['success'])){
 
 <body>
 
-    <div class="box">   
+    <div class="box">  
         <form action="profileServ.php" method="POST" enctype="multipart/form-data">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
                 style="display:none">
@@ -62,9 +62,9 @@ else if(isset($_GET['success'])){
                 <input type="text" placeholder="Description"  name="desc" value="<?php echo $_SESSION['input_profil']['desc'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
-            
             <button type="submit" class="button">Complete My Profil !</button>
         </form>
+        <div class="vertical-bar"></div> 
     </div>
     <script src="../../login/picture.js"></script>
 </body>
