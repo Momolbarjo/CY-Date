@@ -6,7 +6,7 @@
     font-family: 'Merriweather', sans-serif;
 }
 
-body {
+#content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,11 +112,56 @@ i {
     text-decoration: underline;
 }
 
+.blur-effect {
+    filter: blur(8px) brightness(50%);
+    transition: all 0.5s ease;
+}
+
+#displaySearch {
+    position: absolute;
+    top: 5%;
+    right: 50%;
+    z-index: 999;
+    display: none;
+    width: 15%;
+    height: 5%;
+}
+
+
+
+#displaySearch input {
+    height: 100%;
+    width: 84%;
+    border: 2px solid grey;
+    color: darkgray;
+    padding: 5% 12% 5% 5%;
+}
+
+#displaySearch,
+#displaySearch input {
+    background-color: paleturquoise;
+    border-radius: 4%, 4%, 4%, 4%;
+}
+
+#displaySearch input::placeholder {
+    color: darkgray;
+}
+
+#displaySearch i {
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    font-size: 3em;
+}
+
 @media (max-width: 1920px) {
     #submenu a {
         font-size: 16px;
     }
 
+    #displaySearch i {
+        font-size: 2.2em;
+    }
 }
 
 @keyframes bigger {
