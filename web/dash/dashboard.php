@@ -30,7 +30,7 @@
 </div>
 <div id="displaySearch">
     <input type="text" id="searchInput" placeholder="Looking for someone...">
-    <div id="Results"></div>
+    <div id="Results" class="profile-container"></div>
      <i class='bx bx-cog'></i>
 </div>
     <script src="../../Browser/disable.js"></script>

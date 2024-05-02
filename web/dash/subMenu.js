@@ -23,13 +23,11 @@ window.addEventListener('click', function (e) {
 });
 
 
-$('#searchInput').on('input', function () {
+$('#displaySearch').on('input', function () {
     var input = $(this).val();
-    if (input.length > 0) {
-        $.get('search.php', { i: input }, function (elem) {
-            $('#Results').html(elem);
-        });
-    } else {
-        $('#Results').empty();
-    }
+    $.get('look4Some.php', { i: input }, function (elem) {
+        $('#Results').html(elem);
+    });
+}).on('click', function () {
+    $(this).trigger('input');
 });

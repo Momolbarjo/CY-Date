@@ -67,10 +67,31 @@
     z-index: 101;
 }
 
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.profile-container .profile {
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
 .round-image:hover {
     filter: brightness(80%);
 }
 
+.roundOther-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    z-index: 101;
+}
 
 .deco_button {
     border-radius: 3% 3% 2% 2%;

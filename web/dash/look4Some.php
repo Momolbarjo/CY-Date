@@ -4,10 +4,15 @@ if(isset($_GET['i'])){
     $input = $_GET['i'];
     $file = fopen('../../data/users.csv','r');
 
-    while(($line = fgetscsv($file)) !== FALSE){
-        if(strpos($line[2],$input) === 0){
-            echo"<p>$line[2]</p>";
+    while(($line = fgetcsv($file)) !== FALSE){
+
+        if($input == "" ||strpos($line[2],$input) === 0){
+            $username = $line[2];
+            $profilePicPath = $line[9];
+            echo "<div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div>";
         }
     }
     fclose($file);
 }
+
+?>

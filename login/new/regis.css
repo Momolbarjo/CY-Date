@@ -14,7 +14,7 @@ body {
     background-image: url('../../BG/love.gif');
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .box {
@@ -130,6 +130,10 @@ body {
 
 @media screen and (max-width: 1920px) {
     body {
-        zoom: calc((100% / 10) * 8)
+        zoom: calc((100% / 10) * 8);
+    }
+
+    .box {
+        zoom: calc((100% / 10) * 9.6);
     }
 }
