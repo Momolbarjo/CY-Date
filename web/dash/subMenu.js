@@ -23,7 +23,7 @@ window.addEventListener('click', function (e) {
 });
 
 
-$('#displaySearch').on('input', function () {
+$('#searchInput').on('input', function () {
     var input = $(this).val();
     $.get('look4Some.php', { i: input }, function (elem) {
         $('#Results').html(elem);
