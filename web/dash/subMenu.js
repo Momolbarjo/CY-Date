@@ -33,7 +33,6 @@ window.addEventListener('click', function (e) {
 });
 
 
-
 $('#searchInput').on('input', function () {
     var input = $(this).val();
     $.get('look4Some.php', { i: input }, function (elem) {
