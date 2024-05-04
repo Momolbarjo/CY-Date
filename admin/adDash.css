@@ -1,15 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    height: 100%;
+    margin: 0;
+}
+
+#content {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 130vh;
     background-image: url('../BG/adminBG.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
 
-.navMenu {
+#content .navMenu {
     position: fixed;
     top: 0%;
     left: 0%;
@@ -61,6 +70,7 @@ body {
     border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     overflow: auto;
+    margin-top: 5%;
 }
 
 #userTable tr {
@@ -84,6 +94,11 @@ body {
     object-fit: cover;
 }
 
+.blur-effect {
+    filter: blur(8px) brightness(50%);
+    transition: all 0.5s ease;
+}
+
 
 @keyframes bigger {
     100% {
@@ -91,10 +106,15 @@ body {
     }
 }
 
-@media (max-width: 1920px) {
+@media screen and (max-width: 1920px) {
+    body {
+        zoom: calc((100% / 10) * 8.3);
+    }
+
     #userTable {
         font-size: 24px;
         width: 85%;
+        top: 100%;
     }
 
     .round-image {

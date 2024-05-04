@@ -9,7 +9,7 @@ if(isset($_GET['i'])){
         if($input == "" ||strpos($line[2],$input) === 0){
             $username = $line[2];
             $profilePicPath = $line[9];
-            echo "<div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div>";
+            echo "<a href='../profile/profilePage.php?user=$username'><div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div></a>";
         }
     }
     fclose($file);

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../../BG/bulb.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.profile {
+    width: 80%;
+    max-width: 600px;
+    margin: 2em auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    text-align: center;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.profile h1 {
+    margin: 0;
+    color: #333;
+}
+
+.profile p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#optionsBtn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#optionsMenu {
+    margin-top: 20px;
+}
+
+#optionsMenu a {
+    display: block;
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+#optionsMenu a:hover {
+    text-decoration: underline;
+}

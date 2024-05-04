@@ -42,16 +42,16 @@ if (isset($_GET['error'])){
                     <option value="female" <?php echo ($_SESSION['input_data']['gender'] ?? '') === 'female' ? 'selected' : ''; ?>>Female</option>
                     <option value="others" <?php echo ($_SESSION['input_data']['gender'] ?? '') === 'others' ? 'selected' : ''; ?>>Others</option>
                 </select>
-                <i class='bx bxs-user-circle'></i>
+                <i class='bx bx-male-female'></i>
             </div>
 
             <div class="inputBox">
                 <input type="text" placeholder="username" name="username" value="<?php echo $_SESSION['input_data']['username'] ?? ''; ?>" required>
-                <i class='bx bxs-user-circle'></i>
+                <i class='bx bxs-user-pin' ></i>
             </div>
             <div class="inputBox">
                 <input type="email" placeholder="email" name="email" value="<?php echo $_SESSION['input_data']['email'] ?? ''; ?>" required>
-                <i class='bx bxs-user-circle'></i>
+                <i class='bx bxs-envelope' ></i>
             </div>
             <div class="inputBox">
                 <input type="date" placeholder="birthday" name="birthday" value="<?php echo $_SESSION['input_data']['birthday'] ?? ''; ?>" required>
