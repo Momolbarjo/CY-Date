@@ -15,7 +15,8 @@ body {
     width: 80%;
     max-width: 600px;
     margin: 2em auto;
-    background-color: #fff;
+    background: transparent;
+    backdrop-filter: blur(50px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 2em;
     text-align: center;
@@ -31,7 +32,7 @@ body {
 
 .profile h1 {
     margin: 0;
-    color: #333;
+    color: white;
 }
 
 .profile p {
@@ -55,7 +56,7 @@ body {
 
 #optionsMenu a {
     display: block;
-    color: #007BFF;
+    color: white;
     text-decoration: none;
     margin-bottom: 10px;
 }
