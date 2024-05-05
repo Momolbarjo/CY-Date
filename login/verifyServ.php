@@ -79,19 +79,20 @@ function verify_login($username, $password)
     $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
-        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingGender, $existingDate, $existingSub, $existingProfilPath, $existingRole) = explode(",", $user);
+        list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingGender, $existingDate, $existingSub, $existingProfilPath, $existingReports, $existingRole) = explode(",", $user);
 
-        if ($existingUsername == $username && $existingPassword == $password) {
+        if ($existingUsername == $username && $existingPassword == $password && $existingReports < 3) {
             $_SESSION['role'] = $existingRole;
             return $existingProfilPath;
         }
     }
-
-    $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
-    return false;
+    if ($existingReports >= 3 || $existingRole == 'banned'){
+        $existingRole = 'banned';
+        $_SESSION['error'] = '⚠️You are banned⚠️';
+        return false;
+    }
+    else{
+        $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
+        return false;
+    }
 }
-
-
-function totitle($str){
-    return ucfirst(strtolower($str));
-  }
