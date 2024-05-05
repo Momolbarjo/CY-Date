@@ -36,8 +36,8 @@ body {
 }
 
 .pic {
-	 position: relative;
-	 margin-left: -15%;
+    position: relative;
+    margin-left: -15%;
 }
 
 .inputBox {
@@ -45,8 +45,8 @@ body {
     width: 350px;
     height: 70px;
     margin: 35px 0;
-    margin-left:-160%;
-    top:35%;
+    margin-left: -160%;
+    top: 35%;
 }
 
 .inputBox input {
@@ -96,12 +96,12 @@ body {
 
 
 .inputBox2 {
-	position:absolute;
-	top:29%;
-	margin: 35px 0;
-    	margin-left:-5%;
-    	width:32%;
-	height:35%;
+    position: absolute;
+    top: 29%;
+    margin: 35px 0;
+    margin-left: -5%;
+    width: 32%;
+    height: 35%;
 }
 
 .inputBox2 input {
@@ -115,13 +115,13 @@ body {
     color: darkgray;
     margin-left: -15%;
     padding: 5% 12% 5% 5%;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 .inputBox2 input::placeholder {
     color: darkgray;
-    font-size : 20;
-    vertical-align:top;
+    font-size: 20;
+    vertical-align: top;
 }
 
 
@@ -161,9 +161,6 @@ body {
     object-fit: cover;
 }
 
-.round-image:hover {
-    filter: brightness(-120%);
-}
 
 .error {
     color: red;
@@ -202,15 +199,15 @@ body {
 }
 
 .pics {
-	position : absolute;
-	height : 35%;
-	width : 30%;
-	left : 68%;
-	top : 35%;
+    position: absolute;
+    height: 35%;
+    width: 30%;
+    left: 68%;
+    top: 35%;
 }
 
 .pics i {
-	visibility : hidden;
+    visibility: hidden;
 }
 
 
