@@ -81,18 +81,17 @@ function verify_login($username, $password)
     foreach ($users as $user) {
         list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingGender, $existingDate, $existingSub, $existingProfilPath, $existingReports, $existingRole) = explode(",", $user);
 
-        if ($existingUsername == $username && $existingPassword == $password && $existingReports < 3) {
-            $_SESSION['role'] = $existingRole;
-            return $existingProfilPath;
+        if ($existingUsername == $username && $existingPassword == $password) {
+            if ($existingReports >= 3 || $existingRole == 'banned') {
+                $_SESSION['role'] = 'banned';
+                $_SESSION['error'] = '⚠️You are banned⚠️';
+                return false;
+            } else {
+                $_SESSION['role'] = $existingRole;
+                return $existingProfilPath;
+            }
         }
     }
-    if ($existingReports >= 3 || $existingRole == 'banned'){
-        $existingRole = 'banned';
-        $_SESSION['error'] = '⚠️You are banned⚠️';
-        return false;
-    }
-    else{
-        $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
-        return false;
-    }
+    $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
+    return false;
 }
