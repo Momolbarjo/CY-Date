@@ -25,11 +25,15 @@ else if(isset($_GET['success'])){
 
     <div class="box">  
         <form action="profileServ.php" method="POST" enctype="multipart/form-data">
+            
+            <div class="pic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
                 style="display:none">
             <label for="imageUpload">
             <img src="<?php  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
             </label>
+            </div>
+            
             <div class="inputBox">
                 <input type="textbox" value="<?php  echo $_SESSION['input_log']['username'] ?? '';?>" readonly />
             </div>
@@ -58,10 +62,26 @@ else if(isset($_GET['success'])){
                 <i class='bx bxs-user-circle'></i>
             </div>
 
-            <div class="inputBox">
-                <input type="text" placeholder="Description"  name="desc" value="<?php echo $_SESSION['input_profil']['desc'] ?? ''; ?>" required>
-                <i class='bx bxs-user-circle'></i>
+            <div class="inputBox2">
+                <input type="textarea" placeholder="Write your description..."   name="desc" value="<?php echo $_SESSION['input_profil']['desc'] ?? ''; ?>" required>
             </div>
+            
+            <div class="pics">
+            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
+                style="display:none">
+            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic"><i>espace</i>
+            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
+                style="display:none">
+            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <br><br><br>            
+            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
+                style="display:none">
+            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic"><i>espace</i>
+            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
+                style="display:none">
+            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            </div>
+            
             <button type="submit" class="button">Complete My Profil !</button>
         </form>
         <div class="vertical-bar"></div> 
