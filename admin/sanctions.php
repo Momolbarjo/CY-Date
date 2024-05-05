@@ -23,6 +23,7 @@ if (isset($_POST["sanction"]) && isset($_POST["index"])) {
         $lines = file($filename, FILE_IGNORE_NEW_LINES);
         $userData = str_getcsv($lines[$index]);
         $userData[11] = 'user';
+        $userData[10] = 0 ;
         $lines[$index] = implode(",", $userData);
         file_put_contents($filename, implode(PHP_EOL, $lines) . PHP_EOL);
     }

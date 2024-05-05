@@ -14,17 +14,17 @@
     <div class="box">
         <form action="login/logServ.php" method="POST">
             <?php
-                session_start();
+            session_start();
 
-                if (isset($_GET['error'])){
-                    echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
-                    unset($_SESSION['error']);
-                }
-                else if(isset($_GET['success'])){
-                    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
-                    unset($_SESSION['success']);
-                }
-             ?>
+            if (isset($_GET['error'])){
+                echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
+                unset($_SESSION['error']);
+            }
+            else if(isset($_GET['success'])){
+                echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
+                unset($_SESSION['success']);
+            }
+            ?>
             <img id="cupid" src="Pictures/cupid.png">
             <div class="inputBox">
                 <input type="text" placeholder="Username" name="username" value="<?php echo $_SESSION['input_log']['username'] ?? ''; ?>" required>
@@ -50,7 +50,7 @@
         </form>
     </div>
 
-
+    
 </body>
 
 </html>
