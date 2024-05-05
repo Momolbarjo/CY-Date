@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'email' => $email,
         'birthday' => $birthday,
         'password' => $password,
-        'gender' => $gender
+        'gender' => $gender,
     ];
 
     if ($verificationResult === false) {
@@ -50,8 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $role = "user";
+        $reports =0;
 
-        $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath,$role\n";
+        $data = "$surname,$name,$username,$email,$birthday,$password,$gender,$day,$status,$profilepicPath,$reports,$role\n";
         file_put_contents("../../data/users.csv", $data, FILE_APPEND);
 
         $_SESSION['success'] = '✅Your account has been created✅';
