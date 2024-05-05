@@ -95,3 +95,9 @@ function verify_login($username, $password)
     $_SESSION['error'] = '⚠️Username or password incorrect⚠️';
     return false;
 }
+
+function totitle($string)
+{
+    return ucfirst(strtolower($string));
+}
+?>
