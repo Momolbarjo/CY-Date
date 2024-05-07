@@ -68,17 +68,17 @@ else if(isset($_GET['success'])){
             
             <div class="pics">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img ssrc="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
             </div>
             
             <button type="submit" class="button">Complete My Profil !</button>
