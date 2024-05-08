@@ -70,9 +70,7 @@ body {
     object-fit: cover;
     bottom: 50%;
     height: 60%;
-    /* Ajustez cette valeur pour changer la hauteur de l'image */
     width: 60%;
-    /* Ajustez cette valeur pour changer la largeur de l'image */
 }
 
 .first img {
