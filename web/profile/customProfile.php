@@ -46,22 +46,17 @@ else if(isset($_GET['success'])){
             <div class="inputBox">
                 <select name="region" required >
                     <option value="">Region</option>
-                    <option value="Auvergne-Rhône-Alpes" <?php echo ($userData['region'] ?? '') === 'Auvergne-Rhone-Alpes' ? 'selected' : ''; ?>>Auvergne-Rhône-Alpes</option>
-                    <option value="Bourgogne-Franche-Comté" <?php echo ($userData['region'] ?? '') === 'Bourgogne-Franche-Comté' ? 'selected' : ''; ?>>Bourgogne-Franche-Comté</option>
-                    <option value="Bretagne" <?php echo ($userData['region'] ?? '') === 'Bretagne' ? 'selected' : ''; ?>>Bretagne</option>
-                    <option value="Centre-Val de Loire" <?php echo ($userData['region'] ?? '') === 'Centre-Val de Loire' ? 'selected' : ''; ?>>Centre-Val de Loire</option>
-                    <option value="Corse" <?php echo ($userData['region'] ?? '') === 'Corse' ? 'selected' : ''; ?>>Corse</option>
-                    <option value="Grand Est" <?php echo ($userData['region'] ?? '') === 'Grand Est' ? 'selected' : ''; ?>>Grand Est</option>
-                    <option value="Hauts-de-France" <?php echo ($userData['region'] ?? '') === 'Hauts-de-France' ? 'selected' : ''; ?>>Hauts-de-France</option>
-                    <option value="Ile-de-France" <?php echo ($userData['region'] ?? '') === 'Ile-de-France' ? 'selected' : ''; ?>>Ile-de-France</option>
-                    <option value="Normandie" <?php echo ($userData['region'] ?? '') === 'Normandie' ? 'selected' : ''; ?>>Normandie</option>
-                    <option value="Nouvelle-Aquitaine" <?php echo ($userData['region'] ?? '') === 'Nouvelle-Aquitaine' ? 'selected' : ''; ?>>Nouvelle-Aquitaine</option>                 
-                    <option value="Occitanie" <?php echo ($userData['region'] ?? '') === 'Occitanie' ? 'selected' : ''; ?>>Occitanie</option>
-                    <option value="Pays de la Loire" <?php echo ($userData['region'] ?? '') === 'Pays de la Loire' ? 'selected' : ''; ?>>Pays de la Loire</option>
-                    <option value="Provence Alpes Côte d`Azur" <?php echo ($userData['region'] ?? '') === 'Provence Alpes Côte d`Azur' ? 'selected' : ''; ?>>Provence Alpes Côte d`Azur</option>  
+                    <?php
+                    $regions = array("Auvergne-Rhône-Alpes", "Bourgogne-Franche-Comté", "Bretagne", "Centre-Val de Loire", "Corse", "Grand Est", "Hauts-de-France", "Ile-de-France", "Normandie", "Nouvelle-Aquitaine", "Occitanie", "Pays de la Loire", "Provence Alpes Côte d`Azur");
+                    foreach ($regions as $region) {
+                        $selected = ($userData['region'] ?? '') === $region ? 'selected' : '';
+                        echo "<option value=\"$region\" $selected>$region</option>";
+                    }
+                    ?>
                 </select>
                 <i class='bx bxs-user-circle'></i>
             </div>
+
 
             <div class="inputBox">
                 <input type="number" placeholder="Size"  min="120" max="240" name="size" value="<?php echo $userData['height'] ?? ''; ?>" required>
