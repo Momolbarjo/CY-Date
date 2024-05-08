@@ -9,6 +9,6 @@ document.getElementById('imageUpload').addEventListener('change', function (e) {
         }
         reader.readAsDataURL(file);
     } else {
-        alert('Please upload a jpg, a jpeg ,a png or a gif file');
+        alert('Please upload a jpg, a jpeg ,a png or a gif file!');
     }
 });
