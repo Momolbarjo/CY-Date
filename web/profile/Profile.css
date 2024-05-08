@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: url('../../BG/bulb.jpg');
+    background-image: url('../../BG/bgProfil.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
@@ -14,31 +14,70 @@ body {
 
 .profile {
     width: 60%;
-    height: 80%;
-    margin: 5% 15% 15%;
+    height: 110%;
+    margin-left: 15%;
+    margin-top : 5%;
     background: transparent;
-    backdrop-filter: blur(50px);
+    background-color : black;
+    /*backdrop-filter: blur(50px);*/
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 5% 5% 5% 5%;
-    text-align: left;
+    padding: 5% 5% 15% 5%;
 }
 
 .first {
+    height : 15%;
+    position : relative;
     text-align: center;
 }
 
 .second {
+    height : 60%;
+    width : 20%;
+    position : relative;
     text-align: left;
+    margin-top : 3%;
 }
 
+.third {
+    height : 60%;
+    width : 35%;
+    position : relative;
+    text-align: left;
+    left : 30%;
+}
+
+.third #p1{
+    margin-top : -71.5%;
+}
+
+.four {
+    position : absolute;
+    right : 5%;
+    top : 5%;
+}
+
+.five {
+    height : 40%;
+    width : 30%;
+    position : absolute;
+    left : 65%;
+    bottom : 20%;
+    
+    
+}
+
+.five img {
+    position : absolute;
+    object-fit: cover;
+}
 
 .first img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ddd;
-    left:50%
+    width: 20%;
+    height:20%;
+    border-radius: 40%;
+    border: 3px solid white;
+    left:50%;
+    margin-top : -5%;
 }
 
 .first h1 {
@@ -48,24 +87,74 @@ body {
 }
 
 #p1 {
-    font-weight: 800;
+    text-align : center;
+    font-weight: 1000;
     border : 2px solid white;
-    background-color : pink;
-    height : 4%;
-    width: 10%;
+    background-color : rebeccapurple;
     font-size: 20px;
 }
     
 
 #p2 {
+    margin-left : 10%;
     font-weight: 400;
     font-style: italic;
-    color : lightgray;
+    color : white;
     font-size: 20px;
 }    
 
+
+.five button {
+    background-color: rebeccapurple;
+    color: #fff;
+    border : none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align:  center;
+    margin-left : 12%;
+}
+
+#btn1 {
+    position : absolute;
+    top : 50%;
+}
+
+#btn2 {
+    position : absolute;
+    top : 50%;
+    right : 60%;
+}
+
+#img1 {
+	visibility : visible;
+}
+
+#img2 {
+	visibility : hidden;
+}
+
+#img3 {
+	visibility : hidden;
+}
+
+#img4 {
+	visibility : hidden;
+}
+
+#img5 {
+	visibility : hidden;
+}
+
+#img6 {
+	visibility : hidden;
+}
+
+
+
 #optionsBtn {
-    background-color: #007BFF;
+    background-color: rebeccapurple;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -77,6 +166,8 @@ body {
 
 #optionsMenu {
     margin-top: 20px;
+    background-color : black;
+    border : 2px solid red;
 }
 
 #optionsMenu a {
@@ -84,6 +175,7 @@ body {
     color: white;
     text-decoration: none;
     margin-bottom: 10px;
+    font-style : italic;
 }
 
 #optionsMenu a:hover {
