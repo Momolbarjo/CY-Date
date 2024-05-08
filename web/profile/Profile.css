@@ -1,6 +1,6 @@
 body {
-    font-family: Palatino,serif;
-    color : black;
+    font-family: Palatino, serif;
+    color: black;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -16,139 +16,137 @@ body {
     width: 60%;
     height: 110%;
     margin-left: 15%;
-    margin-top : 5%;
+    margin-top: 5%;
     background: transparent;
-    background-color : black;
-    /*backdrop-filter: blur(50px);*/
+    background-color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 5% 5% 15% 5%;
 }
 
 .first {
-    height : 15%;
-    position : relative;
+    height: 15%;
+    position: relative;
     text-align: center;
 }
 
 .second {
-    height : 60%;
-    width : 20%;
-    position : relative;
+    height: 60%;
+    width: 20%;
+    position: relative;
     text-align: left;
-    margin-top : 3%;
+    margin-top: 3%;
 }
 
 .third {
-    height : 60%;
-    width : 35%;
-    position : relative;
+    height: 60%;
+    width: 35%;
+    position: relative;
     text-align: left;
-    left : 30%;
+    left: 30%;
 }
 
-.third #p1{
-    margin-top : -71.5%;
+.third #p1 {
+    margin-top: -71.5%;
 }
 
 .four {
-    position : absolute;
-    right : 5%;
-    top : 5%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
 }
 
 .five {
-    height : 40%;
-    width : 30%;
-    position : absolute;
-    left : 65%;
-    bottom : 20%;
-    
-    
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    left: 65%;
+    bottom: 20%;
+
+
 }
 
 .five img {
-    position : absolute;
+    position: absolute;
     object-fit: cover;
+    bottom: 50%;
+    height: 60%;
+    /* Ajustez cette valeur pour changer la hauteur de l'image */
+    width: 60%;
+    /* Ajustez cette valeur pour changer la largeur de l'image */
 }
 
 .first img {
     width: 20%;
-    height:20%;
+    height: 20%;
     border-radius: 40%;
     border: 3px solid white;
-    left:50%;
-    margin-top : -5%;
+    left: 50%;
+    margin-top: -5%;
 }
 
 .first h1 {
-    left:50%;
+    left: 50%;
     margin: 0;
     color: white;
 }
 
 #p1 {
-    text-align : center;
+    text-align: center;
     font-weight: 1000;
-    border : 2px solid white;
-    background-color : rebeccapurple;
+    border: 2px solid white;
+    background-color: rebeccapurple;
     font-size: 20px;
 }
-    
+
 
 #p2 {
-    margin-left : 10%;
+    margin-left: 10%;
     font-weight: 400;
     font-style: italic;
-    color : white;
+    color: white;
     font-size: 20px;
-}    
+}
 
 
 .five button {
     background-color: rebeccapurple;
     color: #fff;
-    border : none;
+    border: none;
     padding: 10px 20px;
     margin-top: 20px;
     border-radius: 50%;
     cursor: pointer;
-    text-align:  center;
-    margin-left : 12%;
+    text-align: center;
+    margin-left: 12%;
 }
 
 #btn1 {
-    position : absolute;
-    top : 50%;
+    position: absolute;
+    top: 50%;
 }
 
 #btn2 {
-    position : absolute;
-    top : 50%;
-    right : 60%;
+    position: absolute;
+    top: 50%;
+    right: 60%;
+}
+
+#btn1 i,
+#btn2 i {
+
+    font-size: 2em;
 }
 
 #img1 {
-	visibility : visible;
+    visibility: visible;
 }
 
-#img2 {
-	visibility : hidden;
-}
-
-#img3 {
-	visibility : hidden;
-}
-
-#img4 {
-	visibility : hidden;
-}
-
-#img5 {
-	visibility : hidden;
-}
-
+#img2,
+#img3,
+#img4,
+#img5,
 #img6 {
-	visibility : hidden;
+    visibility: hidden;
 }
 
 
@@ -161,13 +159,13 @@ body {
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
-    text-align:  right;
+    text-align: right;
 }
 
 #optionsMenu {
     margin-top: 20px;
-    background-color : black;
-    border : 2px solid red;
+    background-color: black;
+    border: 2px solid red;
 }
 
 #optionsMenu a {
@@ -175,7 +173,7 @@ body {
     color: white;
     text-decoration: none;
     margin-bottom: 10px;
-    font-style : italic;
+    font-style: italic;
 }
 
 #optionsMenu a:hover {

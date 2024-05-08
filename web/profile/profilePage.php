@@ -11,6 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Profile.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Profil of <?php echo $username; ?></title>
 </head>
 <body>
@@ -41,16 +42,13 @@
         </div>
     
     	<div class="five">
-    		<img id="img1" src="garen.jpeg" alt="image 1">
-    		<img id="img2" src="darius.jpeg" alt="image 2">
-    		<img id="img3" src="trynda.jpeg" alt="image 3">
-    		<img id="img4" src="morde.jpeg" alt="image 4">
-    		<img id="img5" src="aatrox.jpeg" alt="image 5">
-    		<img id="img6" src="urgot.jpeg" alt="image 6">
-    		<br>
-    		
-    		<button id="btn1" onclick="changeImg(-1)"><--</button>
-    		<button id="btn2" onclick="changeImg(1)">--></button>
+			<?php for ($i = 0; $i < 6; $i++): ?>
+				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" alt="cantFoundPic" id="img<?php echo $i+1;?>">
+			<?php endfor; ?>
+				<br>
+	
+    		<button id="btn1" onclick="changeImg(-1)"><i class='bx bx-left-arrow-alt'></i></button>
+    		<button id="btn2" onclick="changeImg(1)"><i class='bx bx-right-arrow-alt' ></i></button>
     	</div>
 
     </div>

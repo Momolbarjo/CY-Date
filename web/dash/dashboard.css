@@ -75,13 +75,16 @@ body {
 
 
 .profile-container {
+    position: fixed;
+    left: 0%;
+    width: 100vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+
 }
 
 .profile-container .profile {
-    width: 30%;
+    width: 20%;
     box-sizing: border-box;
     padding: 10px;
 }
