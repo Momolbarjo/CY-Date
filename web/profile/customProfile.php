@@ -67,20 +67,30 @@ else if(isset($_GET['success'])){
             </div>
             
             <div class="pics">
-            <label for="imageUpload">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
-                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-            <label for="imageUpload">
+                <label for="imageUpload1">
+                    <input type="file" id="imageUpload1" name="addPicture1" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image1" alt="cantFoundPic" id="addPicture1">
+                </label>
+                <label for="imageUpload2">
+                    <input type="file" id="imageUpload2" name="addPicture2" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image2" alt="cantFoundPic" id="addPicture2">
+                </label>
+                <label for="imageUpload3">
+                    <input type="file" id="imageUpload3" name="addPicture3" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image3" alt="cantFoundPic" id="addPicture3">
+                </label>
+                <label for="imageUpload4">
+                    <input type="file" id="imageUpload4" name="addPicture4" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image4" alt="cantFoundPic" id="addPicture4">
+                </label>
+                <label for="imageUpload5">
+                    <input type="file" id="imageUpload5" name="addPicture5" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image5" alt="cantFoundPic" id="addPicture5">
+                </label>
+                <label for="imageUpload6">
+                    <input type="file" id="imageUpload6" name="addPicture6" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                    <img src="../../Pictures/carréVide.png" class="square-image square-image6" alt="cantFoundPic" id="addPicture6">
+                </label>
             </div>
             
             <button type="submit" class="button">Complete My Profil !</button>

@@ -20,6 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         move_uploaded_file($tmp_name, "../../data/profilePic/$name");
     }
 
+    for($i=1;$i<7;$i++){
+        if (isset($_FILES["addPicture$i"]) && $_FILES["addPicture$i"]['error'] == 0) {
+            $upload_Dir = "../../data/userPic/";
+            $profilepicName = $username . "_" . $_FILES["addPicture$i"]["name"];
+            move_uploaded_file($_FILES["addPicture$i"]["tmp_name"], $upload_Dir . $profilepicName);
+        }
+    }
+    
+
     $lines = file("../../data/description.csv", FILE_IGNORE_NEW_LINES);
     $found = false;
 

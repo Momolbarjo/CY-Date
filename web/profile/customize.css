@@ -120,7 +120,7 @@ body {
 
 .inputBox2 input::placeholder {
     color: darkgray;
-    font-size: 20;
+    font-size: 20px;
     vertical-align: top;
 }
 
@@ -156,6 +156,7 @@ body {
 }
 
 .square-image {
+    border-radius: 10%;
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -216,6 +217,7 @@ body {
         zoom: calc((100% / 10) * 8)
     }
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 * {
@@ -324,7 +326,7 @@ body {
 
 .inputBox2 textarea {
     height: 100%;
-    width: 100%; 
+    width: 100%;
     resize: none;
     background: transparent;
     outline: none;
