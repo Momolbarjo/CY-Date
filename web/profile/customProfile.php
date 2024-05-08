@@ -59,7 +59,7 @@ else if(isset($_GET['success'])){
 
 
             <div class="inputBox">
-                <input type="number" placeholder="Size"  min="120" max="240" name="size" value="<?php echo $userData['height'] ?? ''; ?>" required>
+                <input type="number" placeholder="Size"  min="125" max="240" name="size" value="<?php echo $userData['height'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>
             </div>
 
