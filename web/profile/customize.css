@@ -99,7 +99,7 @@ body {
     position: absolute;
     top: 29%;
     margin: 35px 0;
-    margin-left: -5%;
+    margin-left: -9%;
     width: 32%;
     height: 35%;
 }
@@ -202,8 +202,227 @@ body {
     position: absolute;
     height: 35%;
     width: 30%;
-    left: 68%;
+    left: 65%;
+    top: 32%;
+}
+
+.pics i {
+    visibility: hidden;
+}
+
+
+@media screen and (max-width: 1920px) {
+    body {
+        zoom: calc((100% / 10) * 8)
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    background-image: url('../../BG/love.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 110%;
+    background: linear-gradient(pink, beige);
+    text-align: center;
+    align-items: center;
+    color: darkgray;
+    border-radius: 3%;
+    padding: 2% 6%;
+}
+
+.box form {
+    margin-top: 0%;
+    margin-left: 40%;
+}
+
+.pic {
+    position: relative;
+    margin-left: -15%;
+}
+
+.inputBox {
+    position: relative;
+    width: 350px;
+    height: 70px;
+    margin: 35px 0;
+    margin-left: -160%;
     top: 35%;
+}
+
+.inputBox input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    margin-left: -15%;
+    padding: 5% 12% 5% 5%;
+}
+
+.inputBox input::placeholder {
+    color: darkgray;
+}
+
+.inputBox select {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    margin-left: -15%;
+    padding: 2% 12% 2% 5%;
+    appearance: none;
+    line-height: 1.5;
+}
+
+.inputBox select::placeholder {
+    color: darkgray;
+}
+
+
+.inputBox i {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 140%;
+}
+
+
+.inputBox2 {
+    position: absolute;
+    top: 29%;
+    margin: 35px 0;
+    margin-left: -9%;
+    width: 32%;
+    height: 35%;
+}
+
+.inputBox2 textarea {
+    height: 100%;
+    width: 100%; 
+    resize: none;
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    margin-left: -15%;
+    padding: 5% 12% 5% 5%;
+    vertical-align: top;
+}
+
+.inputBox2 input::placeholder {
+    color: darkgray;
+    font-size: 20;
+    vertical-align: top;
+}
+
+
+
+.button {
+    width: 100%;
+    height: 45px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 120%;
+    color: cadetblue;
+    font-weight: 700;
+    margin-top: 10%;
+}
+
+.button:hover {
+    background-color: grey;
+}
+
+.round-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.round-image:hover {
+    filter: brightness(-120%);
+}
+
+.square-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid red;
+    top: 5.5%;
+    right: 42%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    top: 5.5%;
+    right: 43%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+}
+
+
+.vertical-bar {
+    width: 0.5%;
+    margin-right: 50%;
+    background-color: pink;
+    height: 100%;
+}
+
+.pics {
+    position: absolute;
+    height: 35%;
+    width: 30%;
+    left: 65%;
+    top: 32%;
 }
 
 .pics i {

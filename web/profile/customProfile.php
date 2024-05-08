@@ -63,23 +63,24 @@ else if(isset($_GET['success'])){
             </div>
 
             <div class="inputBox2">
-                <input type="textarea" placeholder="Write your description..."   name="desc" value="<?php echo $_SESSION['input_profil']['desc'] ?? ''; ?>" required>
+                <textarea maxlength="144" cols="20" rows="5" placeholder="Write your description..."   name="desc" value="<?php echo $_SESSION['input_profil']['desc'] ?? ''; ?>" required></textarea>
             </div>
             
             <div class="pics">
-            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
-                style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic"><i>espace</i>
-            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
-                style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
-            <br><br><br>            
-            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
-                style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic"><i>espace</i>
-            <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
-                style="display:none">
-            <img src="carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <label for="imageUpload">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+                <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif" style="display:none">
+                <img src="../../Pictures/carréVide.png" class="square-image" alt="cantFoundPic" id="profilePic">
+            <label for="imageUpload">
             </div>
             
             <button type="submit" class="button">Complete My Profil !</button>

@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Palatino,serif;
+    color : black;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -12,33 +13,56 @@ body {
 
 
 .profile {
-    width: 80%;
-    max-width: 600px;
-    margin: 2em auto;
+    width: 60%;
+    height: 80%;
+    margin: 5% 15% 15%;
     background: transparent;
     backdrop-filter: blur(50px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 2em;
+    padding: 5% 5% 5% 5%;
+    text-align: left;
+}
+
+.first {
     text-align: center;
 }
 
-.profile img {
+.second {
+    text-align: left;
+}
+
+
+.first img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #ddd;
+    left:50%
 }
 
-.profile h1 {
+.first h1 {
+    left:50%;
     margin: 0;
     color: white;
 }
 
-.profile p {
-    color: #666;
-    line-height: 1.6;
+#p1 {
+    font-weight: 800;
+    border : 2px solid white;
+    background-color : pink;
+    height : 4%;
+    width: 10%;
+    font-size: 20px;
 }
+    
+
+#p2 {
+    font-weight: 400;
+    font-style: italic;
+    color : lightgray;
+    font-size: 20px;
+}    
 
 #optionsBtn {
     background-color: #007BFF;
@@ -48,6 +72,7 @@ body {
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
+    text-align:  right;
 }
 
 #optionsMenu {
