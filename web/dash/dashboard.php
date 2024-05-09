@@ -39,8 +39,45 @@
         <input type="number" placeholder="Size(cm)" value="size" min="120" max="220"></input>
     </div>
 </div>
+<div id="subOpt">
+    <div id="opt1" class="option">
+        <img src="../../Pictures/silver.png" alt="cant find pic">
+        <p>
+            <i class='bx bxs-star'></i>Access to the messaging service<br>
+            <i class='bx bxs-star'></i>100 messages a day<br>
+            <i class='bx bxs-star'></i>Send Friend Request<br>
+            <i class='bx bx-star' ></i>Seen History<br>
+            <i class='bx bx-star' ></i>Charism<br>
+            <i class='bx bx-star'></i>Randomized date<br><br><br>
+            <i class='bx bx-money' ></i>9.99$ per month<br>
+        </p>
+        <button id="silBtn"><i class='bx bx-badge-check' ></i></button>
+    </div>
+    <div id="opt2" class="option">
+        <img src="../../Pictures/gold.png" alt="cant find pic">
+        <p>
+            <i class='bx bxs-star'></i>∞ messages a day<br>
+            <i class='bx bxs-star'></i>Send Friend Request<br>
+            <i class='bx bxs-star'></i>Seen History<br>
+            <i class='bx bxs-star'></i>Charism<br>
+            <i class='bx bxs-star'></i>CEO<br>
+            <i class='bx bxs-star'></i>Randomized date<br><br><br>
+            <i class='bx bx-money' ></i>19.99$ per month<br>
+        </p>
+        <button id="gldBtn"><i class='bx bx-badge-check' ></i></button>
+    </div>
+</div>
     <script src="../../Browser/disable.js"></script>
     <script src="subMenu.js"></script>
+    <script>
+        var silBtn = document.getElementById('silBtn');
+        silBtn.addEventListener('mouseover', function () {
+            silBtn.innerHTML = "<i class='bx bxs-error'></i>";
+        });
+        silBtn.addEventListener('mouseout', function () {
+            silBtn.innerHTML = "<i class='bx bx-badge-check'></i>";
+        });
+    </script>
 </body>
 
 </html>

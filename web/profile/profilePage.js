@@ -9,31 +9,24 @@ document.getElementById('optionsBtn').addEventListener('click', function () {
 });
 
 var count = 1;
-
 function changeImg(i) {
 	var image_pre = document.getElementById('img' + count);
 	var nextCount = count + i;
 
-	if ((nextCount >= 1 && nextCount <= 6 && document.getElementById('img' + nextCount).src !== "../../Pictures/carréVide.png") ||
-		(nextCount < 1 && document.getElementById('img6').src !== "../../Pictures/carréVide.png") ||
-		(nextCount > 6 && document.getElementById('img1').src !== "../../Pictures/carréVide.png")) {
-		count = nextCount;
+
+	if (nextCount < 1) {
+		count = totalImages;
+	} else if (nextCount > totalImages) {
+		count = 1;
 	} else {
-		if (i > 0) {
-			count++;
-			if (count > 6) {
-				count = 1;
-			}
-		} else if (i < 0) {
-			count--;
-			if (count < 1) {
-				count = 6;
-			}
-		}
+		count = nextCount;
 	}
 
 	var image_new = document.getElementById('img' + count);
 
+	document.body.style.backgroundImage = "url('" + image_new.src + "')";
+
 	image_pre.style.visibility = "hidden";
-	image_new.style.visibility = "visible";
 }
+
+

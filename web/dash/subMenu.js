@@ -8,7 +8,6 @@ document.getElementById('profilePic').addEventListener('click', function () {
 });
 
 
-
 document.getElementById('searchBtn').addEventListener('click', function () {
     document.getElementById('content').classList.add('blur-effect');
     document.getElementById('displaySearch').style.display = 'block';
@@ -16,7 +15,8 @@ document.getElementById('searchBtn').addEventListener('click', function () {
 
 document.getElementById('sub').addEventListener('click', function () {
     document.getElementById('content').classList.add('blur-effect');
-
+    document.getElementById('opt1').style.display = 'block';
+    document.getElementById('opt2').style.display = 'block';
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,9 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('click', function (e) {
-    if (!document.getElementById('displaySearch').contains(e.target) && e.target.id !== 'searchBtn' && e.target.id !== 'sub') {
+    if (!document.getElementById('displaySearch').contains(e.target) && e.target.id !== 'searchBtn' && e.target.id !== 'sub' && !document.getElementById('opt1').contains(e.target) && !document.getElementById('opt2').contains(e.target)) {
         document.getElementById('content').classList.remove('blur-effect');
         document.getElementById('displaySearch').style.display = 'none';
+        document.getElementById('opt1').style.display = 'none';
+        document.getElementById('opt2').style.display = 'none';
     }
 });
 

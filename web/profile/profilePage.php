@@ -29,7 +29,7 @@
         </div>
         
         <div class="third">
-        	<p id="p1">DESCRPTION</p> <p id="p2"> <?php echo $userData['description'] ?? 'No info';  ?></p> 
+        	<p id="p1">DESCRIPTION</p> <p id="p2"> <?php echo $userData['description'] ?? 'No info';  ?></p> 
         </div>
         
         <div class="four">
@@ -43,7 +43,7 @@
     
     	<div class="five">
 			<?php for ($i = 0; $i < count($userData['pictures']); $i++): ?>
-				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" alt="cantFoundPic" id="img<?php echo $i+1;?>">
+				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" alt="cantFoundPic"  id="img<?php echo $i+1;?>">
 			<?php endfor; ?>
 				<br>
 	
@@ -52,7 +52,22 @@
     	</div>
 
     </div>
-  	  
+	<script>
+			var totalImages = <?php echo count($userData['pictures']); ?>;
+			document.addEventListener("DOMContentLoaded", function() {
+			
+			var image_default = "../../BG/bulb.jpg"; 
+			var image_user = "<?php echo $userData['pictures'][0]; ?>";
+
+			if (image_user !== "" && image_user !== "../../Pictures/carréVide.png") {
+				
+				document.body.style.backgroundImage = "url('" + image_user + "')";
+			} else {
+				
+				document.body.style.backgroundImage = "url('" + image_default + "')";
+			}
+		});
+	</script>
     <script src="profilePage.js"></script>
 </body>
 </html>

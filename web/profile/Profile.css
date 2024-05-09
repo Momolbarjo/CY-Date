@@ -1,26 +1,31 @@
 body {
     font-family: Palatino, serif;
-    color: black;
+    color: white;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: url('../../BG/bgProfil.jpg');
+    background-image: url('../../BG/bulb.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
 
+#p1 {
+    text-decoration: underline;
+}
 
 .profile {
-    width: 60%;
-    height: 110%;
-    margin-left: 15%;
+    width: 20%;
+    height: 100%;
+    margin-left: 1%;
     margin-top: 5%;
-    background: transparent;
-    background-color: black;
+    backdrop-filter: blur(50px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 5% 5% 15% 5%;
+    border-radius: 15%;
+    border: 1px solid white;
+    overflow: hidden;
 }
 
 .first {
@@ -29,24 +34,25 @@ body {
     text-align: center;
 }
 
-.second {
-    height: 60%;
-    width: 20%;
-    position: relative;
-    text-align: left;
-    margin-top: 3%;
-}
-
 .third {
-    height: 60%;
-    width: 35%;
+    height: 200px;
+    width: 200%;
     position: relative;
-    text-align: left;
+    top: 35%;
     left: 30%;
+    margin-top: 0%;
 }
 
-.third #p1 {
-    margin-top: -71.5%;
+.second,
+.third {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+}
+
+.second {
+    margin-right: 5%;
+
 }
 
 .four {
@@ -93,16 +99,13 @@ body {
 #p1 {
     text-align: center;
     font-weight: 1000;
-    border: 2px solid white;
-    background-color: rebeccapurple;
     font-size: 21px;
 }
 
 
-#p2 {
-    margin-left: 10%;
+.third #p2 {
+    width: 100%;
     font-weight: 400;
-    font-style: italic;
     color: white;
     font-size: 20px;
 }
@@ -122,12 +125,13 @@ body {
 
 #btn1 {
     position: absolute;
-    top: 50%;
+    top: 80%;
+    right: 200%;
 }
 
 #btn2 {
     position: absolute;
-    top: 50%;
+    top: 80%;
     right: 60%;
 }
 
@@ -137,10 +141,8 @@ body {
     font-size: 2em;
 }
 
-#img1 {
-    visibility: visible;
-}
 
+#img1,
 #img2,
 #img3,
 #img4,

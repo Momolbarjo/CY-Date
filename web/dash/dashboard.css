@@ -7,6 +7,23 @@
 }
 
 
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+:root {
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(168, 239, 255, 1);
+    --c2: rgba(168, 239, 255, 0.1);
+    --c3: rgba(255, 215, 0, 1);
+}
+
+
 body {
     height: 100%;
     margin: 0;
@@ -202,6 +219,76 @@ i {
     top: 100%;
 }
 
+#subOpt {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+.option {
+    text-align: center;
+    width: 20%;
+    height: 800px;
+    border: 0.35rem solid;
+    animation: borderRotate var(--d) linear infinite forwards;
+    padding: 10px;
+    box-sizing: border-box;
+    background: url("../../BG/subBg.png");
+    display: none;
+    position: relative;
+}
+
+.option:nth-child(1) {
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+}
+
+.option:nth-child(2) {
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c3) 0.1turn, var(--c3) 0.15turn, var(--c2) 0.25turn) 30;
+}
+
+
+.option img {
+    position: absolute;
+    top: -32%;
+    left: 5%;
+}
+
+.option p {
+    z-index: 999;
+    margin-top: 50%;
+    color: white;
+    font-weight: 1000;
+    font-size: 24px;
+}
+
+.option button {
+    margin-top: 30%;
+    width: 50%;
+    height: 10%;
+    border-radius: 30px;
+}
+
+.option button>i {
+    font-size: 4em;
+    margin-top: -5%;
+}
+
+.option #silBtn:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.option #gldBtn:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+
+
 @media (max-width: 1920px) {
     #submenu a {
         font-size: 14px;
@@ -215,5 +302,11 @@ i {
 @keyframes bigger {
     100% {
         transform: scale(2, 2)
+    }
+}
+
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
     }
 }
