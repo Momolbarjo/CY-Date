@@ -74,13 +74,15 @@ body {
 }
 
 .first img {
-    width: 20%;
-    height: 20%;
-    border-radius: 40%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     border: 3px solid white;
     left: 50%;
-    margin-top: -5%;
+    object-fit: cover;
+    margin-bottom: 5%;
 }
+
 
 .first h1 {
     left: 50%;
