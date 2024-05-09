@@ -42,7 +42,7 @@
         </div>
     
     	<div class="five">
-			<?php for ($i = 0; $i < 6; $i++): ?>
+			<?php for ($i = 0; $i < count($userData['pictures']); $i++): ?>
 				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" alt="cantFoundPic" id="img<?php echo $i+1;?>">
 			<?php endfor; ?>
 				<br>
