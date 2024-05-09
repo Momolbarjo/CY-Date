@@ -32,7 +32,7 @@ function loadUserData($username) {
     fclose($file);
 
 
-    $pictures = glob("../../data/userPic/{$username}*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+    $pictures = glob("../../data/userPic/{$username}_*.{jpg,jpeg,png,gif}", GLOB_BRACE);
 
     $userData['pictures'] = $pictures;
 
