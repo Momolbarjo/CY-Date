@@ -33,6 +33,8 @@ window.addEventListener('click', function (e) {
         document.getElementById('opt2').style.display = 'none';
         document.getElementById('silSubOptions').style.display = 'none';
         document.getElementById('gldSubOptions').style.display = 'none';
+        document.getElementById('silBtn').style.marginTop = '30%';
+        document.getElementById('gldBtn').style.marginTop = '30%';
     }
 });
 
@@ -41,6 +43,7 @@ var gldBtn = document.getElementById('gldBtn');
 
 silBtn.addEventListener('click', function () {
     document.getElementById('silSubOptions').style.display = 'block';
+    document.getElementById('silBtn').style.marginTop = '10%';
     document.getElementById('opt2').style.display = 'none';
 });
 
@@ -56,6 +59,7 @@ silBtn.addEventListener('mouseout', function () {
 
 gldBtn.addEventListener('click', function () {
     document.getElementById('gldSubOptions').style.display = 'block';
+    document.getElementById('gldBtn').style.marginTop = '10%';
     document.getElementById('opt1').style.display = 'none';
 });
 

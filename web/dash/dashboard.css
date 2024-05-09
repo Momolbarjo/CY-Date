@@ -297,8 +297,6 @@ i {
 
 
 
-
-
 @media (max-width: 1920px) {
     #submenu a {
         font-size: 14px;
@@ -306,6 +304,10 @@ i {
 
     #displaySearch i {
         font-size: 2.2em;
+    }
+
+    #subOpt {
+        zoom: calc((100% / 10) * 7.5);
     }
 }
 
