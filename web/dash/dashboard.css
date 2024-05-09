@@ -290,6 +290,8 @@ i {
 .option #silSubOptions,
 #gldSubOptions {
     z-index: 9999;
+    font-weight: 500;
+    font-size: 22px;
     color: white;
 }
 
