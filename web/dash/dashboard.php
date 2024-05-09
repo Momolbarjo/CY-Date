@@ -51,6 +51,11 @@
             <i class='bx bx-star'></i>Randomized date<br><br><br>
             <i class='bx bx-money' ></i>9.99$ per month<br>
         </p>
+        <div id="silSubOptions" style="display: none;">
+            <input type="radio" name="sil" id="silMonth"><i class='bx bx-star' ></i>9.99$ Month<br>
+            <input type="radio" name="sil" id="silQuaterly"><i class='bx bxs-star-half' ></i>19.99$ Quaterly<br>
+            <input type="radio" name="sil" id="silAnnual"><i class='bx bxs-star'></i>79.99$ Annual<br>
+        </div>
         <button id="silBtn"><i class='bx bx-badge-check' ></i></button>
     </div>
     <div id="opt2" class="option">
@@ -64,20 +69,16 @@
             <i class='bx bxs-star'></i>Randomized date<br><br><br>
             <i class='bx bx-money' ></i>19.99$ per month<br>
         </p>
-        <button id="gldBtn"><i class='bx bx-badge-check' ></i></button>
+        <div id="gldSubOptions" style="display: none;">
+            <input type="radio"  name="gld" id="gldMonth"><i class='bx bx-star' ></i>19.99$ Month<br>
+            <input type="radio" name="gld" id="gldQuaterly"><i class='bx bxs-star-half' ></i>49.99$ Quaterly<br>
+            <input type="radio" name="gld" id="gldAnnual"><i class='bx bxs-star'></i>149.99$ Quaterly<br>
+        </div>
+        <button id="gldBtn"><i class='bx bx-badge-check' ></i></button>       
     </div>
 </div>
     <script src="../../Browser/disable.js"></script>
     <script src="subMenu.js"></script>
-    <script>
-        var silBtn = document.getElementById('silBtn');
-        silBtn.addEventListener('mouseover', function () {
-            silBtn.innerHTML = "<i class='bx bxs-error'></i>";
-        });
-        silBtn.addEventListener('mouseout', function () {
-            silBtn.innerHTML = "<i class='bx bx-badge-check'></i>";
-        });
-    </script>
 </body>
 
 </html>

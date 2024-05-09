@@ -31,7 +31,32 @@ window.addEventListener('click', function (e) {
         document.getElementById('displaySearch').style.display = 'none';
         document.getElementById('opt1').style.display = 'none';
         document.getElementById('opt2').style.display = 'none';
+        document.getElementById('silSubOptions').style.display = 'none';
+        document.getElementById('gldSubOptions').style.display = 'none';
     }
+});
+
+var silBtn = document.getElementById('silBtn');
+var gldBtn = document.getElementById('gldBtn');
+
+silBtn.addEventListener('click', function () {
+    document.getElementById('silSubOptions').style.display = 'block';
+    document.getElementById('opt2').style.display = 'none';
+});
+
+
+silBtn.addEventListener('mouseover', function () {
+    silBtn.innerHTML = "<i class='bx bxs-error'></i>";
+});
+silBtn.addEventListener('mouseout', function () {
+    silBtn.innerHTML = "<i class='bx bx-badge-check'></i>";
+});
+
+
+
+gldBtn.addEventListener('click', function () {
+    document.getElementById('gldSubOptions').style.display = 'block';
+    document.getElementById('opt1').style.display = 'none';
 });
 
 
