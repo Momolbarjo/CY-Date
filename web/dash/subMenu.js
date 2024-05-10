@@ -72,3 +72,44 @@ $('#searchInput').on('input', function () {
 }).on('click', function () {
     $(this).trigger('input');
 });
+
+
+document.getElementById('silBtn').addEventListener('click', function () {
+    var selectedOption = $('input[type=radio][name=sil]:checked').val();
+    if (selectedOption) {
+        $.ajax({
+            url: '../../subscription/sub.php',
+            type: 'post',
+            data: { 'subscription': selectedOption },
+            success: function (response) {
+                if (response === "Already Sub") {
+                    alert("Vous êtes déjà abonné à cette option.");
+                } else {
+                    alert("Abonnement réussi !");
+                }
+            }
+        });
+    } else {
+        alert('Veuillez sélectionner une option de mensualité.');
+    }
+});
+
+document.getElementById('gldBtn').addEventListener('click', function () {
+    var selectedOption = $('input[type=radio][name=gld]:checked').val();
+    if (selectedOption) {
+        $.ajax({
+            url: '../../subscription/sub.php',
+            type: 'post',
+            data: { 'subscription': selectedOption },
+            success: function (response) {
+                if (response === "Already Sub") {
+                    alert("Vous êtes déjà abonné à cette option.");
+                } else {
+                    alert("Abonnement réussi !");
+                }
+            }
+        });
+    } else {
+        alert('Veuillez sélectionner une option de mensualité.');
+    }
+});

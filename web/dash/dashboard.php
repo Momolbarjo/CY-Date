@@ -52,7 +52,7 @@
             <i class='bx bx-money' ></i>9.99$ per month<br>
         </p>
         <div id="silSubOptions" style="display: none;">
-            <input type="radio" name="sil" id="silMonth"><i class='bx bx-star' ></i>9.99$ Month<br>
+            <input type="radio" name="sil" id="silMonth" required><i class='bx bx-star' ></i>9.99$ Month<br>
             <input type="radio" name="sil" id="silQuaterly"><i class='bx bxs-star-half' ></i>19.99$ Quaterly<br>
             <input type="radio" name="sil" id="silAnnual"><i class='bx bxs-star'></i>79.99$ Annual<br>
         </div>
@@ -70,7 +70,7 @@
             <i class='bx bx-money' ></i>19.99$ per month<br>
         </p>
         <div id="gldSubOptions" style="display: none;">
-            <input type="radio"  name="gld" id="gldMonth"><i class='bx bx-star' ></i>19.99$ Month<br>
+            <input type="radio"  name="gld" id="gldMonth" required><i class='bx bx-star' ></i>19.99$ Month<br>
             <input type="radio" name="gld" id="gldQuaterly"><i class='bx bxs-star-half' ></i>49.99$ Quaterly<br>
             <input type="radio" name="gld" id="gldAnnual"><i class='bx bxs-star'></i>149.99$ Quaterly<br>
         </div>
