@@ -1,7 +1,6 @@
 body {
-    font-family: Palatino, serif;
-    color: white;
-    background-color: #f4f4f4;
+    color: black;
+    background-color:#FD6C9E;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -11,21 +10,16 @@ body {
     overflow: hidden;
 }
 
-#p1 {
-    text-decoration: underline;
-}
 
-.profile {
-    width: 20%;
-    height: 100%;
-    margin-left: 1%;
+#profile {
+    width: 60%;
+    height: 110%;
+    margin-left: 15%;
     margin-top: 5%;
-    backdrop-filter: blur(50px);
+    background-color : beige;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 5% 5% 15% 5%;
-    border-radius: 15%;
-    border: 1px solid white;
-    overflow: hidden;
+    padding: 3% 5% 17% 5%;
+    border-radius : 20%;
 }
 
 .first {
@@ -34,25 +28,24 @@ body {
     text-align: center;
 }
 
-.third {
-    height: 200px;
-    width: 200%;
-    position: relative;
-    top: 35%;
-    left: 30%;
-    margin-top: 0%;
-}
-
-.second,
-.third {
-    display: inline-block;
-    vertical-align: top;
-    width: 35%;
-}
-
 .second {
-    margin-right: 5%;
+    height: 60%;
+    width: 20%;
+    position: relative;
+    text-align: left;
+    margin-top: 3%;
+}
 
+.third {
+    height: 60%;
+    width: 35%;
+    position: relative;
+    text-align: left;
+    left: 30%;
+}
+
+.third #p1 {
+    margin-top: -71.5%;
 }
 
 .four {
@@ -62,21 +55,20 @@ body {
 }
 
 .five {
-    height: 40%;
-    width: 30%;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    left: 65%;
-    bottom: 20%;
-
-
+    bottom: 8%;
+    right : -15%;
 }
 
 .five img {
     position: absolute;
     object-fit: cover;
-    bottom: 50%;
-    height: 60%;
-    width: 60%;
+    bottom: 20%;
+    left : 42.5%;
+    height: 20%;
+    width: 20%;
 }
 
 .first img {
@@ -86,63 +78,96 @@ body {
     border: 3px solid white;
     left: 50%;
     object-fit: cover;
-    margin-bottom: 5%;
 }
 
 
 .first h1 {
+    margin-bottom : 20%;
     left: 50%;
     margin: 0;
-    color: white;
+    color: black;
 }
 
 #p1 {
-    text-align: center;
+    text-decoration: underline;
+    text-align: l;
     font-weight: 1000;
     font-size: 21px;
 }
 
 
-.third #p2 {
-    width: 100%;
+#p2 {
+    margin-left: 10%;
     font-weight: 400;
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
 
-.five button {
-    background-color: rebeccapurple;
-    color: #fff;
+#btn1,
+#btn2,
+#btn3,
+#btn4 {
+    position: absolute;
     border: none;
     padding: 10px 20px;
     margin-top: 20px;
-    border-radius: 50%;
     cursor: pointer;
     text-align: center;
     margin-left: 12%;
 }
 
 #btn1 {
-    position: absolute;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
     top: 80%;
-    right: 200%;
+    left:33%;
 }
 
 #btn2 {
-    position: absolute;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
     top: 80%;
-    right: 60%;
+    right: 40%;
 }
 
+#btn3 {
+    background-color:  #fff;
+    color:black;
+    border-radius: 10%;
+    height : 5%;
+    width : 5%;
+    top: 50%;
+    left:-10%;
+    visibility : hidden;
+}
+
+#btn4 {
+    background-color:  #fff;
+    color:black;
+    border-radius: 10%;
+    height : 5%;
+    width : 5%;
+    top: 50%;
+    right: 2.5%;
+    visibility : hidden;
+}
+
+
 #btn1 i,
-#btn2 i {
+#btn2 i,
+#btn3 i,
+#btn4 i {
 
     font-size: 2em;
 }
 
+#img1 {
+    visibility: visible;
+}
 
-#img1,
 #img2,
 #img3,
 #img4,
@@ -154,7 +179,7 @@ body {
 
 
 #optionsBtn {
-    background-color: rebeccapurple;
+    background-color: red;
     color: #fff;
     border: none;
     padding: 10px 20px;
