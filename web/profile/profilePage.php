@@ -4,6 +4,8 @@
     $username = $_GET['user'];
 
     $userData = loadUserData($username);
+    
+    $max = count($userData['pictures'])
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +18,11 @@
 </head>
 <body>
     
-    <div class="profile">
+    <div id="profile">
     	<div class="first">
         	<img src="<?php echo $userData['profilePicPath']; ?>" alt="Profile pic">
         	<h1><?php echo $username; ?></h1>
+        	<br>
         </div>
         
         <div class="second">
@@ -29,7 +32,7 @@
         </div>
         
         <div class="third">
-        	<p id="p1">DESCRIPTION</p> <p id="p2"> <?php echo $userData['description'] ?? 'No info';  ?></p> 
+        	<p id="p1">DESCRPTION</p> <p id="p2"> <?php echo $userData['description'] ?? 'No info';  ?></p> 
         </div>
         
         <div class="four">
@@ -43,31 +46,18 @@
     
     	<div class="five">
 			<?php for ($i = 0; $i < count($userData['pictures']); $i++): ?>
-				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" alt="cantFoundPic"  id="img<?php echo $i+1;?>">
+				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" onclick="zoom(<?php echo $max ?>)" alt="cantFoundPic" id="img<?php echo $i+1;?>">
 			<?php endfor; ?>
+			<button id="btn1" onclick="changeImg(-1,<?php echo $max ?>)"><i class='bx bx-left-arrow-alt'></i></button>
+    			<button id="btn2" onclick="changeImg(1,<?php echo $max ?>)"><i class='bx bx-right-arrow-alt' ></i></button>
 				<br>
 	
-    		<button id="btn1" onclick="changeImg(-1)"><i class='bx bx-left-arrow-alt'></i></button>
-    		<button id="btn2" onclick="changeImg(1)"><i class='bx bx-right-arrow-alt' ></i></button>
     	</div>
 
     </div>
-	<script>
-			var totalImages = <?php echo count($userData['pictures']); ?>;
-			document.addEventListener("DOMContentLoaded", function() {
-			
-			var image_default = "../../BG/bulb.jpg"; 
-			var image_user = "<?php echo $userData['pictures'][0]; ?>";
-
-			if (image_user !== "" && image_user !== "../../Pictures/carréVide.png") {
-				
-				document.body.style.backgroundImage = "url('" + image_user + "')";
-			} else {
-				
-				document.body.style.backgroundImage = "url('" + image_default + "')";
-			}
-		});
-	</script>
+    <button id="btn3" onclick="changeImg(-1,<?php echo $max ?>)"><i class='bx bx-left-arrow-alt'></i></button>
+    <button id="btn4" onclick="changeImg(1,<?php echo $max ?>)"><i class='bx bx-right-arrow-alt' ></i></button>
+  	  
     <script src="profilePage.js"></script>
 </body>
 </html>
