@@ -15,13 +15,13 @@
 <div id="successMessage" class="success" style="display: none;"></div>
 <div id="errorMessage" class="error" style="display: none;"></div>
     <header class="navMenu">
-        <a href="#"><img class="logo" src="../../Pictures/cupid.png"></a>
+        <a href="#"><img class="logo" src="<?php session_start(); if($_SESSION['status']==="sil"){echo "../../Pictures/silver.png";}else if($_SESSION['status']==="gld"){echo "../../Pictures/gold.png";}else{echo "../../Pictures/cupid.png";}?>"></a>
         <nav class="navigationBar">
             <a href="../logOut.php">Log Out<i class='bx bxs-log-out-circle'></i></a>
             <a href="#" id="searchBtn">Search<i  class='bx bx-search-alt' ></i></a>
             <a href="#" id="sub">Subscription<i class='bx bx-money' ></i></a>
             <label for="imageUpload">
-                <img src="<?php session_start();  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
+                <img src="<?php   if(!$_SESSION['role']){header('Location: ../../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
                 <div id="submenu" >
                     <a href="../profile/customProfile.php">My Profile<i class='bx bxs-user-account'></i></a>
                     <a href="#">My Messages<i class='bx bx-message-square-dots' ></i></a>
@@ -43,7 +43,7 @@
 </div>
 <div id="subOpt">
     <div id="opt1" class="option">
-        <img src="../../Pictures/silver.png" alt="cant find pic">
+        <img src="../../Pictures/silversub.png" alt="cant find pic">
         <p>
             <i class='bx bxs-star'></i>Access to the messaging service<br>
             <i class='bx bxs-star'></i>100 messages a day<br>
@@ -61,7 +61,7 @@
         <button id="silBtn"><i class='bx bx-badge-check' ></i></button>
     </div>
     <div id="opt2" class="option">
-        <img src="../../Pictures/gold.png" alt="cant find pic">
+        <img src="../../Pictures/goldsub.png" alt="cant find pic">
         <p>
             <i class='bx bxs-star'></i>∞ messages a day<br>
             <i class='bx bxs-star'></i>Send Friend Request<br>
