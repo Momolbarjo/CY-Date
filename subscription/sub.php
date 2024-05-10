@@ -2,15 +2,18 @@
 session_start();
 
 $type = $_POST['subscriptionType'];
-$duration = $_POST['subscriptionId'];
+$duration = $_POST['subscriptionClass'];
 $status = $_SESSION['status'];
 $username = $_SESSION['input_log']['username'];
 
 
 if($status==="sub" || $status===$type){
-    echo "Already Sub";
+    $_SESSION['error'] = "❌You are already following this option❌";
+    echo $_SESSION['error'];
+    exit();
 }
 else{
+    $_SESSION['status'] = $type;
     $today = date("Y-m-d");
     if ($duration === 'Month') {
         $end = date("Y-m-d", strtotime("+1 month"));
@@ -36,6 +39,7 @@ else{
 
     file_put_contents('../data/users.csv', implode("\n", $lines));
 
-    echo "Subscription successful!";
+    $_SESSION['success'] = "✅ Subscribed !✅";
+    echo $_SESSION['success'];
 }
 ?>

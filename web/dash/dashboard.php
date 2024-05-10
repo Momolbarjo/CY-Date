@@ -12,6 +12,8 @@
 
 <body>
 <div id="content">
+<div id="successMessage" class="success" style="display: none;"></div>
+<div id="errorMessage" class="error" style="display: none;"></div>
     <header class="navMenu">
         <a href="#"><img class="logo" src="../../Pictures/cupid.png"></a>
         <nav class="navigationBar">
@@ -52,9 +54,9 @@
             <i class='bx bx-money' ></i>9.99$ per month<br>
         </p>
         <div id="silSubOptions" style="display: none;">
-            <input type="radio" name="sil" id="Month" required><i class='bx bx-star' ></i>9.99$ Month<br>
-            <input type="radio" name="sil" id="Quaterly"><i class='bx bxs-star-half' ></i>19.99$ Quaterly<br>
-            <input type="radio" name="sil" id="Annual"><i class='bx bxs-star'></i>79.99$ Annual<br>
+            <input type="radio" name="sil" class="Month" required><i class='bx bx-star' ></i>9.99$ Month<br>
+            <input type="radio" name="sil" class="Quaterly"><i class='bx bxs-star-half' ></i>19.99$ Quaterly<br>
+            <input type="radio" name="sil" class="Annual"><i class='bx bxs-star'></i>79.99$ Annual<br>
         </div>
         <button id="silBtn"><i class='bx bx-badge-check' ></i></button>
     </div>
@@ -70,9 +72,9 @@
             <i class='bx bx-money' ></i>19.99$ per month<br>
         </p>
         <div id="gldSubOptions" style="display: none;">
-            <input type="radio"  name="gld" id="Month" required><i class='bx bx-star' ></i>19.99$ Month<br>
-            <input type="radio" name="gld" id="Quaterly"><i class='bx bxs-star-half' ></i>49.99$ Quaterly<br>
-            <input type="radio" name="gld" id="Annual"><i class='bx bxs-star'></i>149.99$ Quaterly<br>
+            <input type="radio"  name="gld" class="Month" required><i class='bx bx-star' ></i>19.99$ Month<br>
+            <input type="radio" name="gld" class="Quaterly"><i class='bx bxs-star-half' ></i>49.99$ Quaterly<br>
+            <input type="radio" name="gld" class="Annual"><i class='bx bxs-star'></i>149.99$ Quaterly<br>
         </div>
         <button id="gldBtn"><i class='bx bx-badge-check' ></i></button>       
     </div>
@@ -81,4 +83,4 @@
     <script src="subMenu.js"></script>
 </body>
 
-</html>
+</html> 

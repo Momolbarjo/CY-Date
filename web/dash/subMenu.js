@@ -82,18 +82,18 @@ document.getElementById('silBtn').addEventListener('click', function () {
             type: 'post',
             data: {
                 'subscriptionType': selectedOption.attr('name'),
-                'subscriptionId': selectedOption.attr('id')
+                'subscriptionClass': selectedOption.attr('class')
             },
             success: function (response) {
-                if (response === "Already Sub") {
-                    alert("Vous êtes déjà abonné à cette option.");
+                if (response === "❌You are already following this option❌") {
+                    document.getElementById('errorMessage').style.display = "block";
+                    document.getElementById('errorMessage').innerText = response;
                 } else {
-                    alert("Abonnement réussi !");
+                    document.getElementById('successMessage').style.display = "block";
+                    document.getElementById('successMessage').innerText = response;
                 }
             }
         });
-    } else {
-        alert('Veuillez sélectionner une option de mensualité.');
     }
 });
 
@@ -105,17 +105,17 @@ document.getElementById('gldBtn').addEventListener('click', function () {
             type: 'post',
             data: {
                 'subscriptionType': selectedOption.attr('name'),
-                'subscriptionId': selectedOption.attr('id')
+                'subscriptionClass': selectedOption.attr('class')
             },
             success: function (response) {
-                if (response === "Already Sub") {
-                    alert("Vous êtes déjà abonné à cette option.");
+                if (response === "❌You are already following this option❌") {
+                    document.getElementById('errorMessage').innerText = response;
+                    document.getElementById('errorMessage').style.display = "block";
                 } else {
-                    alert("Abonnement réussi !");
+                    document.getElementById('successMessage').innerText = response;
+                    document.getElementById('successMessage').style.display = "block";
                 }
             }
         });
-    } else {
-        alert('Veuillez sélectionner une option de mensualité.');
     }
-});
+}); 
