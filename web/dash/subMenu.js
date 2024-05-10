@@ -75,12 +75,15 @@ $('#searchInput').on('input', function () {
 
 
 document.getElementById('silBtn').addEventListener('click', function () {
-    var selectedOption = $('input[type=radio][name=sil]:checked').val();
-    if (selectedOption) {
+    var selectedOption = $('input[type=radio][name=sil]:checked');
+    if (selectedOption.length) {
         $.ajax({
             url: '../../subscription/sub.php',
             type: 'post',
-            data: { 'subscription': selectedOption },
+            data: {
+                'subscriptionType': selectedOption.attr('name'),
+                'subscriptionId': selectedOption.attr('id')
+            },
             success: function (response) {
                 if (response === "Already Sub") {
                     alert("Vous êtes déjà abonné à cette option.");
@@ -95,12 +98,15 @@ document.getElementById('silBtn').addEventListener('click', function () {
 });
 
 document.getElementById('gldBtn').addEventListener('click', function () {
-    var selectedOption = $('input[type=radio][name=gld]:checked').val();
-    if (selectedOption) {
+    var selectedOption = $('input[type=radio][name=gld]:checked');
+    if (selectedOption.length) {
         $.ajax({
             url: '../../subscription/sub.php',
             type: 'post',
-            data: { 'subscription': selectedOption },
+            data: {
+                'subscriptionType': selectedOption.attr('name'),
+                'subscriptionId': selectedOption.attr('id')
+            },
             success: function (response) {
                 if (response === "Already Sub") {
                     alert("Vous êtes déjà abonné à cette option.");

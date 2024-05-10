@@ -88,6 +88,7 @@ function verify_login($username, $password)
                 return false;
             } else {
                 $_SESSION['role'] = $existingRole;
+                $_SESSION['status'] = $existingSub;
                 return $existingProfilPath;
             }
         }

@@ -1,21 +1,22 @@
 <?php
 session_start();
 
-$data = $_POST['subscription'];
+$type = $_POST['subscriptionType'];
+$duration = $_POST['subscriptionId'];
 $status = $_SESSION['status'];
 $username = $_SESSION['input_log']['username'];
 
-if($status==="sub" || $status===$data){
+
+if($status==="sub" || $status===$type){
     echo "Already Sub";
 }
 else{
     $today = date("Y-m-d");
-
-    if ($data === '9.99$ Month') {
+    if ($duration === 'Month') {
         $end = date("Y-m-d", strtotime("+1 month"));
-    } elseif ($data === '49.99$ Quaterly') {
+    } elseif ($duration === 'Quaterly') {
         $end = date("Y-m-d", strtotime("+3 months"));
-    } elseif ($data === '149.99$ Annual') {
+    } elseif ($duration === 'Annual') {
         $end = date("Y-m-d", strtotime("+1 year"));
     }
 
@@ -24,13 +25,14 @@ else{
     foreach ($lines as $i => $line) {
         $fields = explode(',', $line);
         if ($fields[2] === $username) {
-            $fields[8] = $data;
-            $fields[7] = $today;
-            $fields[] = $end;
+            $fields[8] = $type;
+            $fields[12] = $today;
+            $fields[13] = $end;
             $lines[$i] = implode(',', $fields);
             break;
         }
     }
+
 
     file_put_contents('../data/users.csv', implode("\n", $lines));
 
