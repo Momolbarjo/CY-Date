@@ -1,3 +1,15 @@
+
+function verif(max){
+	max = parseInt(max);
+	if (max == 0){
+		document.getElementById("btn1").style.visibility = "hidden";
+		document.getElementById("btn2").style.visibility = "hidden";
+		document.getElementById("p3").style.visibility = "visible";
+	}
+}
+
+
+
 document.getElementById('optionsBtn').addEventListener('click', function () {
 	var optionsMenu = document.getElementById('optionsMenu');
 	if (optionsMenu.style.display === 'none') {
@@ -12,6 +24,7 @@ var count = 1;
 function changeImg(i,max) {
 	
 	maximum = parseInt(max);
+	
 	var image_pre = document.getElementById('img' + count);
 	var nextCount = count + i;
 
@@ -38,13 +51,17 @@ var state = 0;
 function zoom(max) {
 	
 	maximum = parseInt(max)
+	if (max == 0) {
+		return;
+	}
+	
 	if (state == 0) {
 		state = 1;
 		document.getElementById("profile").style.visibility = "hidden";
 		document.getElementById("btn3").style.visibility = "visible";
 		document.getElementById("btn4").style.visibility = "visible";
 		for (x=1;x<=maximum;x++) {
-				document.getElementById('img' + x ).style.left = '-5%';
+				document.getElementById('img' + x ).style.left = '-8%';
 				document.getElementById('img' + x ).style.bottom = '3%';
 				document.getElementById('img' + x ).style.height = '80%';
 				document.getElementById('img' + x ).style.width = '80%';
