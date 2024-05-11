@@ -1,6 +1,6 @@
 body {
     color: black;
-    background-color: #FD6C9E;
+    background-color: black;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -46,8 +46,8 @@ body {
 }
 
 .first label {
-    font-size : 15px;
-    font-style : italic;
+    font-size: 15px;
+    font-style: italic;
 }
 
 .second {
@@ -67,22 +67,22 @@ body {
 
 .third p {
     margin-top: -71.5%;
-    text-align : center;
+    text-align: center;
 }
 
-.third textarea{
-    position : absolute;
-    height : 1000%;
-    width : 100%;
+.third textarea {
+    position: absolute;
+    height: 1000%;
+    width: 100%;
     resize: none;
     background: transparent;
     outline: none;
-    border : none;
+    border: none;
     padding: 5% 5% 0 5%;
     font-weight: 400;
     color: black;
     font-size: 20px;
-    vertical-align :top;
+    vertical-align: top;
 }
 
 .four {
@@ -109,7 +109,7 @@ body {
 }
 
 .five alt {
-	visibility : visible;
+    visibility: visible;
 }
 
 
@@ -128,18 +128,18 @@ body {
 }
 
 #p3 {
-    height : 15%;
-    width : 20%;
-    border : 2px solid black;
-    position : absolute;
+    height: 15%;
+    width: 20%;
+    border: 2px solid black;
+    position: absolute;
     bottom: 25%;
     right: 18%;
-    font-size : 20px;
-    font-weight : 1000;
-    visibility : hidden;
+    font-size: 20px;
+    font-weight: 1000;
+    visibility: hidden;
     resize: none;
-    padding : 2% 2% 2% 2%;
-    text-align : center;
+    padding: 2% 2% 2% 2%;
+    text-align: center;
 }
 
 #btn1,
@@ -234,7 +234,7 @@ body {
 }
 
 #optionsMenu a {
-    display : block;
+    display: block;
     color: white;
     text-decoration: none;
     margin-bottom: 10px;
