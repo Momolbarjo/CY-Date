@@ -21,7 +21,8 @@
     <div id="profile">
     	<div class="first">
         	<img src="<?php echo $userData['profilePicPath']; ?>" alt="Profile pic">
-        	<h1><?php echo $username; ?></h1> <label>(<?php echo $userData['gender'] ?>)</label>
+        	<h1><?php echo $username; ?><i id="add" class="bx bx-user-plus"></i></h1>
+        	<label>(<?php echo $userData['gender'] ?>)</label>
         	<br>
         </div>
         
@@ -34,13 +35,12 @@
         <div class="third">
         	<p id="p1">DESCRPTION</p><textarea id = "p2" cols="20" rows="6"    name="desc"><?php echo $userData['description'] ?? 'No info';  ?></textarea>
         </div>
-        
-        <div class="four">
+    
+    	<div class="four">
         	<button id="optionsBtn">ACTIONS</button>
         	<div id="optionsMenu" style="display: none;">
             		<a id="a1" href="#">Report</a>
             		<a id="a1" href="#">Block</a>
-            		<a id="a1" href="#">Add</a>
         	</div>
         </div>
     
