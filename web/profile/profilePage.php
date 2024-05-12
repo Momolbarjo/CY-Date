@@ -21,7 +21,8 @@
     <div id="profile">
     	<div class="first">
         	<img src="<?php echo $userData['profilePicPath']; ?>" alt="Profile pic">
-        	<h1><?php echo $username; ?></h1> <label>(<?php echo $userData['gender'] ?>)</label>
+        	<h1><?php echo $username; ?><i id="add" class="bx bx-user-plus"></i></h1>
+        	<label>(<?php echo $userData['gender'] ?>)</label>
         	<br>
         </div>
         
@@ -35,6 +36,14 @@
         	<p id="p1">DESCRPTION</p><textarea id = "p2" cols="20" rows="6"    name="desc"><?php echo $userData['description'] ?? 'No info';  ?></textarea>
         </div>
     
+    	<div class="four">
+        	<button id="optionsBtn">ACTIONS</button>
+        	<div id="optionsMenu" style="display: none;">
+            		<a id="a1" href="#">Report</a>
+            		<a id="a1" href="#">Block</a>
+        	</div>
+        </div>
+    
     	<div class="five">
 			<?php for ($i = 0; $i < count($userData['pictures']); $i++): ?>
 				<img src="<?php echo file_exists($userData['pictures'][$i] ?? '') ? $userData['pictures'][$i] : "../../Pictures/carréVide.png"; ?>" onclick="zoom(<?php echo $max ?>)" alt="THE PERSON DON'T HAVE ANY PICTURES" id="img<?php echo $i+1;?>">
@@ -44,15 +53,6 @@
 				<br>
     	</div>
 
-    </div>
-    
-    <div class="four">
-        	<button id="optionsBtn">ACTIONS</button>
-        	<div id="optionsMenu" style="display: none;">
-            		<a id="a1" href="#">Report</a>
-            		<a id="a1" href="#">Block</a>
-            		<a id="a1" href="#">Add</a>
-        	</div>
     </div>
     
     <button id="btn3" onclick="changeImg(-1,<?php echo $max ?>)"><i class='bx bx-left-arrow-alt'></i></button>
