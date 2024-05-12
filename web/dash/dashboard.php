@@ -74,7 +74,7 @@
         <div id="gldSubOptions" style="display: none;">
             <input type="radio"  name="gld" class="Month" required><i class='bx bx-star' ></i>19.99$ Month<br>
             <input type="radio" name="gld" class="Quaterly"><i class='bx bxs-star-half' ></i>49.99$ Quaterly<br>
-            <input type="radio" name="gld" class="Annual"><i class='bx bxs-star'></i>149.99$ Quaterly<br>
+            <input type="radio" name="gld" class="Annual"><i class='bx bxs-star'></i>149.99$ Annual<br>
         </div>
         <button id="gldBtn"><i class='bx bx-badge-check' ></i></button>       
     </div>
