@@ -11,9 +11,9 @@
 </head>
 
 <body>
-<div id="content">
 <div id="successMessage" class="success" style="display: none;"></div>
 <div id="errorMessage" class="error" style="display: none;"></div>
+<div id="content">
     <header class="navMenu">
         <a href="#"><img class="logo" src="<?php session_start(); if($_SESSION['status']==="sil"){echo "../../Pictures/silver.png";}else if($_SESSION['status']==="gld"){echo "../../Pictures/gold.png";}else{echo "../../Pictures/cupid.png";}?>"></a>
         <nav class="navigationBar">
@@ -81,6 +81,7 @@
 </div>
     <script src="../../Browser/disable.js"></script>
     <script src="subMenu.js"></script>
+    <?php echo "<script>let subs = " . json_encode($_SESSION['status']) . ";</script>"; ?>
 </body>
 
 </html> 

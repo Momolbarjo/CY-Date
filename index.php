@@ -35,7 +35,7 @@
                 <i class='bx bxs-lock'></i>
             </div>
             <div class="remember">
-                <label><input type="checkbox">Stay connected</label>
+                <label><input type="checkbox" name="admin">Admin access</label>
                 <a href="login/reset/forgotHub.php">Forgot password?</a>
             </div>
 

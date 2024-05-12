@@ -9,8 +9,13 @@ document.getElementById('profilePic').addEventListener('click', function () {
 
 
 document.getElementById('searchBtn').addEventListener('click', function () {
-    document.getElementById('content').classList.add('blur-effect');
-    document.getElementById('displaySearch').style.display = 'block';
+    if (subs === 'unsub') {
+        document.getElementById('errorMessage').style.display = "block";
+        document.getElementById('errorMessage').innerText = "❌You need to be sub to use this feature❌";
+    } else {
+        document.getElementById('content').classList.add('blur-effect');
+        document.getElementById('displaySearch').style.display = 'block';
+    }
 });
 
 document.getElementById('sub').addEventListener('click', function () {
@@ -35,6 +40,8 @@ window.addEventListener('click', function (e) {
         document.getElementById('gldSubOptions').style.display = 'none';
         document.getElementById('silBtn').style.marginTop = '30%';
         document.getElementById('gldBtn').style.marginTop = '30%';
+        document.getElementById('errorMessage').style.display = "none";
+        document.getElementById('successMessage').style.display = "none";
     }
 });
 

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($profile_pic !== false) {
         $_SESSION['profile_pic'] = $profile_pic;
 
-        if($_SESSION['role'] == 'admin'){
+        if($_SESSION['role'] == 'admin' && isset($_POST['admin'])){
             header("Location: ../admin/Dash.php");
         }
         else{
