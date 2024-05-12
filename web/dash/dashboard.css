@@ -125,15 +125,15 @@ body {
     width: 100vh;
     display: flex;
     flex-wrap: wrap;
-
+    padding-top:3%;
 }
 
 .profile-container .profile {
     width: 20%;
     box-sizing: border-box;
     padding: 10px;
+    text-decoration : none;
 }
-
 
 .round-image:hover {
     filter: brightness(80%);
@@ -213,12 +213,11 @@ i {
     padding: 5% 12% 5% 5%;
     background-color: transparent;
     border-radius: 25px;
-
 }
 
 #displaySearch,
 #displaySearch input {
-    background-color: paleturquoise;
+    background-color: white;
 }
 
 #displaySearch input::placeholder {
