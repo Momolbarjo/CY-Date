@@ -36,9 +36,9 @@
     <div id="Results" class="profile-container"></div>
     <i id="set" class='bx bx-cog'></i>
     <div id="filters" style="display: none;">
-        <input type="text" placeholder="Region" value="region"></input>
-        <input type="number" placeholder="Year" value="year" min="1960" max="2006" ></input>
-        <input type="number" placeholder="Size(cm)" value="size" min="120" max="220"></input>
+        <input type="text" placeholder="Region" name="region"></input>
+        <input type="number" placeholder="Year" name="year" min="1960" max="2006" ></input>
+        <input type="number" placeholder="Size(cm)" name="size" min="120" max="250"></input>
     </div>
 </div>
 <div id="subOpt">
