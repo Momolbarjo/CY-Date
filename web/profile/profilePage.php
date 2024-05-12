@@ -14,10 +14,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Profile.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Profil of <?php echo $username; ?></title>
 </head>
 <body onmouseenter="verif(<?php echo $max ?>)">
-    
+	<div id="errorMessage" class="error" style="display: none;"></div>
     <div id="profile">
     	<div class="first">
         	<img src="<?php echo $userData['profilePicPath']; ?>" alt="Profile pic">
@@ -61,5 +62,11 @@
     <textarea id="p3"  rows="2"> THE PERSON DON'T HAVE ANY PICTURES </textarea>
   	  
     <script src="profilePage.js"></script>
+	<?php 
+		session_start();
+		echo "<script>let subRecipient = " . json_encode($userData['statut']) . ";</script>"; 
+		echo "<script>let userName = " . json_encode($_SESSION['input_log']['username']) . ";</script>";
+		echo "<script>let recipientName = " . json_encode($userData['username']) . ";</script>";  
+	?>
 </body>
 </html>

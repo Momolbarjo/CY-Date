@@ -1,15 +1,20 @@
 <?php
 
+session_start(); 
+
 if(isset($_GET['i'])){
     $input = $_GET['i'];
     $file = fopen('../../data/users.csv','r');
 
     while(($line = fgetcsv($file)) !== FALSE){
 
-        if($input == "" ||strpos($line[2],$input) === 0){
+        if($input == "" || strpos($line[2],$input) === 0){
             $username = $line[2];
             $profilePicPath = $line[9];
-            echo "<a href='../profile/profilePage.php?user=$username'><div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div></a>";
+
+            if($username !== $_SESSION['input_log']['username']) {
+                echo "<a href='../profile/profilePage.php?user=$username'><div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div></a>";
+            }
         }
     }
     fclose($file);

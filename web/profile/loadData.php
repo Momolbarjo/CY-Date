@@ -9,7 +9,8 @@ function loadUserData($username) {
                 'username' => $line[2],
                 'birthdate' => $line[4],
                 'gender' => $line[6],
-                'profilePicPath' => $line[9]
+                'profilePicPath' => $line[9],
+                'statut' => $line[8]
             );
 
         }
