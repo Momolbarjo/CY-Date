@@ -22,6 +22,17 @@ document.getElementById('optionsBtn').addEventListener('click', function () {
 	}
 });
 
+
+document.getElementById('add').addEventListener('click', function () {
+
+	if (this.className == "bx bx-user-plus") {
+		this.className = "bx bx-user-minus";
+	} 
+	else {
+		this.className = "bx bx-user-plus";
+	}
+});
+
 var count = 1;
 
 function changeImg(i,max) {
