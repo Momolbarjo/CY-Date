@@ -72,8 +72,6 @@ function zoom(max) {
 	if (state == 0) {
 		state = 1;
 		document.getElementById("profile").style.visibility = "hidden";
-		document.getElementById("optionsBtn").style.visibility = "hidden";
-		document.getElementById("optionsMenu").style.visibility = "hidden";
 		document.getElementById("btn3").style.visibility = "visible";
 		document.getElementById("btn4").style.visibility = "visible";
 		for (x=1;x<=maximum;x++) {
@@ -90,8 +88,6 @@ function zoom(max) {
 		document.getElementById("profile").style.visibility = "visible";
 		document.getElementById("btn3").style.visibility = "hidden";
 		document.getElementById("btn4").style.visibility = "hidden";
-		document.getElementById("optionsBtn").style.visibility = "visible";
-		document.getElementById("optionsMenu").style.visibility = "visible";
 		for (y=1;y<=maximum;y++) {
 		
 			document.getElementById('img' + y ).style.left = '42.5%';
