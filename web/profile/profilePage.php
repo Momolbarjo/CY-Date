@@ -34,15 +34,6 @@
         <div class="third">
         	<p id="p1">DESCRPTION</p><textarea id = "p2" cols="20" rows="6"    name="desc"><?php echo $userData['description'] ?? 'No info';  ?></textarea>
         </div>
-        
-        <div class="four">
-        	<button id="optionsBtn">ACTIONS</button>
-        	<div id="optionsMenu" style="display: none;">
-            		<a id="a1" href="#">Report</a>
-            		<a id="a1" href="#">Block</a>
-            		<a id="a1" href="#">Add</a>
-        	</div>
-        </div>
     
     	<div class="five">
 			<?php for ($i = 0; $i < count($userData['pictures']); $i++): ?>
@@ -53,6 +44,15 @@
 				<br>
     	</div>
 
+    </div>
+    
+    <div class="four">
+        	<button id="optionsBtn">ACTIONS</button>
+        	<div id="optionsMenu" style="display: none;">
+            		<a id="a1" href="#">Report</a>
+            		<a id="a1" href="#">Block</a>
+            		<a id="a1" href="#">Add</a>
+        	</div>
     </div>
     
     <button id="btn3" onclick="changeImg(-1,<?php echo $max ?>)"><i class='bx bx-left-arrow-alt'></i></button>
