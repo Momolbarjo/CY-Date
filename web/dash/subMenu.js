@@ -26,7 +26,11 @@ document.getElementById('sub').addEventListener('click', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('set').addEventListener('click', function () {
-        document.getElementById('filters').style.display = 'block';
+        if ( document.getElementById('filters').style.display == 'none') {
+        	document.getElementById('filters').style.display = 'block';
+        } else {
+        	 document.getElementById('filters').style.display = 'none';
+        }
     });
 });
 
