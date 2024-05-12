@@ -11,25 +11,11 @@ function verif(max) {
 
 
 document.getElementById('optionsBtn').addEventListener('click', function () {
-
 	var optionsMenu = document.getElementById('optionsMenu');
-
 	if (optionsMenu.style.display === 'none') {
 		optionsMenu.style.display = 'block';
-	}
-	else {
+	} else {
 		optionsMenu.style.display = 'none';
-	}
-});
-
-
-document.getElementById('add').addEventListener('click', function () {
-
-	if (this.className == "bx bx-user-plus") {
-		this.className = "bx bx-user-minus";
-	}
-	else {
-		this.className = "bx bx-user-plus";
 	}
 });
 
