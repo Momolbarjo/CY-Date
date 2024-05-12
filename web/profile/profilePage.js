@@ -36,12 +36,23 @@ document.getElementById('add').addEventListener('click', function () {
 					'receiver': recipientName
 				},
 				success: function (response) {
-					console.log(response);
+
 				}
 			});
 		}
 		else {
 			this.className = "bx bx-user-plus";
+			$.ajax({
+				url: '../../subscription/removeContact.php',
+				type: 'post',
+				data: {
+					'asker': userName,
+					'receiver': recipientName
+				},
+				success: function (response) {
+
+				}
+			});
 		}
 	} else {
 		document.getElementById('errorMessage').style.display = "block";

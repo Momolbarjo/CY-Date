@@ -1,12 +1,24 @@
 <?php
-
 $userData = $_POST['asker'];
 $inputLog = $_POST['receiver'];
 
-$file = fopen('../data/request.csv', 'a'); 
+$file = fopen('../data/request.csv', 'r'); 
 
-fputcsv($file, array($userData, $inputLog)); 
+$contactExists = false;
+while (($line = fgetcsv($file)) !== FALSE) {
+    if ($line[0] == $userData && $line[1] == $inputLog) {
+        $contactExists = true;
+        break;
+    }
+}
+fclose($file);
 
-fclose($file); 
-
+if (!$contactExists) {
+    $file = fopen('../data/request.csv', 'a'); 
+    fputcsv($file, array($userData, $inputLog)); 
+    fclose($file); 
+    
+} else {
+    
+}
 ?>
