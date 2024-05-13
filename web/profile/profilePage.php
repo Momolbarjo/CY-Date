@@ -40,8 +40,8 @@
     	<div class="four">
         	<button id="optionsBtn">ACTIONS</button>
         	<div id="optionsMenu" style="display: none;">
-            		<a id="a1" href="#">Report</a>
-            		<a id="a1" href="#">Block</a>
+            		<a id="report" href="#">Report</a>
+            		<a id="block" href="#">Block</a>
         	</div>
         </div>
     
@@ -60,7 +60,23 @@
     <button id="btn4" onclick="changeImg(1,<?php echo $max ?>)"><i class='bx bx-right-arrow-alt' ></i></button>
     
     <textarea id="p3"  rows="2"> THE PERSON DON'T HAVE ANY PICTURES </textarea>
-  	  
+  	
+	<div id="reportForm">
+		<img id="cupid" src="../../Pictures/silver.png">
+		<input type="text"  id="reported" value="<?php echo $userData['username']; ?>" readonly><br>
+		<select id="reportReason" name="reason" required>
+			<option value="">Reason</option>
+			<?php
+			$reasons = array("harassment", "blackmail", "insult", "sexual assault", "scam", "Bot");
+			foreach ($reasons as $reason) {
+				echo "<option value=\"$reason\">$reason</option>";
+			}
+			?>
+		</select><br>
+		<button id="reportBtn">Report</button>
+	</div>
+
+
     <script src="profilePage.js"></script>
 	<?php 
 		session_start();

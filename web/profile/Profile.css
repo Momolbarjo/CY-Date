@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Merriweather', sans-serif;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+:root {
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgb(130, 236, 246);
+    --c2: rgba(168, 239, 255, 0.1);
+}
+
+
 body {
     color: black;
     background-color: black;
@@ -9,6 +31,8 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
+
 
 
 #profile {
@@ -252,6 +276,68 @@ body {
     text-decoration: underline;
 }
 
+.blur-effect {
+    filter: blur(8px) brightness(50%);
+    transition: all 0.5s ease;
+}
+
+#reportForm {
+    box-sizing: border-box;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    background: linear-gradient(rgb(82, 82, 82), black);
+    text-align: center;
+    border: 0.35rem solid;
+    animation: borderRotate var(--d) linear infinite forwards;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    padding: 10px;
+    align-items: center;
+    color: darkgray;
+    display: none;
+    padding: 2% 6%;
+}
+
+#reportForm #reportBtn,
+#reportForm #reportReason {
+    margin-top: 15%;
+    margin-left: 5%;
+}
+
+#reportForm #reported {
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    padding: 2% 5% 2% 5%;
+    appearance: none;
+    line-height: 1.5;
+    text-align: center;
+    margin-left: 5%;
+}
+
+select {
+    background: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 40px;
+    font-size: 145%;
+    color: darkgray;
+    margin-left: -15%;
+    padding: 2% 18% 2% 18%;
+    appearance: none;
+    line-height: 1.5;
+    cursor: pointer;
+    text-align: center;
+}
+
+#cupid {
+    margin-bottom: 15%;
+    margin-left: 5%;
+}
+
 .error {
     color: red;
     font-weight: bold;
@@ -278,4 +364,23 @@ body {
     background-color: white;
     position: absolute;
     z-index: 9999;
+}
+
+#reportBtn {
+    width: 50%;
+    height: 45px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 120%;
+    color: cadetblue;
+    font-weight: 700;
+}
+
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
+    }
 }

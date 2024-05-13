@@ -22,6 +22,35 @@ document.getElementById('optionsBtn').addEventListener('click', function () {
 	}
 });
 
+document.getElementById('report').addEventListener('click', function () {
+	document.getElementById('profile').classList.add('blur-effect');
+	document.getElementById('reportForm').style.display = 'block';
+});
+
+$(document).ready(function () {
+	$("#reportBtn").click(function () {
+		var reportReason = $("#reportReason").val();
+		$.ajax({
+			url: '../../admin/report.php',
+			type: 'post',
+			data: {
+				'reporter': userName,
+				'reported': recipientName,
+				'reason': reportReason
+			},
+			success: function (response) {
+
+			}
+		});
+	});
+});
+
+window.addEventListener('click', function (e) {
+	if (!document.getElementById('reportForm').contains(e.target) && e.target.id !== 'report') {
+		document.getElementById('reportForm').style.display = 'none';
+		document.getElementById('profile').classList.remove('blur-effect');
+	}
+});
 
 document.getElementById('add').addEventListener('click', function () {
 

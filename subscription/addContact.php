@@ -18,7 +18,5 @@ if (!$contactExists) {
     fputcsv($file, array($userData, $inputLog)); 
     fclose($file); 
     
-} else {
-    
-}
+} 
 ?>
