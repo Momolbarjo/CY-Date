@@ -6,7 +6,17 @@ $(document).ready(function () {
         $(".navigationBar a").removeClass('active');
         $(this).addClass('active');
         if ($(this).is("#allUsers")) {
-            $.get("allUsers.php", function (data) {
+            $.get("getData/allUsers.php", function (data) {
+                $("#userTable").html(data);
+            });
+        }
+        else if ($(this).is("#report")) {
+            $.get("getData/allReports.php", function (data) {
+                $("#userTable").html(data);
+            });
+        }
+        else if ($(this).is("#ban")) {
+            $.get("getData/allBanned.php", function (data) {
                 $("#userTable").html(data);
             });
         }
