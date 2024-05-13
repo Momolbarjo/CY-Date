@@ -25,7 +25,7 @@
                 unset($_SESSION['success']);
             }
             ?>
-            <img id="cupid" src="Pictures/cupid.png">
+            <img id="cupid" src="Pictures/silver.png">
             <div class="inputBox">
                 <input type="text" placeholder="Username" name="username" value="<?php echo $_SESSION['input_log']['username'] ?? ''; ?>" required>
                 <i class='bx bxs-user-circle'></i>

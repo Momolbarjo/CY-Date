@@ -5,21 +5,40 @@
     font-family: 'Merriweather', sans-serif;
 }
 
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+:root {
+    --d: 2500ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgb(130, 236, 246);
+    --c2: rgba(168, 239, 255, 0.1);
+}
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 90vh;
-    background-image: url('../../BG/love.gif');
+    background-image: url('../../BG/bulb.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
 }
 
+
 .box {
     width: 30%;
     height: 70%;
-    background: linear-gradient(pink, beige);
+    background: linear-gradient(rgb(82, 82, 82), black);
+    border: 0.35rem solid;
+    animation: borderRotate var(--d) linear infinite forwards;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
     text-align: center;
     align-items: center;
     color: darkgray;
@@ -128,5 +147,11 @@ body {
 @keyframes bigger {
     100% {
         transform: scale(2, 2)
+    }
+}
+
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
     }
 }
