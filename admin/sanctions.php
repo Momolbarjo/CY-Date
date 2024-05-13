@@ -13,8 +13,8 @@ if (isset($_POST["sanction"]) && isset($_POST["index"])) {
         $userData[10] = intval($userData[10]) + 1;
         $lines[$index] = implode(",", $userData);
         file_put_contents($filename, implode(PHP_EOL, $lines) . PHP_EOL);
-    } 
-    elseif ($sanction === "ban") {
+    }
+    if ($sanction === "ban" || $userData[10] >= 3) {
         $lines = file($filename, FILE_IGNORE_NEW_LINES);
         $userData = str_getcsv($lines[$index]);
         $bannedData = array();
@@ -22,6 +22,9 @@ if (isset($_POST["sanction"]) && isset($_POST["index"])) {
         $userData[11] = 'banned';
         $lines[$index] = implode(",", $userData);
         file_put_contents($filename, implode(PHP_EOL, $lines) . PHP_EOL);
+        if(empty($_POST["ban_reason"])){
+            $reason = "you have been warned more than 3 times";
+        }
         $bannedData[1] = $reason;
         $bannedlines = "$bannedData[0],$bannedData[1]";
         file_put_contents($banfile, $bannedlines, FILE_APPEND);

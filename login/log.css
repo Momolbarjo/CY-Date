@@ -166,6 +166,7 @@ body {
     border: 1px solid red;
     top: 5.5%;
     right: 42%;
+    width: 20%;
     background-color: white;
     position: absolute;
     z-index: 9998;

@@ -77,14 +77,22 @@ function verify_user_data()
 function verify_login($username, $password)
 {
     $users = file("../data/users.csv", FILE_IGNORE_NEW_LINES);
+    $banned = file("../data/banned.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
         list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingGender, $existingDate, $existingSub, $existingProfilPath, $existingReports, $existingRole) = explode(",", $user);
 
         if ($existingUsername == $username && $existingPassword == $password) {
-            if ($existingReports >= 3 || $existingRole == 'banned') {
+            if ($existingRole == 'banned') {
+                foreach ($banned as $ban) {
+                    list($bannedEmail, $banReason) = explode(",", $ban);
+                    if ($bannedEmail == $existingEmail) {
+                        $reason = $banReason;
+                        break;
+                    }
+                }
                 $_SESSION['role'] = 'banned';
-                $_SESSION['error'] = '⚠️You are banned⚠️';
+                $_SESSION['error'] = "⚠️You are banned because of $reason ⚠️";
                 return false;
             } else {
                 $_SESSION['role'] = $existingRole;
