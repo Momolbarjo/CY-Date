@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
 
                 foreach($lines as $line) 
                 {
-                    $data = str_getcsv($line, ";");
+                    $data = str_getcsv($line);
                     if($data[0] == $_SESSION['input_log']['username'] && !in_array($data[1], $usedIds))
                     {
                         $usedIds[] = $data[1];
