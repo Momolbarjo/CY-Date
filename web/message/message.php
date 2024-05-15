@@ -20,10 +20,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
     $uniqueID = uniqid();
     file_put_contents("../../data/message.csv", "$sender;$recipient;$message;$uniqueID\n", FILE_APPEND);
 } 
-/*c'est ici mon cher mohamed que commencent les problemes, 
-en gros je recupere l'id que je veux supprimer et j'ajoute a output toutes 
-les lignes qui n'ont pas cet id, ensuite j'ecrase mon ancien csv avec le nouveau 
-csv qui ne contient pas (si tout se passait bien) le message*/
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
     $deleteID = $_POST['deleteID'];
     $lines = file("../../data/message.csv");

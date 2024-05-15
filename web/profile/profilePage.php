@@ -67,7 +67,7 @@
 		<select id="reportReason" name="reason" required>
 			<option value="">Reason</option>
 			<?php
-			$reasons = array("harassment", "blackmail", "insult", "sexual assault", "scam", "Bot");
+			$reasons = array("harassment", "blackmail", "insult", "sexual assault", "scam", "Bot","shocking Profile");
 			foreach ($reasons as $reason) {
 				echo "<option value=\"$reason\">$reason</option>";
 			}
@@ -82,7 +82,8 @@
 		session_start();
 		echo "<script>let subRecipient = " . json_encode($userData['statut']) . ";</script>"; 
 		echo "<script>let userName = " . json_encode($_SESSION['input_log']['username']) . ";</script>";
-		echo "<script>let recipientName = " . json_encode($userData['username']) . ";</script>";  
+		echo "<script>let recipientName = " . json_encode($userData['username']) . ";</script>";
+		echo "<script>let recipientRole = " . json_encode($userData['role']) . ";</script>"  
 	?>
 </body>
 </html>

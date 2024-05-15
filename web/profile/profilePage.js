@@ -54,7 +54,7 @@ window.addEventListener('click', function (e) {
 
 document.getElementById('add').addEventListener('click', function () {
 
-	if (subRecipient !== "unsub") {
+	if (subRecipient !== "unsub" && recipientRole !== 'banned') {
 		if (this.className == "bx bx-user-plus") {
 			this.className = "bx bx-user-minus";
 			$.ajax({
@@ -85,7 +85,7 @@ document.getElementById('add').addEventListener('click', function () {
 		}
 	} else {
 		document.getElementById('errorMessage').style.display = "block";
-		document.getElementById('errorMessage').innerText = "❌The user is not sub❌";
+		document.getElementById('errorMessage').innerText = "❌The user is not sub or he is banned❌";
 	}
 });
 
