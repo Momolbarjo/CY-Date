@@ -10,7 +10,7 @@ else if(isset($_GET['success'])){
     unset($_SESSION['success']);
 }
 
-$lines = file("../../data/message.csv", FILE_IGNORE_NEW_LINES);
+$lines = file("../../data/request.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
