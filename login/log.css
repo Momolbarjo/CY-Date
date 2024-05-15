@@ -169,7 +169,7 @@ body {
     width: 20%;
     background-color: white;
     position: absolute;
-    z-index: 9998;
+    z-index: 9999;
 }
 
 .success {
