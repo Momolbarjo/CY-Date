@@ -5,7 +5,13 @@
 
     $userData = loadUserData($username);
     
-    $max = count($userData['pictures'])
+    $max = count($userData['pictures']);
+
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blocker']) && isset($_POST['blocked'])){
+		$blocker = $_POST['blocker'];
+		$blocked = $_POST['blocked'];
+		file_put_contents("../../data/blocked.csv", "$blocker,$blocked\n", FILE_APPEND);
+	}
 ?>
 
 <!DOCTYPE html>
