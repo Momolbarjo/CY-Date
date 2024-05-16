@@ -78,4 +78,5 @@ li:hover{
 
 .delete-icon{
     cursor: pointer;
+    display: none;
 }
