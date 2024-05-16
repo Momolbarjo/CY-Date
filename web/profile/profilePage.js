@@ -43,6 +43,9 @@ $(document).ready(function () {
 			}
 		});
 	});
+	$("#block").click(function(){
+		$.post(window.location.href, { blocker: userName, blocked: recipientName })
+		})
 });
 
 window.addEventListener('click', function (e) {
