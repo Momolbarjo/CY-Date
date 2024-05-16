@@ -125,14 +125,14 @@ body {
     width: 100vh;
     display: flex;
     flex-wrap: wrap;
-    padding-top:3%;
+    padding-top: 3%;
 }
 
 .profile-container .profile {
     width: 20%;
     box-sizing: border-box;
     padding: 10px;
-    text-decoration : none;
+    text-decoration: none;
 }
 
 .round-image:hover {
@@ -241,9 +241,10 @@ i {
 }
 
 #filters {
-    position: absolute;
-    right: 0;
-    top: 100%;
+    position: relative;
+    top: -100%;
+    left: 100%;
+    z-index: 9999;
 }
 
 #subOpt {
