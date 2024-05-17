@@ -1,15 +1,26 @@
 <?php
+
+	session_start();
+
     include 'loadData.php';
 
     $username = $_GET['user'];
 
     $userData = loadUserData($username);
+
     
     $max = count($userData['pictures']);
 
+
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blocker']) && isset($_POST['blocked'])){
+
+		
 		$blocker = $_POST['blocker'];
 		$blocked = $_POST['blocked'];
+
+		$_SESSION['blockedUser'] = $blocked;
+
+
 		file_put_contents("../../data/blocked.csv", "$blocker,$blocked\n", FILE_APPEND);
 	}
 ?>
@@ -85,7 +96,6 @@
 
     <script src="profilePage.js"></script>
 	<?php 
-		session_start();
 		echo "<script>let subRecipient = " . json_encode($userData['statut']) . ";</script>"; 
 		echo "<script>let userName = " . json_encode($_SESSION['input_log']['username']) . ";</script>";
 		echo "<script>let recipientName = " . json_encode($userData['username']) . ";</script>";

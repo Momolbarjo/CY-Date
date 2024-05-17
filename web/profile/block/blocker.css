@@ -24,20 +24,21 @@ body {
     margin-top: 20px;
 }
 
-.dont-unblock, .unblock{
+#dont-unblock,
+#unblock {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.dont-unblock {
+#dont-unblock {
     background-color: #ff6347;
     color: white;
     margin-right: 20px;
 }
 
-.unblock {
+#unblock {
     background-color: #32cd32;
     color: white;
 }
