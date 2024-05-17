@@ -25,7 +25,7 @@
                 <div id="submenu" >
                     <a href="../profile/customProfile.php">My Profile<i class='bx bxs-user-account'></i></a>
                     <a href="../message/message.php">My Messages<i class='bx bx-message-square-dots' ></i></a>
-                    <a href="#">My settings<i class='bx bx-cog'></i></a>
+                    <a href="../profile/personnalInformations.php">My settings<i class='bx bx-cog'></i></a>
                 </div>
             </label>
         </nav>

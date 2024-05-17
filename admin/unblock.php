@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $asker = $_POST['asker'];
 $receiver = $_POST['receiver'];
 
