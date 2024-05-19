@@ -26,26 +26,26 @@ body {
     flex-direction: column;
 }
 
-.received {
-    margin-top: 10px;
-    color: azure;
-    background-color: rgb(221, 118, 118);
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    align-self: flex-end;
-
-}
-
+.received,
 .sent {
     margin-top: 10px;
     color: azure;
-    background-color: #15aeeb;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
-    align-self: flex-start;
+    max-width: 10%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
+.received {
+    background-color: rgb(221, 118, 118);
+    align-self: flex-end;
+}
+
+.sent {
+    background-color: #15aeeb;
+    align-self: flex-start;
 }
 
 .chat button {
