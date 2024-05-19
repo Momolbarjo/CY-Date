@@ -18,8 +18,6 @@
 		$blocker = $_POST['blocker'];
 		$blocked = $_POST['blocked'];
 
-		$_SESSION['blockedUser'] = $blocked;
-
 
 		file_put_contents("../../data/blocked.csv", "$blocker,$blocked\n", FILE_APPEND);
 	}

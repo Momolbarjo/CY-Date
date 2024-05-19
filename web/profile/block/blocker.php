@@ -17,8 +17,9 @@
     </div>
     <?php 
         session_start();
+        $blockedUser = $_GET['user'];
 		echo "<script>let userName = " . json_encode($_SESSION['input_log']['username']) . ";</script>";
-		echo "<script>let recipientName = " . json_encode($_SESSION['blockedUser']) . ";</script>";
+		echo "<script>let recipientName = " . json_encode($blockedUser) . ";</script>";
 	?>
 <script>
     document.getElementById('unblock').addEventListener('click', function () {
