@@ -37,8 +37,19 @@ if (isset($_POST["sanction"]) && isset($_POST["index"])) {
         $userData = str_getcsv($lines[$index]);
         $userData[11] = 'user';
         $userData[10] = 0 ;
+    
+        $banLines = file($banfile, FILE_IGNORE_NEW_LINES);
+        foreach ($banLines as $i => $line) {
+            $banData = str_getcsv($line);
+            if ($banData[0] == $userData[3]) { 
+                unset($banLines[$i]); 
+                break;
+            }
+        }
+    
         $lines[$index] = implode(",", $userData);
         file_put_contents($filename, implode(PHP_EOL, $lines) . PHP_EOL);
+        file_put_contents($banfile, implode(PHP_EOL, $banLines) . PHP_EOL); 
     }
     else if ($sanction === "debanfromBanned"){
         $lines = file($banfile, FILE_IGNORE_NEW_LINES);
