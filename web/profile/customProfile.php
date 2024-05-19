@@ -1,21 +1,22 @@
 <?php
 session_start();
+include 'loadData.php';
 
-    include 'loadData.php';
+$username = $_SESSION['input_log']['username'];
+$userData = loadUserData($username);
 
-    $username = $_SESSION['input_log']['username'];
-
-    $userData = loadUserData($username);
-
-if (isset($_GET['error'])){
-    echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
+if (isset($_SESSION['error'])){
+    echo '<div class="error">' . htmlspecialchars($_SESSION['error']) . '</div>';
     unset($_SESSION['error']);
-}
-else if(isset($_GET['success'])){
-    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
+} elseif (isset($_SESSION['success'])){
+    echo '<div class="success">' . htmlspecialchars($_SESSION['success']) . '</div>';
     unset($_SESSION['success']);
 }
+
+$lines = file("../../data/visit.csv", FILE_IGNORE_NEW_LINES);
+
 ?>
+
 
 <html>
 
@@ -25,6 +26,7 @@ else if(isset($_GET['success'])){
     <title>Login</title>
     <link rel="stylesheet" href="customize.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -76,12 +78,42 @@ else if(isset($_GET['success'])){
                     </label>
                 <?php endfor; ?>
             </div>
+
             
             <button type="submit" class="button">Complete My Profil !</button>
+
         </form>
+        <button class="button" id="visited">Some visitors ?</button>                
+        <div class="visitsTableContainer">
+            <table id="visitsTable">
+                    <tr>
+                        <th>Visitor Name</th>
+                        <th>Visitor Picture</th>
+                    </tr>
+                    <?php 
+                        foreach($lines as $line){
+                            $data = str_getcsv($line);
+                            if($data[1] == $username){
+                                echo '<tr>';
+                                echo "<td> {$data[0]} </td>";
+                                echo "<td><img class='round-image' src='{$data[2]}' alt='Image'></td>";
+                                echo '</tr>';
+                            }
+                        }
+
+                    ?>    
+            </table>
+        </div>
         <div class="vertical-bar"></div> 
+
     </div>
+            
+    <script>
+    var sub = "<?php echo $userData['statut'] ?>";
+    </script>
     <script src="../../login/picture.js"></script>
+    <script src="visits.js"></script>
 </body>
 
 </html>
+
