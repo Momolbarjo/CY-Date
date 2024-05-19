@@ -1,13 +1,13 @@
 <?php
 session_start();
-function verify_user($username, $birthday, $password, $confirm)
+function verify_user($username, $email, $password, $confirm)
 {
     $users = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
 
     foreach ($users as $user) {
         list($existingSurname, $existingName, $existingUsername, $existingEmail, $existingBirthday, $existingPassword, $existingProfilePic) = explode(",", $user);
 
-        if ($existingUsername == $username && $existingBirthday == $birthday) {
+        if ($existingUsername == $username && $existingEmail == $email) {
             if ($password != $confirm) {
                 $_SESSION['error'] = '⚠️Password and confirmation do not match⚠️';
                 return false;
@@ -20,7 +20,7 @@ function verify_user($username, $birthday, $password, $confirm)
         }
     }
 
-    $_SESSION['error'] = '⚠️Username or birthdayDate incorrect⚠️';
+    $_SESSION['error'] = '⚠️Username or email incorrect⚠️';
     return false;
 }
 

@@ -31,8 +31,8 @@
                 <i class='bx bxs-user-circle'></i>
             </div>
             <div class="inputBox">
-                <input type="date" placeholder="birthday" name="birthday" value="<?php echo $_SESSION['input_forgot']['birthday'] ?? ''; ?>" required>
-                <i class='bx bx-cake'></i>
+                <input type="email" placeholder="email" name="email" value="<?php echo $_SESSION['input_forgot']['email'] ?? ''; ?>" required>
+                <i class='bx bx-envelope'></i>
             </div>
             <div class="inputBox">
                 <input type="password" placeholder="Password" name="pwd" value="<?php echo $_SESSION['input_forgot']['pwd'] ?? ''; ?>" required>

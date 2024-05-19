@@ -3,18 +3,18 @@ session_start();
 require 'forgotVerif.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
-    $birthday = $_POST["birthday"];
+    $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $confirmPwd = $_POST["confirmPwd"];
 
     $_SESSION['input_forgot'] = [
         'username' => $username,
-        'birthday' => $birthday,
+        'email' => $email,
         'pwd' => $pwd,
         'confirmPwd' => $confirmPwd
     ];
 
-    if (verify_user($username, $birthday,$pwd,$confirmPwd)) {
+    if (verify_user($username, $email,$pwd,$confirmPwd)) {
         replace_Pwd($username, $pwd);
         $_SESSION['success'] = '✅Your password has been reset✅';
         $_SESSION['input_forgot']='';
