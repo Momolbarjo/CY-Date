@@ -19,6 +19,7 @@
                 <a href="#" id="allUsers">All users<i class='bx bx-user-x'></i></a>
                 <a href="#" id="report">Reports<i class='bx bxs-alarm-exclamation'></i></i></a>
                 <a href="#" id="ban">Banned<i class='bx bx-cross' ></i></a>
+                <a href="#" id="unban">Unban request<i class='bx bxs-shield'></i></a>
             </nav>
         </header>
         <div id="userTable"></div>

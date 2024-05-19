@@ -92,8 +92,10 @@ function verify_login($username, $password)
                     }
                 }
                 $_SESSION['role'] = 'banned';
-                $_SESSION['error'] = "⚠️You are banned because of $reason ⚠️";
+                $unbanButton = "<a href='../web/request/unban_request.php'>Yes</a>";
+                $_SESSION['error'] = "⚠️You have been banned because of $reason ⚠️<br>Do you want to ask to be unbanned?<br> " . $unbanButton . " <a href=login/new/registerHub.php>No</a>";
                 return false;
+                exit();
             } else {
                 $_SESSION['role'] = $existingRole;
                 $_SESSION['status'] = $existingSub;

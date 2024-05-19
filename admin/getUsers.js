@@ -20,6 +20,11 @@ $(document).ready(function () {
                 $("#userTable").html(data);
             });
         }
+        else if ($(this).is("#unban")) {
+            $.get("getData/allUnbanedRequest.php", function (data) {
+                $("#userTable").html(data);
+            });
+        }
     });
 
     $(".logo").click(function () {

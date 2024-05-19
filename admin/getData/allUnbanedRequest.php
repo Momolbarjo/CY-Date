@@ -1,14 +1,19 @@
 <?php
-$lines = file("../../data/banned.csv", FILE_IGNORE_NEW_LINES);
-$index = 0;
-echo '<table>';
-echo '<tr>';
+$lines = file("../../data/unban.csv", FILE_IGNORE_NEW_LINES);
 
-foreach($lines as $line){
-    $users = str_getcsv($line);
+if (!empty($lines)) {
+    $index = 0;
+    echo '<table>';
+    echo '<tr>';
+
+    foreach($lines as $line){
+        if (trim($line) == '') {
+            continue;
+        }
+        $users = str_getcsv($line);
         echo '<tr>';
         for ($i = 0; $i < count($users); $i++) {
-             echo "<td>{$users[$i]}</td>";
+            echo "<td>{$users[$i]}</td>";
         }
         echo "<td>
         <form action='sanctions.php' method='post'>
@@ -20,9 +25,10 @@ foreach($lines as $line){
         </form>
         </td>";
         echo '</tr>';
-    $index++;
+    
+        $index++;
+    }
+
+    echo '</table>';
 }
-
-echo '</table>';
-
 ?>

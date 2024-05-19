@@ -17,7 +17,7 @@
             session_start();
 
             if (isset($_GET['error'])){
-                echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
+                echo '<div class="error">' . $_GET['error'] . '</div>';
                 unset($_SESSION['error']);
             }
             else if(isset($_GET['success'])){
