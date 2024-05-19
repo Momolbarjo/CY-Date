@@ -19,7 +19,7 @@ if (!empty($lines)) {
         <form action='sanctions.php' method='post'>
         <input type='hidden' name='index' value='$index'>
             <label>Deban:
-                <input type='radio' name='sanction' value='unban' class='select-user'>
+                <input type='radio' name='sanction' value='request' class='select-user'>
             </label>
             <input value='send' type='submit'>
         </form>

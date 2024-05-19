@@ -14,10 +14,10 @@ foreach($lines as $line){
         <form action='sanctions.php' method='post'>
         <input type='hidden' name='index' value='$index'>
             <label>Report:
-                <input type='radio' name='sanction' value='report' class='select-user'><br>
+                <input type='radio' name='sanction' value='reportByReports' class='select-user'><br>
             </label>
             <label>Ban:
-                <input type='radio' name='sanction' value='ban' class='select-user'>
+                <input type='radio' name='sanction' value='banByReports' class='select-user'>
             </label>
             <label>Reason for ban:
                 <input type='text' name='ban_reason'>
