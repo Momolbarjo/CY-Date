@@ -8,8 +8,7 @@ foreach($lines as $line){
     $users = str_getcsv($line);
         echo '<tr>';
         for ($i = 0; $i < count($users); $i++) {
-                echo "<td>{$users[$i]}</td>";
-            
+            echo "<td>{$users[$i]}</td>";
         }
         echo "<td>
         <form action='sanctions.php' method='post'>

@@ -82,7 +82,36 @@ li:hover {
     background-color: #ddd;
 }
 
-.delete-icon {
+.delete-icon,
+.report-icon {
     cursor: pointer;
     display: none;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid red;
+    top: 5.5%;
+    right: 42%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    top: 5.5%;
+    right: 43%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
 }

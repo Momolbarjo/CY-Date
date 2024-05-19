@@ -17,8 +17,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
     $sender = $_SESSION['input_log']['username'];
     $recipient = $_POST['recipient'];
     $message = $_POST['message'];
-    $uniqueID = uniqid();
-    file_put_contents("../../data/message.csv", "$sender;$recipient;$message;$uniqueID\n", FILE_APPEND);
+    
+    if (strpos($message, ';') !== false) {
+        $_SESSION['error'] = "You cannot use : ';'.";    
+    }
+    else{
+        $uniqueID = uniqid();
+        file_put_contents("../../data/message.csv", "$sender;$recipient;$message;$uniqueID\n", FILE_APPEND);
+    }
 } 
 
 
@@ -45,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My messages</title>
     <link rel="stylesheet" href="message.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 

@@ -35,11 +35,15 @@ $(document).ready(function () {
         }
     }
 
-    function showMessage(messageContent, messageType, messageID) {
+    function showMessage(messageContent, messageType, messageID, sender, recipient) {
         const messageElement = $("<div></div>").addClass("message").addClass(messageType).text(messageContent);
-        const deleteIcon = $('<span class="delete-icon">&#x1F5D1;</span>');
+        const deleteIcon = $('<span class="delete-icon"><i class="bx bx-trash"></i></span>');
+        const reportIcon = $('<span class="report-icon"><i class="bx bxs-error"></i></i></span>');
         messageElement.data("messageID", messageID);
+        messageElement.data("sender", sender);
+        messageElement.data("recipient", recipient);
         messageElement.append(deleteIcon);
+        messageElement.append(reportIcon);
         chat.append(messageElement);
         chat.append("<br>");
         chat.scrollTop(chat.prop("scrollHeight"));
@@ -57,12 +61,12 @@ $(document).ready(function () {
                 const messageID = rowData[3];
                 if (currentUser === sender) {
                     if (username === recipient) {
-                        showMessage(message, 'sent', messageID);
+                        showMessage(message, 'sent', messageID, sender, recipient);
                     }
                 }
                 else if (currentUser === recipient) {
                     if (username === sender) {
-                        showMessage(message, 'received', messageID);
+                        showMessage(message, 'received', messageID, sender, recipient);
                     }
                 }
             });
@@ -78,10 +82,39 @@ $(document).ready(function () {
         $(this).find(".delete-icon").css("display", "none");
     });
 
+    $(".chat").on("mouseenter", ".received", function () {
+        $(this).find(".report-icon").css("display", "inline-block");
+    });
+
+    $(".chat").on("mouseleave", ".received", function () {
+        $(this).find(".report-icon").css("display", "none");
+    });
+
     $(".chat").on("click", ".delete-icon", function () {
         const messageID = $(this).closest('.message').data("messageID");
         deleteMessage(messageID, username);
         $(this).closest('.message').remove();
+    });
+
+    $(".chat").on("click", ".report-icon", function () {
+        const reportedMessage = $(this).closest('.message');
+        const sender = reportedMessage.data("sender");
+        const recipient = reportedMessage.data("recipient");
+        const messageContent = reportedMessage.text().trim();
+
+
+        $.ajax({
+            url: '../../admin/report.php',
+            type: 'post',
+            data: {
+                'reporter': recipient,
+                'reported': sender,
+                'reason': 'said :' + messageContent
+            },
+            success: function (response) {
+
+            }
+        });
     });
 
     function deleteMessage(messageID, username) {
