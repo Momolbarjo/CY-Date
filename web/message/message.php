@@ -10,7 +10,7 @@ else if(isset($_GET['success'])){
     unset($_SESSION['success']);
 }
 
-$lines = file("../../data/request.csv", FILE_IGNORE_NEW_LINES);
+$contactsLines = file("../../data/request.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
@@ -57,9 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
                 <?php
                 $usedIds = [];
 
-                foreach($lines as $line) 
+                foreach($contactsLines as $contactLine) 
                 {
-                    $data = str_getcsv($line);
+                    $data = str_getcsv($contactLine);
                     if($data[0] == $_SESSION['input_log']['username'] && !in_array($data[1], $usedIds))
                     {
                         $usedIds[] = $data[1];
