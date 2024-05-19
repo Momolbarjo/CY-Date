@@ -1,82 +1,88 @@
-body{
+body {
     font-family: Arial, sans-serif;
 }
 
-.container{
+.container {
     display: flex;
     height: 100vh;
 }
 
-.sidebar{
+.sidebar {
     width: 200px;
     background: #f2f2f2;
     padding: 20px;
 }
 
-.chat-area{
+.chat-area {
     flex: 1;
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.chat{
+.chat {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.received{
+.received {
     margin-top: 10px;
     color: azure;
     background-color: rgb(221, 118, 118);
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
+    align-self: flex-end;
+
 }
 
-.sent{
+.sent {
     margin-top: 10px;
     color: azure;
     background-color: #15aeeb;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
+    align-self: flex-start;
+
 }
 
-.chat button{
+.chat button {
     width: 100%;
     padding: 10px 20px;
     margin-top: 10px;
     border-radius: 5px;
 }
 
-#sendButton{
+#sendButton {
     cursor: pointer;
     display: none;
 }
 
-#messageInput{
+#messageInput {
     display: none;
 }
 
 
-#sendButton:hover{
+#sendButton:hover {
     background-color: #15aeeb;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding: 0;
 }
 
-li{
+li {
     cursor: pointer;
 }
 
-li:hover{
+li:hover {
     background-color: #ddd;
-} 
+}
 
-.delete-icon{
+.delete-icon {
     cursor: pointer;
     display: none;
 }
