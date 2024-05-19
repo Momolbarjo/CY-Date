@@ -11,6 +11,11 @@
     
     $max = count($userData['pictures']);
 
+    $visiter = $_SESSION['input_log']['username'];
+    $photo = $_SESSION['profile_pic'];
+    $visited = $username;
+    file_put_contents("../../data/visit.csv", "$visiter,$visited,$photo\n", FILE_APPEND); 
+
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blocker']) && isset($_POST['blocked'])){
 
