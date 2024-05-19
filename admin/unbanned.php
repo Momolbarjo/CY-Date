@@ -19,4 +19,9 @@ if (!$unbannedRequestExist) {
     fclose($file); 
     
 } 
+
+$_SESSION['success'] = '✅Your request has been taken into account✅';
+header("Location: ../index.php?success=". urlencode($_SESSION['success']));
+exit();
+
 ?>
