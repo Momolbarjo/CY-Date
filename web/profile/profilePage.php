@@ -54,7 +54,7 @@
         </div>
         
         <div class="third">
-        	<p id="p1">DESCRPTION</p><textarea id = "p2" cols="20" rows="6"    name="desc"><?php echo $userData['description'] ?? 'No info';  ?></textarea>
+        	<p id="p1">DESCRIPTION</p><textarea id = "p2" cols="20" rows="6"    name="desc"><?php echo $userData['description'] ?? 'No info';  ?></textarea>
         </div>
     
     	<div class="four">

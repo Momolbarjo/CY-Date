@@ -40,12 +40,12 @@ body {
 
 .received {
     background-color: rgb(221, 118, 118);
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .sent {
     background-color: #15aeeb;
-    align-self: flex-start;
+    align-self: flex-end;
 }
 
 .chat button {
