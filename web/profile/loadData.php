@@ -6,7 +6,10 @@ function loadUserData($username) {
     while (($line = fgetcsv($file)) !== FALSE) {
         if ($line[2] == $username) { 
             $userData = array(
+                'name' => $line[0],
+                'surname' => $line[1],
                 'username' => $line[2],
+                'email' => $line[3],
                 'birthdate' => $line[4],
                 'gender' => $line[6],
                 'profilePicPath' => $line[9],

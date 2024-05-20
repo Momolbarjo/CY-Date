@@ -4,27 +4,20 @@
 
     include 'loadData.php';
 
-    $username = $_GET['user'];
+    $username = $_SESSION['input_log']['username'];
 
     $userData = loadUserData($username);
     
 
-    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blocker']) && isset($_POST['blocked'])){
-
-		
-		$blocker = $_POST['blocker'];
-		$blocked = $_POST['blocked'];
-
-
-		file_put_contents("../../data/blocked.csv", "$blocker,$blocked\n", FILE_APPEND);
-	}
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="infos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>My Settings</title>
 </head>
 <body>
@@ -38,14 +31,14 @@
         </div>
         
         <div class="second">
-        	<p id="p1">Name :</p><p id="p2"> none</p>
-        	<p id="p1">First Name :</p><p id="p2"> none</p>
-        	<p id="p1">Email :</p><p id="p2"> none</p>
+        	<p id="p1">Name :</p><p id="p2"> <?php echo $userData['name'];?></p>
+        	<p id="p1">First Name :</p><p id="p2"> <?php echo $userData['surname'];?></p>
+        	<p id="p1">Email :</p><p id="p2"> <?php echo $userData['email'];?></p>
         </div>
         
         <div class="third">
-        	<p id="p1">Username :</p><p id="p2"> none</p>
-        	<p id="p1">Sub :</p><p id="p2"> none</p>
+        	<p id="p1">Username :</p><p id="p2"> <?php echo $userData['username'];?></p>
+        	<p id="p1">Sub :</p><p id="p2"> <?php echo $userData['statut'];?></p>
         </div>
     
         <div class="four">
@@ -59,12 +52,22 @@
     	<h2> Are you sure to delete your account ? </h2>
     	<br><br>
     	<button id="choice1" onclick="deleteAccount(1)">NO</button> &nbsp &nbsp &nbsp
-    	<button id="choice2" onclick="deleteAccount(1)">YES</button>
+    	<button id="choice2" onclick="deleteUser()">YES</button>
     	
     </div>
     
-    
-
+    <script>
+    function deleteUser() {
+        $.ajax({
+            url: '../../admin/deleteUser.php',  
+            type: 'POST',
+            data: { username: '<?php echo $userData['username']; ?>' },
+            success: function() {
+                window.location.href = '../../index.php';
+            }
+        });
+    }
+</script>
     <script src="infos.js"></script>
 </body>
 </html>

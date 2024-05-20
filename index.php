@@ -8,6 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="login/log.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="Browser/disable.js"></script>
 </head>
 
 <body>
@@ -50,7 +51,6 @@
         </form>
     </div>
 
-    
 </body>
 
 </html>
