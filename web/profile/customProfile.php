@@ -31,16 +31,17 @@ $lines = file("../../data/visit.csv", FILE_IGNORE_NEW_LINES);
 
 <body>
 
-    <div class="box">  
-        <form action="profileServ.php" method="POST" enctype="multipart/form-data">
-            
-            <div class="pic">
+
+    <div class="pic">
             <input type="file" id="imageUpload" name="profilPicture" accept=".png, .jpg, .jpeg, .gif"
                 style="display:none">
             <label for="imageUpload">
             <img src="<?php  if(!$_SESSION['role']){header('Location: ../index.php');}echo $_SESSION['profile_pic']; ?>" class="round-image" alt="cantFoundPic" id="profilePic">
             </label>
             </div>
+    <div class="box">  
+        <form action="profileServ.php" method="POST" enctype="multipart/form-data">
+            
             
             <div class="inputBox">
                 <input type="textbox" value="<?php  echo $_SESSION['input_log']['username'] ?? '';?>" readonly />
@@ -116,4 +117,3 @@ $lines = file("../../data/visit.csv", FILE_IGNORE_NEW_LINES);
 </body>
 
 </html>
-
