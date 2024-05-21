@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+$username = $_SESSION['input_log']['username'];
+include 'defaultProfile.php';
+
+
+$filePath = '../../data/users.csv';
+$blockedFilePath = '../../data/blocked.csv';
+$users = getUsersData($filePath);
+$blockedUsers = getBlockedUsersData($blockedFilePath);
+$sortedUsers = sortUsersByRegistrationDate($users);
+$latestUsers = array_slice($sortedUsers, 0, 5);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +30,7 @@
 <div id="errorMessage" class="error" style="display: none;"></div>
 <div id="content">
     <header class="navMenu">
-        <a href="#"><img class="logo" src="<?php session_start(); if($_SESSION['status']==="sil"){echo "../../Pictures/silver.png";}else if($_SESSION['status']==="gld"){echo "../../Pictures/gold.png";}else{echo "../../Pictures/cupid.png";}?>"></a>
+        <a href="#"><img class="logo" src="<?php  if($_SESSION['status']==="sil"){echo "../../Pictures/silver.png";}else if($_SESSION['status']==="gld"){echo "../../Pictures/gold.png";}else{echo "../../Pictures/cupid.png";}?>"></a>
         <nav class="navigationBar">
             <a href="../logOut.php">Log Out<i class='bx bxs-log-out-circle'></i></a>
             <a href="#" id="searchBtn">Search<i  class='bx bx-search-alt' ></i></a>
@@ -30,6 +45,17 @@
             </label>
         </nav>
     </header>
+   
+        <?php foreach ($latestUsers as $user):
+            if (!isUserBlocked($user[2], $blockedUsers, $username)): ?>
+                <li>
+                    <img class="roundOther-image"  src="<?php echo $user[9]; ?>" alt="Profile Picture" width="50" height="50">
+                    <strong><?php echo htmlspecialchars($user[0]); ?></strong>
+                </li>
+            <?php endif;
+            endforeach; 
+        ?>
+
 </div>
 <div id="displaySearch">
     <input type="text" id="searchInput" placeholder="Looking for someone...">

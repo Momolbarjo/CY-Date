@@ -118,6 +118,9 @@ body {
     z-index: 101;
 }
 
+li {
+    color: grey;
+}
 
 .profile-container {
     position: fixed;
@@ -135,6 +138,22 @@ body {
     text-decoration: none;
 }
 
+#profiles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profiles {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profiles.active {
+    display: flex;
+}
+
 .round-image:hover {
     filter: brightness(80%);
 }
@@ -145,6 +164,11 @@ body {
     height: 100px;
     object-fit: cover;
     z-index: 101;
+}
+
+li .roundOther-image {
+    width: 200px;
+    height: 200px;
 }
 
 .deco_button {
