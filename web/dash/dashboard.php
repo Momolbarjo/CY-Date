@@ -49,7 +49,7 @@ $latestUsers = array_slice($sortedUsers, 0, 5);
         <?php foreach ($latestUsers as $user):
             if (!isUserBlocked($user[2], $blockedUsers, $username)): ?>
                 <li>
-                    <img class="roundOther-image"  src="<?php echo $user[9]; ?>" alt="Profile Picture" width="50" height="50">
+                <?php echo "<a href='../profile/profilePage.php?user=$user[2]'><img class='roundOther-image' src='" . $user[9] . "' alt='Profile Picture'></a>"; ?>
                     <strong><?php echo htmlspecialchars($user[0]); ?></strong>
                 </li>
             <?php endif;
