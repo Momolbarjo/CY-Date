@@ -8,14 +8,23 @@
 
     $userData = loadUserData($username);
 
+	$lines = file("../../data/visit.csv", FILE_IGNORE_NEW_LINES);
     
     $max = count($userData['pictures']);
-
     $visiter = $_SESSION['input_log']['username'];
     $photo = $_SESSION['profile_pic'];
     $visited = $username;
-    file_put_contents("../../data/visit.csv", "$visiter,$visited,$photo\n", FILE_APPEND); 
+	$visits = 1;
+	foreach($lines as $line){
+		$data = str_getcsv($line);
+		if($data[0] == $visiter && $data[1] == $visited){
+			$visits = 0;
+		}
+	}
 
+	if($visits){
+		file_put_contents("../../data/visit.csv", "$visiter,$visited,$photo\n", FILE_APPEND); 
+	}
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blocker']) && isset($_POST['blocked'])){
 
