@@ -33,6 +33,12 @@ foreach($lines as $line){
             <input value='send' type='submit'>
         </form>
         </td>";
+        echo "<td>
+        <form action='../../web/message/message.php' method='POST'>
+            <input type = 'hidden' name='user' value = '{$users[2]}'>
+            <button type='submit'>Users message</button>
+        </form> 
+        </td>";
         echo '</tr>';
     }
     $index++;
