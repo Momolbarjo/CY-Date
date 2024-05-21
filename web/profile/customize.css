@@ -36,8 +36,9 @@ body {
 }
 
 .pic {
-    position: relative;
-    margin-left: -15%;
+    position: absolute;
+    top:15%;
+    z-index: 999;
 }
 
 .inputBox {
@@ -246,4 +247,6 @@ body {
     body {
         zoom: calc((100% / 10) * 8)
     }
+    
+    
 }

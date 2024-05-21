@@ -327,7 +327,7 @@ i {
 
 @media (max-width: 1920px) {
     #submenu a {
-        font-size: 14px;
+        font-size: 80%;
     }
 
     #displaySearch i {

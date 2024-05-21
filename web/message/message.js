@@ -16,7 +16,9 @@ $(document).ready(function () {
     $(".sidebar ul li").on("click", function () {
         username = $(this).attr("id");
         loadConversation(username);
-        showChat();
+        if(!admin){
+            showChat();
+        }
     });
 
     function showChat() {

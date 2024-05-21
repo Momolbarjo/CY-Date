@@ -41,6 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
     file_put_contents("../../data/message.csv", $output);
 }
 
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user'])){
+    $currentUser = $_POST['user'];
+    $admin = 1;
+}
+else{
+    $currentUser = $_SESSION['input_log']['username'];
+    $admin = 0;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -67,12 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
                 foreach($contactsLines as $contactLine) 
                 {
                     $data = str_getcsv($contactLine);
-                    if($data[0] == $_SESSION['input_log']['username'] && !in_array($data[1], $usedIds))
+                    if($data[0] == $currentUser && !in_array($data[1], $usedIds))
                     {
                         $usedIds[] = $data[1];
                         echo "<li id='$data[1]'>{$data[1]}</li>";
                     }
-                    elseif($data[1] == $_SESSION['input_log']['username'] && !in_array($data[0], $usedIds))
+                    elseif($data[1] == $currentUser && !in_array($data[0], $usedIds))
                     {
                         $usedIds[] = $data[0];
                         echo "<li id='$data[0]'>{$data[0]}</li>";
@@ -85,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
 
         <div class="chat-area">
             <div class="chat">
-                <!-- C'est pas un truc inutile la team -->
+
             </div>
             <input type="text" id="messageInput" placeholder="Talk about your favorite food :3">
             <button id="sendButton">Send</button>
@@ -93,9 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
 
     </div>
     <script>
-    var currentUser = "<?php echo $_SESSION['input_log']['username']; ?>";
+        var currentUser = "<?php echo htmlspecialchars($currentUser, ENT_QUOTES, 'UTF-8'); ?>";
+        let admin = <?php echo $admin; ?>;
     </script>
     <script src="message.js"></script>
-    
 </body>
 </html>
