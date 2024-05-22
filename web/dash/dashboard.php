@@ -10,7 +10,7 @@ $blockedFilePath = '../../data/blocked.csv';
 $users = getUsersData($filePath);
 $blockedUsers = getBlockedUsersData($blockedFilePath);
 $sortedUsers = sortUsersByRegistrationDate($users);
-$latestUsers = array_slice($sortedUsers, 0, 5);
+$latestUsers = array_slice($sortedUsers, 0, 7);
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $latestUsers = array_slice($sortedUsers, 0, 5);
             </label>
         </nav>
     </header>
-   
+    <h1 id="crampté">The New Crampteurs like Hackmoun :</h1>
         <?php foreach ($latestUsers as $user):
             if ($user[2] !== $username && !isUserBlocked($user[2], $blockedUsers, $username)): ?>
                 <li>
@@ -75,8 +75,7 @@ $latestUsers = array_slice($sortedUsers, 0, 5);
             <i class='bx bxs-star'></i>100 messages a day<br>
             <i class='bx bxs-star'></i>Send Friend Request<br>
             <i class='bx bx-star' ></i>Seen History<br>
-            <i class='bx bx-star' ></i>Charism<br>
-            <i class='bx bx-star'></i>Randomized date<br><br><br>
+            <i class='bx bx-star' ></i>Charism<br><br><br>
             <i class='bx bx-money' ></i>9.99$ per month<br>
         </p>
         <div id="silSubOptions" style="display: none;">
@@ -93,8 +92,7 @@ $latestUsers = array_slice($sortedUsers, 0, 5);
             <i class='bx bxs-star'></i>Send Friend Request<br>
             <i class='bx bxs-star'></i>Seen History<br>
             <i class='bx bxs-star'></i>Charism<br>
-            <i class='bx bxs-star'></i>CEO<br>
-            <i class='bx bxs-star'></i>Randomized date<br><br><br>
+            <i class='bx bxs-star'></i>CEO<br><br><br>
             <i class='bx bx-money' ></i>19.99$ per month<br>
         </p>
         <div id="gldSubOptions" style="display: none;">
