@@ -4,6 +4,20 @@ $banfile = "../data/banned.csv";
 $unbanfile = "../data/unban.csv";
 $reportfile = "../data/reports.csv";
 
+
+if (isset($_POST['delete_index']) && isset($_POST['filename'])) {
+    $indexToDelete = intval($_POST['delete_index']);
+    $file = $_POST['filename']; 
+
+    $lines = file($file, FILE_IGNORE_NEW_LINES);
+
+    if ($indexToDelete >= 0 && $indexToDelete < count($lines)) {
+        unset($lines[$indexToDelete]);
+
+        file_put_contents($file, implode(PHP_EOL, $lines) . PHP_EOL);
+    }
+}
+
 if (isset($_POST["sanction"]) && isset($_POST["index"])) {
     $sanction = $_POST["sanction"];
     $index = (int)$_POST["index"];

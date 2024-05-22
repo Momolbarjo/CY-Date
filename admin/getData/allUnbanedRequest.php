@@ -21,7 +21,15 @@ if (!empty($lines)) {
             <label>Deban:
                 <input type='radio' name='sanction' value='request' class='select-user'>
             </label>
+            <button name='delete'>❌</button>
             <input value='send' type='submit'>
+        </form>
+        </td>
+        <td>
+        <form action='sanctions.php' method='post'>
+        <input type='hidden' name='delete_index' value='$index'>
+        <input type='hidden' name='filename' value='../data/unban.csv'>
+        <button type='submit' name='delete'>❌</button>
         </form>
         </td>";
         echo '</tr>';

@@ -38,6 +38,13 @@ foreach($lines as $line){
             <input type = 'hidden' name='user' value = '{$users[2]}'>
             <button type='submit'>Users message</button>
         </form> 
+        </td>
+        <td>
+        <form action='sanctions.php' method='post'>
+        <input type='hidden' name='delete_index' value='$index'>
+        <input type='hidden' name='filename' value='../data/users.csv'>
+        <button type='submit' name='delete'>❌</button>
+        </form>
         </td>";
         echo '</tr>';
     }
