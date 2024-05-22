@@ -33,6 +33,7 @@ $(document).ready(function () {
             $.post(window.location.href, { message: messageContent, recipient: username }, function () {
                 showMessage(messageContent, 'sent');
                 messageInput.val("");
+                loadConversation(username);
             });
         }
     }
@@ -56,7 +57,7 @@ $(document).ready(function () {
         $.get("../../data/message.csv", function (data) {
             const lines = data.split("\n");
             lines.forEach(function (line) {
-                const rowData = line.split(";");
+                const rowData = line.split(",");
                 const sender = rowData[0];
                 const recipient = rowData[1];
                 const message = rowData[2];
@@ -94,8 +95,16 @@ $(document).ready(function () {
 
     $(".chat").on("click", ".delete-icon", function () {
         const messageID = $(this).closest('.message').data("messageID");
-        deleteMessage(messageID, username);
-        $(this).closest('.message').remove();
+        $.ajax({
+            url: '../../admin/removeMsg.php',
+            type: 'post',
+            data: {
+                'ID': messageID
+            },
+            success: function (response) {
+                loadConversation(username);
+            }
+        });
     });
 
     $(".chat").on("click", ".report-icon", function () {
@@ -119,10 +128,5 @@ $(document).ready(function () {
         });
     });
 
-    function deleteMessage(messageID, username) {
-        console.log(messageID);
-        $.post(window.location.href, { deleteID: messageID });
-        loadConversation(username);
-    }
 
 });

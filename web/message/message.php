@@ -18,28 +18,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['message'])) {
     $recipient = $_POST['recipient'];
     $message = $_POST['message'];
     
-    if (strpos($message, ';') !== false) {
-        $_SESSION['error'] = "You cannot use : ';'.";    
+    if (strpos($message, ',') !== false) {
+        $_SESSION['error'] = "You cannot use : ','.";    
     }
     else{
         $uniqueID = uniqid();
-        file_put_contents("../../data/message.csv", "$sender;$recipient;$message;$uniqueID\n", FILE_APPEND);
+        file_put_contents("../../data/message.csv", "$sender,$recipient,$message,$uniqueID\n", FILE_APPEND);
     }
 } 
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteID'])){
-    $deleteID = $_POST['deleteID'];
-    $lines = file("../../data/message.csv");
-    $output = "";
-    foreach ($lines as $line){
-        $data = explode(";", $line);
-        if ($data[3] != $deleteID){
-            $output .= $line;
-        }
-    }
-    file_put_contents("../../data/message.csv", $output);
-}
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user'])){
     $currentUser = $_POST['user'];
