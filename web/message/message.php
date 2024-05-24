@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-if (isset($_GET['error'])){
-    echo '<div class="error">' . htmlspecialchars($_GET['error']) . '</div>';
-    unset($_SESSION['error']);
-}
-else if(isset($_GET['success'])){
-    echo '<div class="success">' . htmlspecialchars($_GET['success']) . '</div>';
-    unset($_SESSION['success']);
-}
 
 $contactsLines = file("../../data/request.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
@@ -53,7 +45,7 @@ else{
 
 <body>
     <div class="container">
-
+    <div id="errorMessage" class="error" style="display: none;"></div>
         <div class="sidebar">
             <h2>Contacts</h2>
             <ul>

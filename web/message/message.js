@@ -3,6 +3,21 @@ $(document).ready(function () {
     const sendButton = $("#sendButton");
     const chat = $(".chat");
 
+
+    function checkMessageLimit() {
+        $.post('check_message_limit.php', function (response) {
+            if (response.canSend) {
+                messageInput.prop('disabled', false);
+                sendButton.prop('disabled', false);
+            } else {
+                messageInput.prop('disabled', true);
+                sendButton.prop('disabled', true);
+                window.location.href = "../dash/dashboard.php";
+            }
+        }, 'json');
+    }
+
+
     sendButton.on("click", function () {
         sendMessage(username);
     });
@@ -29,12 +44,22 @@ $(document).ready(function () {
     function sendMessage(username) {
         const messageContent = messageInput.val().trim();
         if (messageContent !== "") {
-            const recipient = $(".chat-area .sidebar ul li.active").attr("id");
-            $.post(window.location.href, { message: messageContent, recipient: username }, function () {
-                showMessage(messageContent, 'sent');
-                messageInput.val("");
-                loadConversation(username);
-            });
+            $.post('check_message_limit.php', function (response) {
+                if (response.canSend) {
+                    const recipient = $(".chat-area .sidebar ul li.active").attr("id");
+                    $.post(window.location.href, { message: messageContent, recipient: username }, function () {
+                        showMessage(messageContent, 'sent');
+                        messageInput.val("");
+                        loadConversation(username);
+                        checkMessageLimit();
+                    });
+                } else {
+                    messageInput.prop('disabled', true);
+                    sendButton.prop('disabled', true);
+                    document.getElementById('errorMessage').style.display = "block";
+                    document.getElementById('errorMessage').innerText = "❌You reached your limit of messages per day❌";
+                }
+            }, 'json');
         }
     }
 
@@ -128,5 +153,6 @@ $(document).ready(function () {
         });
     });
 
+    checkMessageLimit();
 
 });
