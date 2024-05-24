@@ -21,7 +21,6 @@ if (!empty($lines)) {
             <label>Deban:
                 <input type='radio' name='sanction' value='request' class='select-user'>
             </label>
-            <button name='delete'>❌</button>
             <input value='send' type='submit'>
         </form>
         </td>
