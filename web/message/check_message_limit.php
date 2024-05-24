@@ -1,5 +1,6 @@
 <?php
 session_start();
+$statut = $_SESSION['status'];
 
 define('MESSAGE_LIMIT', 5);
 define('TIME_FRAME', 24);
@@ -22,7 +23,7 @@ if (!isset($_COOKIE[$cookie_name])) {
         setcookie($cookie_name, json_encode($messageData), $currentTime + TIME_FRAME, "/");
         $response = ['canSend' => true];
     } else {
-        if ($messageData['count'] < MESSAGE_LIMIT) {
+        if ($messageData['count'] < MESSAGE_LIMIT || $statut !== "sil" ) {
             
             $messageData['count']++;
             setcookie($cookie_name, json_encode($messageData), $currentTime + TIME_FRAME, "/");
