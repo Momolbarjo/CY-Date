@@ -1,5 +1,6 @@
-
 <?php
+/* Programme HTML/CSS/PHP
+
 session_start();
 
 if (isset($_GET['error'])){
