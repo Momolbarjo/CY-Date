@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php /* Programme HTML/CSS/PHP/JS permettant d'afficher la bar de navigation en haut du site dans le menu principal. */ ?>
+<?php /* Programme HTML/CSS/PHP/JS permettant d'afficher la bar de navigation en haut du site dans le menu principal du mode administrateur. */ ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
