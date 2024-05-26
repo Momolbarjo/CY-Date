@@ -27,5 +27,11 @@
 - **Ban Review**: View banned users, handle unbanning requests, and review reported content.
 - **Ban Appeal**: Banned users can appeal for unbanning, and administrators decide their fate.
 
+## Best Experience Browsers:
+
+![chrome](https://github.com/Momolbarjo/CY-Date/assets/119139743/014dbb01-0407-4295-9cf6-e55de7c6ec27)
+
+![edge](https://github.com/Momolbarjo/CY-Date/assets/119139743/39a9db41-60c7-4ecc-b500-471f571f4848)
+
 
 ![Design sans titre (12)](https://github.com/Momolbarjo/CY-Date/assets/119139743/37ffa2e9-d0db-4f42-ad12-372f8fd3b032)
