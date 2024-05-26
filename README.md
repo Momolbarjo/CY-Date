@@ -27,12 +27,4 @@
 - **Ban Appeal**: Banned users can appeal for unbanning, and administrators decide their fate.
 
 
-## A Letter from the Team
-
-```text
-Dear all,
-
-We wish that you will enjoy your visit on our website.
-
-Best regards,
-M, D, M
+![Design sans titre (12)](https://github.com/Momolbarjo/CY-Date/assets/119139743/37ffa2e9-d0db-4f42-ad12-372f8fd3b032)
