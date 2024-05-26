@@ -30,7 +30,8 @@
 ## Best Browsers Experience :
 
 
-![Capture d'écran 2024-05-26 194855](https://github.com/Momolbarjo/CY-Date/assets/119139743/f2112352-002e-4c84-867f-abf55e7e7c56)
+
+                      ![Capture d'écran 2024-05-26 194855](https://github.com/Momolbarjo/CY-Date/assets/119139743/f2112352-002e-4c84-867f-abf55e7e7c56)
 
 
 ![Design sans titre (12)](https://github.com/Momolbarjo/CY-Date/assets/119139743/37ffa2e9-d0db-4f42-ad12-372f8fd3b032)
