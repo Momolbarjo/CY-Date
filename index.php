@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-<?php /* Programme HTML/CSS/JS/PHP permettant la connexion au site et l'envoie vers les pages suivantes. */
+<!-- /* Programme HTML/CSS/JS/PHP permettant la connexion au site et l'envoie vers les pages suivantes.  -->
     
 <head>
     <meta charset="UTF-8">

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
-<?php /* Programme HTML/CSS/PHP permettant à un utilisateur banni de faire une demande de débanissemet qui pourra être valider par les administrateurs. */ ?>
+<!-- /* Programme HTML/CSS/PHP permettant à un utilisateur banni de faire une demande de débanissemet qui pourra être valider par les administrateurs. */  -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
