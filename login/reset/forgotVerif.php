@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP qui permet de verifier les informations concernant le mot de passe l'adresse mail d'un utilisateur lors de l'utilisation de "mot de passe oublié" par ce dernier. */
 session_start();
 function verify_user($username, $email, $password, $confirm)
 {
