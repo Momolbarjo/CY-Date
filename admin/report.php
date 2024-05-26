@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP permettant le signalement d'un utilisateur en y ajoutant la raison. */
     $reporter = $_POST['reporter'];
     $reported = $_POST['reported'];
     $reason = $_POST['reason'];
