@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant de débannir un utilisateur suite à une demande de débanissements de sa part. */
+
 $bannedUser = $_POST['user'];
 $unbanReason = $_POST['reason'];
 

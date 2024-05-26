@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP qui va vérifier les informations mis par un utilisateur lors de la création d'un compte pour voir si elles respectent les normes du site (nombre de caractères, etc...). */
+
 session_start();
 function verify_user_data()
 {

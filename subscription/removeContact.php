@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP permettant la suppression d'un contact d'un utilisateur. */
 
 $asker = $_POST['asker'];
 $receiver = $_POST['receiver'];

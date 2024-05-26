@@ -220,7 +220,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(rgb(82, 82, 82), black);
+    background: linear-gradient(rgb(82, 82, 82), white);
     color: white;
     border-radius: 10px;
     padding: 20px;
@@ -235,7 +235,7 @@ body {
 
 .visitsTableContainer th,
 .visitsTableContainers td {
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 10px;
     text-align: center;
 }

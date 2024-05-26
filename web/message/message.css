@@ -1,15 +1,18 @@
 body {
     font-family: Arial, sans-serif;
+    background: rgb(31, 0, 37);
 }
 
 .container {
+    background-image: url('../../BG/bulb.jpg');
     display: flex;
     height: 100vh;
 }
 
 .sidebar {
+    color: azure;
     width: 200px;
-    background: #f2f2f2;
+    background: black;
     padding: 20px;
 }
 
@@ -55,18 +58,29 @@ body {
     border-radius: 5px;
 }
 
-#sendButton {
-    cursor: pointer;
-    display: none;
+.message-container {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 #messageInput {
-    display: none;
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
 }
 
+#sendButton {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: grey;
+}
 
 #sendButton:hover {
-    background-color: #15aeeb;
+    color: black;
 }
 
 ul {

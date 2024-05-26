@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP permettant la suppression d'un message envoyé par un utilisateur. */
     $msgId = $_POST['ID'];
     
     $file = fopen('../data/message.csv', 'r');

@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP/HTML/CSS/JS permettant la modification du profil d'un utilisateur par lui-même (informations non-importantes qui peuvent variés). */ 
+
 session_start();
 include 'loadData.php';
 

@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP permettant à un utilisateur de souscrire à une des formules d'abonnement proposés. */
 session_start();
 
 $type = $_POST['subscriptionType'];

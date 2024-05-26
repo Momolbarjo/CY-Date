@@ -1,5 +1,5 @@
 <?php
-
+/* Programme PHP permettant l'affichage des profils récents dans le menu principal. */
 
 function getUsersData($filePath) {
     $users = [];

@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP qui permet de stocker les nouvelles informations concernant le mot de passe d'un utilisateur. */
+
 session_start();
 require 'forgotVerif.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

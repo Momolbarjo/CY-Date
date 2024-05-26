@@ -1,4 +1,5 @@
 <?php
+/* Programme HTML/CSS/JS/PHP gérant la page principal du site pour un utilisateur. Il va afficher la barre de navigation et ses fonctionnalités qui vont avec (recherche, abonnement, etc...). Il va aussi afficher la photo de profil de l'utilisateur et des fonctionnalité en plus si il clique dessus (modification de paramètre, de profil, messagerie, etc...). Et affiche aussi les profils récemment créer sur le site. */ 
 
 session_start();
 $username = $_SESSION['input_log']['username'];

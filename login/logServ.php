@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP qui permet la connexion d'un utilisateur sur le site à l'aide de son identifiant et de son mot de passe (si correctes -> la connexion au site réussi). */
+
 session_start();
 require 'verifyServ.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

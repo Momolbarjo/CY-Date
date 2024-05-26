@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php /* Programme HTML/CSS/PHP qui permet à l'utilisateur d'essayer de se connecter malgré l'oublie de son mot de passe. Il met un nouveau mot de passe grâce à son adresse mail. */ ?>
 
 <head>
     <meta charset="UTF-8">

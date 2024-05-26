@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant la vérification du nombre de messages envoyé sur une conversation dans la messagerie. */
+
 session_start();
 $statut = $_SESSION['status'];
 

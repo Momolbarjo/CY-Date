@@ -1,4 +1,5 @@
 <?php
+/* Programme PHP permettant la recherche de queulqu'un sur le site à l'aide de son nom d'utilisateur (barre de recherche). */
 
 session_start(); 
 

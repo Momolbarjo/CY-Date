@@ -1,5 +1,6 @@
-
 <?php
+/* Programme HTML/CSS/PHP permettant l'enregistrement d'un nouvel utilisateur sur le site. */
+
 session_start();
 
 if (isset($_GET['error'])){

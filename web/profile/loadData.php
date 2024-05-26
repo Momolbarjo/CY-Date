@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant de récupérer les informations d'un utilisateur depuis users.csv pour pouvoir les utiliser. */
+
 function loadUserData($username) {
 
     $file = fopen('../../data/users.csv', 'r');
