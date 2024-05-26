@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant la gestion des sanctions appliqués aux utilisateurs (signalement, bannissements, etc...). */
+
 $filename = "../data/users.csv";
 $banfile = "../data/banned.csv";
 $unbanfile = "../data/unban.csv";
