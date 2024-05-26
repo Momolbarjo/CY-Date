@@ -1,6 +1,7 @@
 <?php
+/* Programme HTML/CSS/JS/PHP permettant l'affichage des informations personnels d'un utilisateur. Et offre la possibilité à l'utilisateur de supprimer son comtpe. */
 
-	session_start();
+    session_start();
 
     include 'loadData.php';
 
