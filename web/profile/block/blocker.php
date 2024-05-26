@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php /* Programme HTML/CSS/PHP qui permet d'afficher un message prevenant l'utilisateur X qu'il a bloqué Y quand X essaye d'accéder au profil de Y. */ ?>
+	
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
