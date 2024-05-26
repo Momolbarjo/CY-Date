@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant la gestion d'ajout de contacts sur le site (demande envoyé ou reçu). */
+
 $userData = $_POST['asker'];
 $inputLog = $_POST['receiver'];
 
