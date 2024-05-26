@@ -1,5 +1,5 @@
 <?php
-/* Programme HTML/CSS/PHP
+/* Programme HTML/CSS/PHP permettant l'enregistrement d'un nouvel utilisateur sur le site. */
 
 session_start();
 
