@@ -1,5 +1,5 @@
 <?php
-
+/* Programme en PHP qui va récupérer les personnes bannis stockés dans banned.csv pour permettre de les afficher dans le mode administrateur du site */
 
 $lines = file("../../data/banned.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
