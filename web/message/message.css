@@ -12,7 +12,7 @@ body {
 .sidebar {
     color: azure;
     width: 200px;
-    background: black;
+    background: linear-gradient(rgb(82, 82, 82), black);
     padding: 20px;
 }
 
