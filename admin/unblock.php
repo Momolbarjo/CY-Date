@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant de débloquer un utilisateur après l'avoir bloqué. */
+
 session_start();
 $asker = $_POST['asker'];
 $receiver = $_POST['receiver'];
