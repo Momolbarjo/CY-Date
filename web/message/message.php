@@ -1,4 +1,5 @@
 <?php
+
 /* Programme PHP permettant l'envoie de messages à un utilisateur via la messagerie du site. */ 
 
 session_start();
@@ -47,7 +48,7 @@ else{
 
 <body>
     <div class="container">
-    <div id="errorMessage" class="error" style="display: none;"></div>
+        <div id="errorMessage" class="error" style="display: none;"></div>
         <div class="sidebar">
             <h2>Contacts</h2>
             <ul>
@@ -69,18 +70,16 @@ else{
                     }
                 }
                 ?>
-
             </ul>
         </div>
 
         <div class="chat-area">
-            <div class="chat">
-
+            <div class="chat"></div>
+            <div class="message-container">
+                <input type="text" id="messageInput" placeholder="Talk about your favorite food :3">
+                <i id="sendButton" class='bx bx-send'></i>
             </div>
-            <input type="text" id="messageInput" placeholder="Talk about your favorite food :3">
-            <button id="sendButton">Send</button>
         </div>
-
     </div>
     <script>
         var currentUser = "<?php echo htmlspecialchars($currentUser, ENT_QUOTES, 'UTF-8'); ?>";
@@ -88,4 +87,6 @@ else{
     </script>
     <script src="message.js"></script>
 </body>
+
 </html>
+
