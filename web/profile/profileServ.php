@@ -1,4 +1,6 @@
 <?php
+/* Prgoramme PHP qui permet de valider la modification d'un profil sur le serveur de site. */
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
