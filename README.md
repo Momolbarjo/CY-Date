@@ -1,7 +1,6 @@
 # Welcome to CY-Date
 
-![Design sans titre (10)](https://github.com/Momolbarjo/CY-Date/assets/119139743/41721729-ed26-4d31-aae6-b699067ae0b5)
-
+![Design sans titre (10)](https://github.com/Momolbarjo/CY-Date/assets/119139743/acbd61ae-513f-4733-95af-c56065965a17)
 
 ## Getting Started
 - **Sign Up**: Create your personal account.
