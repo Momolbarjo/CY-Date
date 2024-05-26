@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant la suppression d'un utilisateur du site (mode administrateur). */
+
 $user = $_POST['username'];
 
 
