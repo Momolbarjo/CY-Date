@@ -13,8 +13,9 @@
 - **Profile Management**: Edit your profile, manage messages, and access personal information.
 
 ## Subscription Plans
-- **Silver ($9.99/month)**: Send up to 100 messages per day and view friend requests.
-- **Gold ($19.99/month)**: Unlimited messaging and see who viewed your profile.
+
+![Capture d'écran 2024-05-26 135407](https://github.com/Momolbarjo/CY-Date/assets/119139743/ea789f3d-312d-4bc3-9188-e3c2ee32dc7b)
+
 
 ## Profile Customization
 - **Personal Info**: Share your region, height, and a personal description.
