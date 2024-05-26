@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant la validation de la création d'un nouveau compte sur le serveur du site. */
+
 session_start();
 require '../verifyServ.php';
 
