@@ -1,6 +1,7 @@
 <?php
+/* Programme HTML/CSS/JS/PHP gérant l'affichage du profil d'un utilisateur X depuis le compte d'un utilisateur Y. Il permet aussi à l'utilisateur Y de signaler et/ou de bloquer l'utilisateur X. */
 
-	session_start();
+    session_start();
 
     include 'loadData.php';
 
