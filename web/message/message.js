@@ -1,9 +1,10 @@
 $(document).ready(function () {
+    // Sélectionne les éléments de l'interface.
     const messageInput = $("#messageInput");
     const sendButton = $("#sendButton");
     const chat = $(".chat");
 
-
+    // Fonction pour vérifier la limite de messages.
     function checkMessageLimit() {
         $.post('check_message_limit.php', function (response) {
             if (response.canSend) {
@@ -17,17 +18,19 @@ $(document).ready(function () {
         }, 'json');
     }
 
-
+    // Gestionnaire d'événement pour le bouton d'envoi de message.
     sendButton.on("click", function () {
         sendMessage(username);
     });
 
+    // Gestionnaire d'événement pour l'appui sur la touche "Enter" dans le champ de message.
     messageInput.on("keypress", function (event) {
         if (event.key === "Enter") {
             sendMessage(username);
         }
     });
 
+    // Gestionnaire d'événement pour les clics sur les éléments de la barre latérale (utilisateurs).
     $(".sidebar ul li").on("click", function () {
         username = $(this).attr("id");
         loadConversation(username);
@@ -36,11 +39,13 @@ $(document).ready(function () {
         }
     });
 
+    // Affiche le champ de message et le bouton d'envoi.
     function showChat() {
         messageInput.show();
         sendButton.show();
     }
 
+    // Fonction pour envoyer un message.
     function sendMessage(username) {
         const messageContent = messageInput.val().trim();
         if (messageContent !== "") {
@@ -63,6 +68,7 @@ $(document).ready(function () {
         }
     }
 
+    // Fonction pour afficher un message dans la fenêtre de chat.
     function showMessage(messageContent, messageType, messageID, sender, recipient) {
         const messageElement = $("<div></div>").addClass("message").addClass(messageType).text(messageContent);
         const deleteIcon = $('<span class="delete-icon"><i class="bx bx-trash"></i></span>');
@@ -77,6 +83,7 @@ $(document).ready(function () {
         chat.scrollTop(chat.prop("scrollHeight"));
     }
 
+    // Fonction pour charger une conversation avec un utilisateur spécifique.
     function loadConversation(username) {
         chat.empty();
         $.get("../../data/message.csv", function (data) {
@@ -101,23 +108,27 @@ $(document).ready(function () {
         });
     }
 
-
+    // Affiche l'icône de suppression lors du survol des messages envoyés.
     $(".chat").on("mouseenter", ".sent", function () {
         $(this).find(".delete-icon").css("display", "inline-block");
     });
 
+    // Cache l'icône de suppression lorsque le curseur quitte un message envoyé.
     $(".chat").on("mouseleave", ".sent", function () {
         $(this).find(".delete-icon").css("display", "none");
     });
 
+    // Affiche l'icône de rapport lors du survol des messages reçus.
     $(".chat").on("mouseenter", ".received", function () {
         $(this).find(".report-icon").css("display", "inline-block");
     });
 
+    // Cache l'icône de rapport lorsque le curseur quitte un message reçu.
     $(".chat").on("mouseleave", ".received", function () {
         $(this).find(".report-icon").css("display", "none");
     });
 
+    // Gestionnaire d'événement pour la suppression d'un message.
     $(".chat").on("click", ".delete-icon", function () {
         const messageID = $(this).closest('.message').data("messageID");
         $.ajax({
@@ -132,12 +143,12 @@ $(document).ready(function () {
         });
     });
 
+    // Gestionnaire d'événement pour le rapport d'un message.
     $(".chat").on("click", ".report-icon", function () {
         const reportedMessage = $(this).closest('.message');
         const sender = reportedMessage.data("sender");
         const recipient = reportedMessage.data("recipient");
         const messageContent = reportedMessage.text().trim();
-
 
         $.ajax({
             url: '../../admin/report.php',
@@ -148,11 +159,12 @@ $(document).ready(function () {
                 'reason': 'said :' + messageContent
             },
             success: function (response) {
-
+                // Possibilité d'ajouter une action en cas de succès, actuellement vide.
             }
         });
     });
 
+    // Vérifie la limite de messages au chargement de la page.
     checkMessageLimit();
-
 });
+
