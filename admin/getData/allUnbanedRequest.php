@@ -1,4 +1,7 @@
 <?php
+
+/* Programme en PHP qui va récupérer les demandes de débannissements stockés dans unban.csv pour permettre de les afficher dans le mode administrateur du site */
+
 $lines = file("../../data/unban.csv", FILE_IGNORE_NEW_LINES);
 
 if (!empty($lines)) {

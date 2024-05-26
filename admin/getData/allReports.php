@@ -1,4 +1,6 @@
 <?php
+/* Programme en PHP qui va récupérer les signalements stockés dans report.csv pour permettre de les afficher dans le mode administrateur du site */
+
 $lines = file("../../data/reports.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
 echo '<table>';
