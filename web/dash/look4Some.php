@@ -23,7 +23,7 @@ if(isset($_GET['i'])){
                             break;
                         }
                         elseif($data[1] == $_SESSION['input_log']['username'] && $data[0] == $username){
-                            echo "<a href='../profile/block/blocked.php?user=$username'><div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div></a>";
+                            echo "<a href='../profile/block/blocked.html?user=$username'><div class='profile'><img class='roundOther-image' src='$profilePicPath' alt='Profile Picture'><p>$username</p></div></a>";
                             $isBlocked = true;
                             break;
                         }
