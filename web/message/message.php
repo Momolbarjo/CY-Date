@@ -1,4 +1,6 @@
 <?php
+/* Programme PHP permettant l'envoie de messages à un utilisateur via la messagerie du site. */ 
+
 session_start();
 
 
