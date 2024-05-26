@@ -1,4 +1,7 @@
 <?php
+
+/* Programme en PHP qui va récupérer tous les utilisateurs du site et leur informations stockés dans users.csv pour permettre de les afficher dans le mode administrateur du site */
+
 $lines = file("../../data/users.csv", FILE_IGNORE_NEW_LINES);
 $index = 0;
 echo '<table>';
