@@ -24,15 +24,7 @@ document.getElementById('sub').addEventListener('click', function () {
     document.getElementById('opt2').style.display = 'block';
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('set').addEventListener('click', function () {
-        if (document.getElementById('filters').style.display == 'none') {
-            document.getElementById('filters').style.display = 'block';
-        } else {
-            document.getElementById('filters').style.display = 'none';
-        }
-    });
-});
+
 
 window.addEventListener('click', function (e) {
     if (!document.getElementById('displaySearch').contains(e.target) && e.target.id !== 'searchBtn' && e.target.id !== 'sub' && !document.getElementById('opt1').contains(e.target) && !document.getElementById('opt2').contains(e.target)) {

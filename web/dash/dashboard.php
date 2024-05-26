@@ -60,12 +60,6 @@ $latestUsers = array_slice($sortedUsers, 0, 7);
 <div id="displaySearch">
     <input type="text" id="searchInput" placeholder="Looking for someone...">
     <div id="Results" class="profile-container"></div>
-    <i id="set" class='bx bx-cog'></i>
-    <div id="filters" style="display: none;">
-        <input type="text" placeholder="Region" name="region"></input>
-        <input type="number" placeholder="Year" name="year" min="1960" max="2006" ></input>
-        <input type="number" placeholder="Size(cm)" name="size" min="120" max="250"></input>
-    </div>
 </div>
 <div id="subOpt">
     <div id="opt1" class="option">
